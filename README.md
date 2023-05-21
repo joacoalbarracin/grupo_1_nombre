@@ -20,13 +20,18 @@ Florencia Roqueta
 Hobby: Gastronomía y deportes
 
 Carolina Salvucci
-
+Licenciada en Nutrición
+Hobby: Cocina, deportes y teatro
 
 Tomas Ricardi
 
-Joaquin Albarracin
+Joaquin Albarracin -
+Estudiante de Cs de Datos (UBA) -
+Hobby: Fútbol
 
 Javier Nieva
+Áreas de experiencia: Consultoría funcional y de negocios en Salesforce
+Hobby: Viajes
 
 
 Listado de páginas de referencia:
