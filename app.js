@@ -11,6 +11,10 @@ app.get('/carrito', (req,res) => {
     res.sendFile(path.join(__dirname,"views/productCart.html"))
 })
 
+app.get('/producto', (req,res) => {
+    res.sendFile(path.join(__dirname,"views/productDetail.html"))
+})
+
 app.listen(3000, ()=>{
     console.log( 'Servido corriendo en puerto 3000'
     )
