@@ -1,0 +1,141 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+body{
+    background-color: #ebebeb;
+}
+body header div.top-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+	background-color: rgb(233, 150, 122);
+    border-radius: 10px; /* Ajusta el valor según el grado de redondez que desees */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ajusta el valor de desenfoque y opacidad según tus preferencias */
+    width: 100vw;
+}
+
+body header div div ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 20px;
+    padding: 10px;
+}
+body header div div ul li{
+    margin: 0.3em;
+    padding: 0.3em;
+    list-style: none;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.search-bar{
+
+    background-color: antiquewhite;
+    border-radius: 0.5em;
+    background: #ebebeb;
+    color: #bfbfbf;
+}
+
+b{
+    padding-right: 25em;
+    font-weight: lighter;
+}
+
+
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-weight: 500;
+    padding: 1em 0;
+    padding-bottom: 2em;
+
+}
+
+nav ul li {
+    list-style: none;
+    padding-top: 0.5em;
+    font-weight: 500;
+    font-size: large;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: rgb(205, 92, 92);
+    font-weight: bold;
+    padding: 0.5em;
+}
+
+.logo{
+    border: red 1px solid;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    
+
+}
+
+@media (min-width: 797px){
+.option{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: red;
+    border-radius: #a7a1a1 1px solid;
+    justify-content: space-between;
+    padding-bottom: 0.5em;
+    padding: 2em;
+    margin: 2em;
+    box-shadow: 0 0 10px 0 rgba(10, 10, 10, 0.7), 
+              0 0 20px 0 rgba(196, 189, 189, 0.5), 
+              0 0 30px 0 rgba(143, 140, 140, 0.3), 
+              0 0 40px 0 rgba(59, 59, 59, 0.2), 
+              0 0 50px 0 rgba(124, 121, 121, 0.1);
+}
+
+}
+
+.img{
+    border: red 1px solid;
+}
+.option-tittle{
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+}
+#option-count{
+    padding-bottom: 1em;
+}
+
+.option-price{
+    padding-bottom: 1em;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.cart-tittle{
+    padding-left: 1em;
+    padding-top: 1em;
+    margin-bottom: 0.5em;
+    font-weight: lighter;
+    display: flex;
+    justify-content: center;
+}
+
+#trash{
+    color: rgb(233, 150, 122);
+    font-size:large
+}
