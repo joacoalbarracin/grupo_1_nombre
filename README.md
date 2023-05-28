@@ -1,4 +1,5 @@
-# grupo_1_adventureBA
+# grupo_1_adventureBA 
+Enlace a Trello: https://trello.com/b/b1ns0FOP/digital-house-full-stack
 
 Nombre: # grupo_1_adventureba
 
