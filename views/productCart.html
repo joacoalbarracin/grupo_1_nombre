@@ -6,93 +6,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     rel="stylesheet" />
-    <title>Carrito</title>
+    <link rel="stylesheet" href="/css/normalize.css"> 
+    <link rel="stylesheet" href="css/styles.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    
+    <title>Carritov</title>
 </head>
 <body>
     <header>
-
-        <img src="./Logo-AdventureBA.png" alt="Logo-AdventureBA">
-
-        <div class ="buscador">
-
-            <div class="input"> Buscar productos, marcas...</div>
-            <div class ="lupa"> <i class="fa fa-search"></i></div>
-
-        </div>
-
-        <div class="carrito">
-
-            <div><i class="fa-solid fa-cart-shopping"></i></div>
-
-        </div>
-
-
-        <div>
-
-            <div><i class="fa-regular fa-user"></i></div>
-
+        <div class="top-bar">
+            <div>
+                <img class="logo" src="./Logo-AdventureBA.png" alt="Logo-AdventureBA" >
+            </div>
+            <div>
+                <ul class="test">
+                    <li class="search-bar"> <b>Buscame!</b><i class="fa fa-search"></i></li>
+                    <li><i class="fa-solid fa-cart-shopping"></i></li>
+                    <li><i class="fa-regular fa-user"></i></li>
+                </ul>
+            </div>
         </div>
 
         <nav>
-            <ul>
-                <li>
-                    <a href=""> Entretenimiento </a>
-                </li>
-                <li>
-                    <a href=""> Gastronomía</a>
-                </li>
-                <li>
-                    <a href=""> Cultura</a>
-                </li>
-                <li>
-                <a href="">Ofertas</a>
-                </li>
-
-            </ul>
+            <div>
+                <ul>
+                    <li>
+                        <a href=""> Entretenimiento </a>
+                    </li>
+                    <li>
+                        <a href=""> Gastronomía</a>
+                    </li>
+                    <li>
+                        <a href=""> Cultura</a>
+                    </li>
+                    <li>
+                    <a href="">Ofertas</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
 
     </header>
 
     <main>
-        <h2>Carrito</h2>
+        <h2 class="cart-tittle">Cada vez mas cerca de tu nueva experiencia!</h2>
+        <div class="content">
+            <div class="option">
+                <img src="./img/Teatro Colon.jpeg" alt="Teatro Colon">
 
-        <div>
+                <h3 class="option-tittle">Visita Guíada - Teatro Colón</h3>
 
-            <img src="./img/Teatro Colon.jpeg" alt="Teatro Colon">
+                <form id="option-count"id='myform' method='POST' class='quantity' action='#'>
+                    <input type='button' value='-' class='qtyminus minus' field='quantity' />
+                    <input type='text' name='quantity' value='0' class='qty' />
+                    <input type='button' value='+' class='qtyplus plus' field='quantity' />
+                </form>
 
-            <p>Visita Guíada - Teatro Colón</p>
+                <p class="option-price">$4.000</p>
 
-            <form id='myform' method='POST' class='quantity' action='#'>
-                <input type='button' value='-' class='qtyminus minus' field='quantity' />
-                <input type='text' name='quantity' value='0' class='qty' />
-                <input type='button' value='+' class='qtyplus plus' field='quantity' />
-            </form>
+                <div><i id="trash" class="fa-solid fa-trash"></i></div>
+            </div>
+            <div class="option">
+                <img src="./img/Teatro Colon.jpeg" alt="Teatro Colon">
 
-            <p>$4.000</p>
+                <h3 class="option-tittle">Almuerzo - 2 Personas</h3>
 
-            <div><i class="fa-solid fa-trash"></i></div>
+                <form id="option-count" id='myform' method='POST' class='quantity' action='#'>
+                    <input type='button' value='-' class='qtyminus minus' field='quantity' />
+                    <input type='text' name='quantity' value='0' class='qty' />
+                    <input type='button' value='+' class='qtyplus plus' field='quantity' />
+                </form>
 
+                <p class="option-price">$7.000</p>
 
-        </div>
+                <div><i id="trash" class="fa-solid fa-trash"></i></div>
+            </div>
 
+            <div class="option">
+                <img  class="img" src="./img/Teatro Colon.jpeg" alt="Teatro Colon">
 
-        <div>
+                <h3 class="option-tittle">Visita Guíada - Teatro Colón</h3>
 
-            <img src="./img/Gastronomía.jpeg" alt="Gastronomía">
+                <form id="option-count" id='myform' method='POST' class='quantity' action='#'>
+                    <input type='button' value='-' class='qtyminus minus' field='quantity' />
+                    <input type='text' name='quantity' value='0' class='qty' />
+                    <input type='button' value='+' class='qtyplus plus' field='quantity' />
+                </form>
 
-            <p>Almuerzo - 2 Personas</p>
+                <p class="option-price">$4.000</p>
 
-            <form id='myform' method='POST' class='quantity' action='#'>
-                <input type='button' value='-' class='qtyminus minus' field='quantity' />
-                <input type='text' name='quantity' value='0' class='qty' />
-                <input type='button' value='+' class='qtyplus plus' field='quantity' />
-            </form>
+                <div><i id="trash" class="fa-solid fa-trash"></i></div>
+            </div>
+            <div class="option">
+                <img src="./img/Teatro Colon.jpeg" alt="Teatro Colon">
 
-            <p>$7.000</p>
+                <h3 class="option-tittle">Visita Guíada - Teatro Colón</h3>
 
-            <div><i class="fa-solid fa-trash"></i></div>
+                <form id="option-count" id='myform' method='POST' class='quantity' action='#'>
+                    <input type='button' value='-' class='qtyminus minus' field='quantity' />
+                    <input type='text' name='quantity' value='0' class='qty' />
+                    <input type='button' value='+' class='qtyplus plus' field='quantity' />
+                </form>
 
+                <p class="option-price">$4.000</p>
 
+                <div><i id="trash" class="fa-solid fa-trash"></i></div>
+            </div>
         </div>
 
         <div>
