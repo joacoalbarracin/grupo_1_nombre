@@ -380,15 +380,18 @@ header div.burger-menu i {
     width: 100vw;
 }
 
-.buenosAires {
+.presentacion .buenosAires {
     width: 100vw;
 }
 
-.texto-presentacion {
+.presentacion .texto-presentacion {
     position: absolute;
     color: #FFF;
     padding: 10px;
     text-align: center;
+    overflow: hidden;
+    max-width: 37.5%;
+    max-height: 100%;
 }
 
 main {
@@ -437,6 +440,7 @@ main section article .info-articulos h4{
 
 main .suscripcion {
     text-align: center;
+    margin-bottom: 25px;
 }
 
 main .suscripcion h3 {
@@ -447,6 +451,10 @@ main .suscripcion a {
     padding: 5px;
     background-color: coral;
     font-size: 20px;
+}
+
+footer {
+    background-color: coral;
 }
 
 footer .data-util {
