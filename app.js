@@ -25,9 +25,9 @@ app.get('/register', (req,res) => {
     res.sendFile(path.join(__dirname,"views/register.html"))
 })
 
-
-
-
+app.get('/home', (req,res) => {
+    res.sendFile(path.join(__dirname,"views/home.html"))
+})
 
 app.listen(3000, ()=>{
     console.log( 'Servido corriendo en puerto 3000'
