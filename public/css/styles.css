@@ -92,7 +92,25 @@ nav ul li a{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+<<<<<<< HEAD
    
+=======
+    justify-content: space-around;
+
+}
+
+
+
+
+
+@media (min-width: 797px){
+.option{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: red;
+    border-radius: #a7a1a1 1px solid;
+>>>>>>> 07dbcc303c03f345718a7bece2c72e47e0fa1cef
     justify-content: space-between;
 
 }
