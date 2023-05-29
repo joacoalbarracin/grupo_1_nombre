@@ -153,9 +153,7 @@ nav ul li a{
     padding-bottom: 1em;
 }
 
-.img{
-    border: red 1px solid;
-}
+
 
 .option{
     display: flex;
@@ -204,6 +202,10 @@ footer div ul li a{
 
 }
 
+main form {
+    display: flex;
+    
+}
 
 
 
@@ -227,6 +229,14 @@ footer div ul li a{
 
 /*De acá hacia abajo en CSS de formulario y registro*/
 
+.barra-superior{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
 #formulario-registro{
     background-color: #ebebeb;
     display: flex;
@@ -237,7 +247,7 @@ footer div ul li a{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 25px;
 
 }
@@ -245,7 +255,7 @@ footer div ul li a{
 form div {
     margin-bottom: 10px;
     border-radius: 5%;
-    width:100%;
+    width:70%;
 }
 
 .text-field {
@@ -275,4 +285,39 @@ form div {
 .botonEnviar:hover {
     background-color: #0022AA ;
 
+}
+
+.botonEnviar{
+    width:min-content;
+    padding: 0.2em;
+    justify-content: space-between;
+}
+
+.buscador{
+    display: flex;
+    justify-content: space-between;
+    padding-left:0.2em: ;
+  
+    
+}
+
+.carrito{
+    display: flex;
+    align-items: center;
+    
+}
+
+body header div div h4 {
+
+    background-color: antiquewhite;
+    border-radius: 0.5em;
+    background: #ebebeb;
+    color: #bfbfbf;
+    align-items: center;
+    padding-right: 2rem;
+
+}
+
+.div-carrito-user{
+    padding: 1em;
 }
