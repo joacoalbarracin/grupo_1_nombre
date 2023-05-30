@@ -1,0 +1,50 @@
+
+            #formulario-registro{
+                background-color: #ebebeb;
+                display: flex;
+                justify-content: center;
+            }
+
+            .formularios{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 25px;
+
+            }
+
+            form div {
+                margin-bottom: 10px;
+                border-radius: 5%;
+                width:100%;
+            }
+
+            .text-field {
+                padding: 5px;
+                width: 100%;
+            }
+
+
+            .botonForm{
+                width: 40%;
+
+            }
+
+            .botonSubmit{
+                background-color: green;
+                color: #FFF;
+                }
+
+            
+            .botonEnviar {
+                background-color: grey;
+                color:#FFF;
+                transition:background-color 0.7s;
+
+                
+            }
+            .botonEnviar:hover {
+                background-color: #0022AA ;
+
+            }
