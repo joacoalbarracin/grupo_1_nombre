@@ -15,23 +15,28 @@
 </head>
 <body>
     <header>
-        <div class="barra-superior">
-            <img src="./Logo-AdventureBA.png" alt="Logo-AdventureBA">
 
-            <div class ="buscador">
-                <h4> Buscar </h4>
-                <i class="fa fa-search"></i>
-            </div>
+        <img src="./Logo-AdventureBA.png" alt="Logo-AdventureBA">
 
-    
-            <div class="carrito">
-    
-                <div class="div-carrito-shop"><i class="fa-solid fa-cart-shopping"></i></div>
-                <div class="div-carrito-user"><i class="fa-regular fa-user"></i></div>
-    
-            </div>
+        <div class ="buscador">
+
+            <div class="input"> Buscar productos, marcas...</div>
+            <div class ="lupa"> <i class="fa fa-search"></i></div>
+
         </div>
-  
+
+        <div class="carrito">
+
+            <div><i class="fa-solid fa-cart-shopping"></i></div>
+
+        </div>
+
+
+        <div>
+
+            <div><i class="fa-regular fa-user"></i></div>
+
+        </div>
 
         <nav>
             <ul>
@@ -52,27 +57,36 @@
 
     </header>
 
-        <main>
-            <form class="formularios" action="/" method="get">
-                <div>  
-                    <label>E-mail:</label>
-                    <input class="text-field" type="email" name="email">
-                </div>
-                <div>   
-                    <label>Contraseña:</label>
-                    <input class="text-field" type="password" name="contrasenia">
-                </div> 
+    <main id="formulario-registro">
+        <h3>Completá tus datos</h3>
+        <form class="formularios" action="/" method="get">
+            <div>
+                <label>Nombre:</label>
+                <input class="text-field" type="text" name="nombre">
+            </div>
+           <div>
+                <label>Apellido:</label>
+                 <input class="text-field" type="text" name="apellido">
+           </div>
+            <div>
+                <label>E-mail:</label>
+                <input class="text-field" type="email" name="email">
+            </div>
+            <div>
+                <label>Contraseña:</label>
+                <input class="text-field" type="password" name="contrasenia">
+            </div>
+            <div>
+                <label>Repetí tu contraseña:</label>
+                <input class="text-field" type="password" name="validar-contrasenia">
+            </div>
+            <div>
+                <button class="botonForm botonSubmit" type="submit">Registrate</button>
+            </div>
 
-                <div>
-                    <h6>¿Olvidaste tu contraseña?</h6>
-                </div>
-                <div>
-                    <button class="botonForm botonEnviar" type="submit">Enviar</button>
-                </div>
+    </main>
 
-            </form>
-        </main>
-    </header>
+
     <footer class="footer-flex">
         <div>
             <ul class="ul-footer">
@@ -102,10 +116,3 @@
     </footer>
 </body>
 </html>
-
-
-
-
-
-
-
