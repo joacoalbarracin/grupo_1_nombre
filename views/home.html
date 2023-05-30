@@ -14,12 +14,14 @@
 
     <body>
         <header>
-            <img class="logo" src="" alt="logo Adventure-BA">
-            <i class="fas fa-solid fa-shopping-cart"></i>
-            <i class="fas fa-solid fa-user"></i>
-            <div class="buscador">
-                <input type="search" name="buscador" placeholder="Busca tu experiencia"> 
-                <div class="lupa"><i class = "fas fa-search"></i></div>
+            <div class="top-header">
+                <img class="logo" src="" alt="logo Adventure-BA">
+                <div class="buscador">
+                    <input type="search" name="buscador" placeholder="Busca tu experiencia"> 
+                    <div class="lupa"><i class = "fas fa-search"></i></div>
+                </div>
+                <i class="fas fa-solid fa-shopping-cart"></i>
+                <i class="fas fa-solid fa-user"></i>
             </div>
             <nav>
                 <ul>
@@ -45,9 +47,9 @@
         </header>
 
         <section>
-            <div>
-                <img src="/img/obelisco.jpg" alt="foto-BA">
-                <p> Bienvenidos a Buenos Aires, la capital de Argentina y uno de los destinos turísticos más emocionantes de Sudamérica.
+            <div class="presentacion">
+                <img class="buenosAires" src="/img/obelisco.jpg" alt="foto-BA">
+                <p class="texto-presentacion"> Bienvenidos a Buenos Aires, la capital de Argentina y uno de los destinos turísticos más emocionantes de Sudamérica.
 
 
                     Aquí encontrarás una variedad de experiencias que satisfarán todos tus intereses. Podrás degustar la famosa gastronomía porteña, disfrutar de la cultura y la historia en los museos y monumentos emblemáticos de la ciudad, y sentir la pasión del fútbol argentino.
@@ -64,7 +66,7 @@
                 <div class="productos">
                     <article>
                         <img src="/img/teatro-colon.jpg" alt="teatro-colon">
-                        <div class="info/articulos">
+                        <div class="info-articulos">
                             <p class="precio">$8.000</p>
                             <p class="descuento">20% OFF</p>
                             <h4 class = "desc-prod">Visita Guiada Teatro Colón<h4>
@@ -72,7 +74,7 @@
                     </article>
                     <article>
                         <img src="/img/comida-soho.jpg" alt="comida-soho">
-                        <div class="info/articulos">
+                        <div class="info-articulos">
                         <p class="precio">$12.000</p>
                         <p class="descuento">10% OFF</p>
                         <h4 class = "desc-prod">Tour Gastronómico Palermo Soho<h4>
@@ -80,7 +82,7 @@
                     </article>
                     <article>
                         <img src="/img/bombonera.jpg" alt="bombonera">
-                        <div class="info/articulos">
+                        <div class="info-articulos">
                         <p class="precio">$30.000</p>
                         <p class="descuento">5% OFF</p>
                         <h4 class = "desc-prod">Tour Museo Boca Juniors + Entrada Copa Libertadores<h4>
@@ -93,7 +95,7 @@
                 <div class="productos">
                     <article>
                         <img src="/img/teatro-colon.jpg" alt="teatro-colon">
-                        <div class="info/articulos">
+                        <div class="info-articulos">
                             <p class="precio">$8.000</p>
                             <p class="descuento">20% OFF</p>
                             <h4 class = "desc-prod">Visita Guiada Teatro Colón<h4>
@@ -101,7 +103,7 @@
                     </article>
                     <article>
                         <img src="/img/comida-soho.jpg" alt="comida-soho">
-                        <div class="info/articulos">
+                        <div class="info-articulos">
                         <p class="precio">$12.000</p>
                         <p class="descuento">10% OFF</p>
                         <h4 class = "desc-prod">Tour Gastronómico Palermo Soho<h4>
@@ -109,7 +111,7 @@
                     </article>
                     <article>
                         <img src="/img/bombonera.jpg" alt="bombonera">
-                        <div class="info/articulos">
+                        <div class="info-articulos">
                         <p class="precio">$30.000</p>
                         <p class="descuento">5% OFF</p>
                         <h4 class = "desc-prod">Tour Museo Boca Juniors + Entrada Copa Libertadores<h4>
@@ -122,7 +124,7 @@
                 <div class="productos">
                     <article>
                         <img src="/img/teatro-colon.jpg" alt="teatro-colon">
-                        <div class="info/articulos">
+                        <div class="info-articulos">
                             <p class="precio">$8.000</p>
                             <p class="descuento">20% OFF</p>
                             <h4 class = "desc-prod">Visita Guiada Teatro Colón<h4>
@@ -130,7 +132,7 @@
                     </article>
                     <article>
                         <img src="/img/comida-soho.jpg" alt="comida-soho">
-                        <div class="info/articulos">
+                        <div class="info-articulos">
                         <p class="precio">$12.000</p>
                         <p class="descuento">10% OFF</p>
                         <h4 class = "desc-prod">Tour Gastronómico Palermo Soho<h4>
@@ -138,7 +140,7 @@
                     </article>
                     <article>
                         <img src="/img/bombonera.jpg" alt="bombonera">
-                        <div class="info/articulos">
+                        <div class="info-articulos">
                         <p class="precio">$30.000</p>
                         <p class="descuento">5% OFF</p>
                         <h4 class = "desc-prod">Tour Museo Boca Juniors + Entrada Copa Libertadores<h4>
@@ -146,30 +148,34 @@
                     </article>
                 </div>
             </section>
-            <div>
+            <div class="suscripcion">
                 <h3>Suscribite a la lista de correo</h3>
                 <a href="#">Suscribirse</a>
             </div>
         </main>
         <footer>
             <section>
-                <article>
-                    <h4>Atención al cliente</h4>
-                    <i class="fas fa-solid fa-phone"></i>
-                </article>
-                <article>
-                    <h4>¿Quienes somos?</h4>
-                    <i class="fas fa-solid fa-users"></i>
-                </article>
-                <article>
-                    <i class="fa-brands fa-instagram"></i>
-                </article>
-                <article>
-                    <i class="fa-brands fa-twitter"></i>
-                </article>
-                <article>
-                    <i class="fas fa-sharp fa-solid fa-envelope"></i>
-                </article>
+                <div class="data-util">
+                    <article>
+                        <h4>Atención al cliente</h4>
+                        <i class="fas fa-solid fa-phone"></i>
+                    </article>
+                    <article>
+                        <h4>¿Quienes somos?</h4>
+                        <i class="fas fa-solid fa-users"></i>
+                    </article>
+                </div>
+                <div class="redes">
+                    <article>
+                        <i class="fa-brands fa-instagram"></i>
+                    </article>
+                    <article>
+                        <i class="fa-brands fa-twitter"></i>
+                    </article>
+                    <article>
+                        <i class="fas fa-sharp fa-solid fa-envelope"></i>
+                    </article>
+                </div>
             </section>
         </footer>
 

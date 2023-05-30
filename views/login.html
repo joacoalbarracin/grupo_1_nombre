@@ -6,32 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     rel="stylesheet" />
+    <link rel="stylesheet" href="/css/normalize.css"> 
+    <link rel="stylesheet" href="css/styles.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <title>Producto</title>
 </head>
 <body>
     <header>
+        <div class="barra-superior">
+            <img src="./Logo-AdventureBA.png" alt="Logo-AdventureBA">
 
-        <img src="./Logo-AdventureBA.png" alt="Logo-AdventureBA">
+            <div class ="buscador">
+                <h4> Buscar </h4>
+                <i class="fa fa-search"></i>
+            </div>
 
-        <div class ="buscador">
-
-            <div class="input"> Buscar productos, marcas...</div>
-            <div class ="lupa"> <i class="fa fa-search"></i></div>
-
+    
+            <div class="carrito">
+    
+                <div class="div-carrito-shop"><i class="fa-solid fa-cart-shopping"></i></div>
+                <div class="div-carrito-user"><i class="fa-regular fa-user"></i></div>
+    
+            </div>
         </div>
-
-        <div class="carrito">
-
-            <div><i class="fa-solid fa-cart-shopping"></i></div>
-
-        </div>
-
-
-        <div>
-
-            <div><i class="fa-regular fa-user"></i></div>
-
-        </div>
+  
 
         <nav>
             <ul>
@@ -49,7 +49,6 @@
                 </li>
 
             </ul>
-
 
     </header>
 
@@ -73,29 +72,33 @@
 
             </form>
         </main>
+    </header>
+    <footer class="footer-flex">
+        <div>
+            <ul class="ul-footer">
+                <li>
+                    <a href=""> Atención al Cliente </a>
+                </li>
+                <li>
+                    <a href="">¿Quiénes Somos?</a>
+                </li>
+    
+            </ul>
+        </div>
 
-    <footer>
-    <ul>
-        <li>
-            <a href=""> Atención al Cliente </a>
-        </li>
-        <li>
-            <a href="">¿Quiénes Somos?</a>
-        </li>
-
-    </ul>
-
-    <ul>
-        <li>
-            <a href="www.facebook.com"> <i class="fa-brands fa-facebook"></i> </a>
-        </li>
-        <li>
-            <a href="www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
-        </li>
-        <li>
-            <a href="mailto: abc@example.com"><i class="fa-regular fa-envelope"></i></a> 
-        </li>
-
+        <div>
+            <ul class="ul-footer">
+                <li>
+                    <a href="www.facebook.com"> <i class="fa-brands fa-facebook"></i> </a>
+                </li>
+                <li>
+                    <a href="www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a href="mailto: abc@example.com"><i class="fa-regular fa-envelope"></i></a> 
+                </li>
+            </ul>
+        </div>
     </footer>
 </body>
 </html>
