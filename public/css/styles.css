@@ -102,7 +102,7 @@ nav ul li a{
 
 .descripcion {
 
-    width: 40%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -119,6 +119,32 @@ nav ul li a{
               0 0 50px 0 rgba(124, 121, 121, 0.1);
 }
 
+.imgdetalle {
+    
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: #a7a1a1 1px solid;
+    justify-content: space-between;
+    padding-bottom: 0.1em;
+    padding: 2em;
+    margin: 2em;
+
+}
+
+.detalletitulo {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: #a7a1a1 1px solid;
+    justify-content: space-between;
+    padding-bottom: 0.1em;
+    padding: 2em;
+    margin: 2em;
+
+}
 
 .option{
     display: flex;
@@ -167,7 +193,10 @@ nav ul li a{
 .option-tittle{
     padding-top: 0.5em;
     padding-bottom: 1em;
+    
 }
+
+
 
 
 
@@ -312,7 +341,7 @@ form div {
 .buscador{
     display: flex;
     justify-content: space-between;
-    padding-left:0.2em: ;
+    padding-left:0.2em;
   
     
 }
@@ -509,6 +538,21 @@ footer .redes {
     header div.burger-menu {
         display: none;
     }
+
+    .descripcion {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+    
+    .imgdetalle {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+    }
+
 }
 
 @media (min-width: 769px){
