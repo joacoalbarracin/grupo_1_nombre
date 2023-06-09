@@ -2,19 +2,19 @@ const path = require('path');
 
 const controller = {
     home: (req, res) => {
-        res.render(path.resolve('./views/home.ejs'))
+        res.render('home')
     },
     login: (req, res) => {
-        res.render(path.resolve('./views/login.ejs'))
+        res.render('login')
     },
     productCart: (req, res) => {
-        res.render(path.resolve('./views/productCart.ejs'))
+        res.render('productCart')
     },
     productDetail: (req, res) => {
-        res.render(path.resolve('./views/productDetail.ejs'))
+        res.render('productDetail')
     },
     register: (req, res) => {
-        res.render(path.resolve('./views/register.ejs'))
+        res.render('register')
     },
 
 };
