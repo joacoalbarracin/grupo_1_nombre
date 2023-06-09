@@ -1,0 +1,62 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head', {title: "ProductDetail"})%>
+
+<body>
+    <%- include('./partials/header')%>
+
+    <main>
+        <h2 class="cart-tittle">Cada vez mas cerca de tu nueva experiencia!</h2>
+        <div class="content">
+            
+            <div class="descripcion">
+                <span><img  class="imgdetalle" src="./img/Teatro Colon.jpeg" alt="Teatro Colon"></span>
+
+                <h3 class="detalletitulo">Visita Guíada - Teatro Colón</h3>
+
+                <h5 class="descripcion"><span>
+                    El Teatro Colón guarda secretos en cada rincón 
+                    y vivir la experiencia 
+                     de una visita guiada es 
+                     conocer una porción de su historia de más de cien 
+                      años al servicio de la cultura argentina y mundial. 
+                    </span></h5>
+
+
+                <form id="option-count" id='myform' method='POST' class='quantity' action='#'>
+                    <input type='button' value='-' class='qtyminus minus' field='quantity' />
+                    <input type='text' name='quantity' value='0' class='qty' />
+                    <input type='button' value='+' class='qtyplus plus' field='quantity' />
+                </form>
+
+                
+
+                <p class="option-price">$4.000</p>
+
+                <div><i id="trash" class="fa-solid fa-trash"></i></div>
+
+               
+            </div>
+
+            <div class="option">
+                <h2 class="option-tittle">Detalle</h2>
+                <h3>Horario</h3> <span>10 hs </span>
+                <h3>Duración</h3> <span>2 hs</span>
+                <h3>Cupo</h3><span>15</span>
+            </div>
+        
+         
+        
+
+        <div>
+
+        </div>
+    </main>
+
+    <%- include('./partials/footer')%>
+
+</body>
+</html>

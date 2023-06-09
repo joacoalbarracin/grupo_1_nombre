@@ -2,19 +2,19 @@ const path = require('path');
 
 const controller = {
     home: (req, res) => {
-        res.sendFile(path.resolve('./views/home.html'))
+        res.render(path.resolve('./views/home.ejs'))
     },
     login: (req, res) => {
-        res.sendFile(path.resolve('./views/login.html'))
+        res.render(path.resolve('./views/login.ejs'))
     },
     productCart: (req, res) => {
-        res.sendFile(path.resolve('./views/productCart.html'))
+        res.render(path.resolve('./views/productCart.ejs'))
     },
     productDetail: (req, res) => {
-        res.sendFile(path.resolve('./views/productDetail.html'))
+        res.render(path.resolve('./views/productDetail.ejs'))
     },
     register: (req, res) => {
-        res.sendFile(path.resolve('./views/register.html'))
+        res.render(path.resolve('./views/register.ejs'))
     },
 
 };

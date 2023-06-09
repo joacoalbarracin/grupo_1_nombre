@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head', {title: "Register"})%>
+
+<body>
+    <%- include('./partials/header')%>
+
+
+    <main id="formulario-registro">
+        <h3>Completá tus datos</h3>
+        <form class="formularios" action="/" method="get">
+            <div>
+                <label>Nombre:</label>
+                <input class="text-field" type="text" name="nombre">
+            </div>
+           <div>
+                <label>Apellido:</label>
+                 <input class="text-field" type="text" name="apellido">
+           </div>
+            <div>
+                <label>E-mail:</label>
+                <input class="text-field" type="email" name="email">
+            </div>
+            <div>
+                <label>Contraseña:</label>
+                <input class="text-field" type="password" name="contrasenia">
+            </div>
+            <div>
+                <label>Repetí tu contraseña:</label>
+                <input class="text-field" type="password" name="validar-contrasenia">
+            </div>
+            <div>
+                <button class="botonForm botonSubmit" type="submit">Registrate</button>
+            </div>
+
+    </main>
+
+    <%- include('./partials/footer')%>
+
+</body>
+</html>

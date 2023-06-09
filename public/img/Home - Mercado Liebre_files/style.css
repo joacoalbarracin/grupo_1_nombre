@@ -1,0 +1,75 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    background-color: #EAC926;
+    
+}
+
+header p{
+    text-align: center;
+}
+
+header nav ul li a{
+    font-size: 12px;
+    text-decoration: none;
+    color: #000;
+}
+
+header nav ul li{
+    list-style-type: none;
+}
+
+header .buscador .input {
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #666;
+}
+
+header .buscador .lupa i {
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #666;
+}
+
+header div.burger-menu i{
+    color: #fff;
+    background-color: #1259c3;
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px 0px 20px 0px;
+    border-radius: 5px;
+}
+
+header div.burger-menu{
+    text-align: center;
+}
+
+footer{
+    background-color: #fff;
+    
+}
+
+footer article.Payment-Options i {
+    color: #1259c3;
+    font-size: 50px;
+
+}
+
+footer article.Payment-Options{
+    text-align: center;
+}
+
+footer article.Payment-Options h4 {
+    color: #666;
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+footer article.Payment-Options p {
+    color: #666;
+    margin-top: 20px;
+    font-size: 16px;
+}

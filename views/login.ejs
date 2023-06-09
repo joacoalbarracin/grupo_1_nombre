@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head', {title: "Login"})%>
+
+<body>
+    <%- include('./partials/header')%>
+
+
+        <main>
+            <form class="formularios" action="/" method="get">
+                <div>  
+                    <label>E-mail:</label>
+                    <input class="text-field" type="email" name="email">
+                </div>
+                <div>   
+                    <label>Contraseña:</label>
+                    <input class="text-field" type="password" name="contrasenia">
+                </div> 
+
+                <div>
+                    <h6>¿Olvidaste tu contraseña?</h6>
+                </div>
+                <div>
+                    <button class="botonForm botonEnviar" type="submit">Enviar</button>
+                </div>
+
+            </form>
+        </main>
+    </header>
+    
+    <%- include('./partials/footer')%>
+
+</body>
+</html>
+
+
+
+
+
+
+

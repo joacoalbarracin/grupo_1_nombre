@@ -1,55 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    rel="stylesheet" />
-    <link rel="stylesheet" href="/css/normalize.css"> 
-    <link rel="stylesheet" href="css/styles.css"> 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    
-    <title>Carrito</title>
-</head>
+    <%- include('./partials/head', {title: "ProductCart"})%>
+
 <body>
-    <header>
-        <div class="top-bar">
-            <div>
-                <img class="logo" src="/img/Logo-AdventureBA.png" alt="Logo-AdventureBA" >
-            </div>
-            <div>
-                <ul class="test">
-                    <li class="search-bar"> <b>Buscame!</b><i class="fa fa-search"></i></li>
-                    <li><i class="fa-solid fa-cart-shopping"></i></li>
-                    <li><i class="fa-regular fa-user"></i></li>
-                </ul>
-            </div>
-        </div>
+    <%- include('./partials/header')%>
 
-        <nav>
-            <div>
-                <ul>
-                    <li>
-                        <a href=""> Entretenimiento </a>
-                    </li>
-                    <li>
-                        <a href=""> Gastronomía</a>
-                    </li>
-                    <li>
-                        <a href=""> Cultura</a>
-                    </li>
-                    <li>
-                    <a href="">Ofertas</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-
-    </header>
 
     <main>
         <h2 class="cart-tittle">Cada vez mas cerca de tu nueva experiencia!</h2>
@@ -155,33 +110,7 @@
         </div>
     </main>
 
-    <footer class="footer-flex">
-        <div>
-            <ul class="ul-footer">
-                <li>
-                    <a href=""> Atención al Cliente </a>
-                </li>
-                <li>
-                    <a href="">¿Quiénes Somos?</a>
-                </li>
-    
-            </ul>
-        </div>
+    <%- include('./partials/footer')%>
 
-        <div>
-            <ul class="ul-footer">
-                <li>
-                    <a href="www.facebook.com"> <i class="fa-brands fa-facebook"></i> </a>
-                </li>
-                <li>
-                    <a href="www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
-                </li>
-                <li>
-                    <a href="mailto: abc@example.com"><i class="fa-regular fa-envelope"></i></a> 
-                </li>
-            </ul>
-        </div>
-
-    </footer>
 </body>
 </html>
