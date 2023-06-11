@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head', {title: "Home"})%>
+
+
+    <body>
+        
+        <%- include('./partials/header')%>
+
+        <section>
+            <div class="presentacion">
+                <img class="buenosAires" src="/img/Teatro Colon.jpeg" alt="foto-BA">
+                <p class="texto-presentacion"> Bienvenidos a Buenos Aires, la capital de Argentina y uno de los destinos turísticos más emocionantes de Sudamérica.
+
+
+                    Aquí encontrarás una variedad de experiencias que satisfarán todos tus intereses. Podrás degustar la famosa gastronomía porteña, disfrutar de la cultura y la historia en los museos y monumentos emblemáticos de la ciudad, y sentir la pasión del fútbol argentino.
+                
+                
+                    Ven a Buenos Aires y vive una experiencia única e inolvidable.
+                </p>
+            </div>
+        </section>
+
+        <main>
+            <section>
+                <h3>Entretenimiento</h3>
+                <div class="productos">
+                    <article>
+                        <img src="/img/Teatro Colon.jpeg" alt="teatro-colon">
+                        <div class="info-articulos">
+                            <p class="precio">$8.000</p>
+                            <p class="descuento">20% OFF</p>
+                            <h4 class = "desc-prod">Visita Guiada Teatro Colón<h4>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="/img/Teatro Colon.jpeg" alt="comida-soho">
+                        <div class="info-articulos">
+                        <p class="precio">$12.000</p>
+                        <p class="descuento">10% OFF</p>
+                        <h4 class = "desc-prod">Tour Gastronómico Palermo Soho<h4>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="/img/Teatro Colon.jpeg" alt="bombonera">
+                        <div class="info-articulos">
+                        <p class="precio">$30.000</p>
+                        <p class="descuento">5% OFF</p>
+                        <h4 class = "desc-prod">Tour Museo Boca Juniors + Entrada Copa Libertadores<h4>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            
+            </section>
+            <div class="suscripcion">
+                <h3>Suscribite a la lista de correo</h3>
+                <a href="#">Suscribirse</a>
+            </div>
+        </main>
+        
+        <%- include('./partials/footer')%>
+
+
+    </body>
+</html>
