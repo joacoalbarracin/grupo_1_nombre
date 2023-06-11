@@ -119,6 +119,20 @@ nav ul li a{
               0 0 50px 0 rgba(124, 121, 121, 0.1);
 }
 
+.descripcion1 {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: red;
+    border-radius: #a7a1a1 1px solid;
+    justify-content: space-between;
+    padding-bottom: 1em;
+    padding: 1em;
+    margin: 1em;
+
+}
+
 .imgdetalle {
     
     width: 70%;
@@ -140,9 +154,9 @@ nav ul li a{
     flex-wrap: wrap;
     border-radius: #a7a1a1 1px solid;
     justify-content: space-between;
-    padding-bottom: 0.1em;
+    padding-bottom: 2em;
     padding: 2em;
-    margin: 2em;
+    margin: 1em;
 
 }
 
@@ -545,7 +559,13 @@ footer .redes {
         justify-content: space-around;
     }
     
-    
+    .descripcion1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+    }
+
     .imgdetalle {
         display: flex;
         flex-wrap: wrap;
