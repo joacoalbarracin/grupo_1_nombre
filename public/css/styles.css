@@ -16,7 +16,7 @@ body header div.top-bar{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
+    text-align: center;
 	background-color: rgb(233, 150, 122);
     border-radius: 10px; /* Ajusta el valor según el grado de redondez que desees */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ajusta el valor de desenfoque y opacidad según tus preferencias */
