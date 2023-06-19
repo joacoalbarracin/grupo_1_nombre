@@ -5,22 +5,24 @@
     font-family: 'Roboto Condensed', sans-serif;
 }
 header{
-    background-color: rgb(233, 150, 122);
+    background-color: #E0E1E6;
     width: 100vw;
 }   
 body{
-    background-color: #ebebeb;
+    background-color: #FFF;
     width: 100vw;
+    font-family: "Roboto", sans-serif;
+    
 }
 body header div.top-bar{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     text-align: center;
-	background-color: rgb(233, 150, 122);
     border-radius: 10px; /* Ajusta el valor según el grado de redondez que desees */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ajusta el valor de desenfoque y opacidad según tus preferencias */
     width: 100vw;
+    
 }
 
 body header div div ul{
@@ -41,13 +43,19 @@ body header div div ul li{
 .navbar{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    background-color: #3c6e71;
+    margin-bottom: 0;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    
 
 }
 
 .search-bar{
 
-    background-color: antiquewhite;
+    background-color: #3c6e71;
     border-radius: 0.5em;
     background: #ebebeb;
     color: #bfbfbf;
@@ -79,13 +87,17 @@ nav ul li {
 
 nav ul li a{
     text-decoration: none;
-    color: rgb(205, 92, 92);
+    color: #FFF;
     font-weight: bold;
     padding: 0.5em;
 }
 
 .logo{
-    border: red 1px solid;
+    height: 100%;
+    width: 60%;
+    padding: 10px;
+
+    
 }
 
 .content{
@@ -101,12 +113,12 @@ nav ul li a{
 
 
 .descripcion {
-
-    width: 70%;
+  
+    width: 60%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    border: red;
+    position: relative;
     border-radius: #a7a1a1 1px solid;
     justify-content: space-between;
     padding-bottom: 0.5em;
@@ -117,25 +129,54 @@ nav ul li a{
               0 0 30px 0 rgba(143, 140, 140, 0.3), 
               0 0 40px 0 rgba(59, 59, 59, 0.2), 
               0 0 50px 0 rgba(124, 121, 121, 0.1);
+    
 }
 
-.descripcion1 {
-    width: 70%;
+.descripcionproducto {
+  
+    width: 50%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    border: red;
+    position: relative;
+    border-radius: #a7a1a1 1px solid;
+    justify-content: space-between;
+    padding-bottom: 0.5em;
+    padding: 2em;
+    margin: 2em;
+    box-shadow: 0 0 10px 0 rgba(10, 10, 10, 0.7), 
+              0 0 20px 0 rgba(196, 189, 189, 0.5), 
+              0 0 30px 0 rgba(143, 140, 140, 0.3), 
+              0 0 40px 0 rgba(59, 59, 59, 0.2), 
+              0 0 50px 0 rgba(124, 121, 121, 0.1);
+    border-radius: 2%;
+    
+}
+
+
+
+.descripcion1 {
+   
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     border-radius: #a7a1a1 1px solid;
     justify-content: space-between;
     padding-bottom: 1em;
     padding: 1em;
     margin: 1em;
+    font-size: 15px;
 
 }
 
+
+
 .imgdetalle {
     
-    width: 70%;
+    width: 80%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -144,6 +185,7 @@ nav ul li a{
     padding-bottom: 0.1em;
     padding: 2em;
     margin: 2em;
+    font-size: 12px;
 
 }
 
@@ -168,7 +210,27 @@ nav ul li a{
     border-radius: #a7a1a1 1px solid;
 
     justify-content: space-between;
+    
 
+}
+
+.optiondetalle {
+    height: 20%;
+    font-size: 20px;
+    border-radius: #a7a1a1 1px solid;
+    padding-bottom: 0.5em;
+    padding: 2em;
+    margin: 2em;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+    justify-content: center;
+    box-shadow: 0 0 10px 0 rgba(10, 10, 10, 0.7), 
+              0 0 20px 0 rgba(196, 189, 189, 0.5), 
+              0 0 30px 0 rgba(143, 140, 140, 0.3), 
+              0 0 40px 0 rgba(59, 59, 59, 0.2), 
+              0 0 50px 0 rgba(124, 121, 121, 0.1);
+    border-radius: 2%;
 }
 
 #trash{
@@ -176,11 +238,11 @@ nav ul li a{
     font-size:large
 }
 
-.cart-tittle{
+.cart-tittle {
     padding-left: 1em;
     padding-top: 1em;
     margin-bottom: 0.5em;
-    font-weight: lighter;
+  
     display: flex;
     justify-content: center;
 }
@@ -189,7 +251,7 @@ nav ul li a{
     padding-left: 1em;
     padding-top: 1em;
     margin-bottom: 0.5em;
-    font-weight: lighter;
+  
     display: flex;
     justify-content: center;
 }
@@ -221,6 +283,7 @@ nav ul li a{
     padding-bottom: 0.5em;
     padding: 2em;
     margin: 2em;
+  
     box-shadow: 0 0 10px 0 rgba(10, 10, 10, 0.7), 
               0 0 20px 0 rgba(196, 189, 189, 0.5), 
               0 0 30px 0 rgba(143, 140, 140, 0.3), 
@@ -245,7 +308,7 @@ nav ul li a{
 }
 
 .ul-footer{
-    background-color: rgb(233, 150, 122);
+    background-color: #3c6e71;
     display: flex;
     justify-content: space-evenly;
     text-decoration: none;
@@ -254,7 +317,7 @@ nav ul li a{
 }
 footer div ul li a{
 
-    color: rgb(205, 92, 92);
+    color: #FFF;
     text-decoration: none;
     list-style: none;
     font-weight: bold;
@@ -383,11 +446,11 @@ body header div div h4 {
 /*CSS Joaquín*/
 
 body {
-    font-family: 'Roboto', sans-serif
+    font-family: 'Roboto', sans-serif;
+  
 }
 
 header {
-    background-color: coral;
     width: 100vw;
 }
 
@@ -403,9 +466,10 @@ header .top-header .logo {
 }
 
 header .top-header .buscador {
-    width: 60%;
+    width: 50%;
     padding: 5px;
     display: flex;
+    align-items: center;
 }
 
 header nav ul {
