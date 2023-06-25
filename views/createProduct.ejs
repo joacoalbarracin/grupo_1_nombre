@@ -4,51 +4,15 @@
 
 <body>
     <%- include('./partials/header')%>
-    <main>
-        <h3>Modificá tu producto</h3>
-        <form class="formularios" action="/" method="get">
-            <div>
-                <label>Título del producto:</label>
-                <input class="text-field" type="text" name="nombreProducto">
-            </div>
-            <div>
-                <label for="descripcion">Descripción del producto:</label>
-                <div>
-                    <textarea id="descripcion" name="descripcion" rows="5" cols="50"></textarea>
-                </div>
-           </div>
-           <div>
-                <label>Categoría:</label>
-                <select>
-                    <option value="entretenimiento">Entretenimiento</option>
-                    <option value="gastronomia">Gastronomía</option>
-                    <option value="cultura">Cultura</option>
-                </select>
-           </div>
-            <div>
-                <label>Imagen del producto</label>
-                <div>
-                    <input type="file" name="fotoProducto">
-                </div>
-            </div>
-            <div>
-                <label>Duración:</label>
-                <input class="text-field" type="time" name="duracion">
-            </div>
-            <div>
-                <label>Ubicación</label>
-                <input class="text-field" type="text" name="ubicacion">
-           </div>
-           <div>
-                <label>Precio:</label>
-                <input class="text-field" type="text" name="ubicacion">
-            </div>
-            <div>
-                <button class="botonForm botonSubmit" type="submit">Modificar</button>
-                <button class="botonForm botonReset" type="submit">Cancelar</button>
-            </div>
 
-    </main>
+    <form method="POST" action="/products" enctype="multipart/form-data">
+        <input name="name" placeholder="nombre" type="text">
+        <input name="category" placeholder="categoria" type="text">
+        <input name="description" placeholder="descripcion" type="text">
+        <input name="price" placeholder="precio" type="number">
+        <input name="image" type="file">
+        <button type="submit">CREATE</button> 
+    </form>
 
     <%- include('./partials/footer')%>
 

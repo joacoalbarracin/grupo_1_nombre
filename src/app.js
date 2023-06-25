@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const mainRouter = require('./routes/mainRouter');
+app.use(express.urlencoded({extended: false})); //para leer lo que llega en el req.body
+app.use(express.json()); //para leer lo que llega en el req.body
 
 app.use(express.static('public'));
 
