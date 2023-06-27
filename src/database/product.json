@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Tour Gastronómico en Palermo Soho",
     "description": "Veni a disfrutar de la gastronomía porteña en el barrio de Palermo.",
-    "image": "",
+    "image": "Gastronomía.jpeg",
     "category": "Gastronomía",
     "price": "40",
     "borrado": false
