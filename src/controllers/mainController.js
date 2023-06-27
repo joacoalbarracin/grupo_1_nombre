@@ -3,8 +3,9 @@ const express = require('express');
 const path = require('path');
 const router = express.Router();
 
-const productos = JSON.parse(fs.readFileSync(path.resolve('./src/database/product.json')));
 
+const productos = JSON.parse(fs.readFileSync(path.resolve('./src/database/product.json')));
+const rutaArchivo = path.resolve('./src/database/product.json')
 
 
     
@@ -52,9 +53,24 @@ module.exports = {
         res.render('productList');
     },
     editProduct: (req,res) => {
-        res.render('editProduct');
+        const productoEncontrado = productos.find(row => row.id == req.params.id)
+        res.render('editProduct', {productoEncontrado: productoEncontrado});
+    },
+    processEdit: (req, res) => {
+        const productoEncontrado = productos.find(row => row.id == req.params.id);
+        for (let propiedad in req.body) {
+            productoEncontrado[propiedad] = req.body[propiedad];
+        };
+        fs.writeFileSync(rutaArchivo, JSON.stringify(productos, null, 2), "utf-8")
+        return res.redirect('/')
     },
     createProduct: (req,res) => {
         res.render('createProduct');
-    }
+    },
+    deleteProduct: (req, res) => {
+        const productoEncontrado = productos.find(row => row.id == req.params.id)
+        productoEncontrado.borrado = true
+        fs.writeFileSync(rutaArchivo, JSON.stringify(productos, null, 2))
+        return res.redirect('/')
+    },
 };

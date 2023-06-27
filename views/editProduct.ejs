@@ -6,32 +6,34 @@
     <%- include('./partials/header')%>
     <main>
         <h3>Modificá tu producto</h3>
-        <form class="formularios" action="/" method="get">
+        <form class="formularios" action="/editProduct/<%= productoEncontrado.id %>?_method=PUT" method="post">
             <div>
                 <label>Título del producto:</label>
-                <input class="text-field" type="text" name="nombreProducto">
+                <input class="text-field" type="text" name="name" id="name" value="<%=productoEncontrado.name%>">
             </div>
             <div>
                 <label for="descripcion">Descripción del producto:</label>
                 <div>
-                    <textarea id="descripcion" name="descripcion" rows="4" cols="40"></textarea>
+                    <input name="description" rows="4" cols="40" id="description" value="<%=productoEncontrado.description%>"></textarea>
                 </div>
            </div>
             <div>
                 <label>Imagen del producto</label>
                 <div>
-                    <input type="file" name="fotoProducto">
+                    <input type="file" name="image" id="image" value="<%=productoEncontrado.image%>">
                 </div>
             </div>
             <div>
                 <label>Precio:</label>
-                <input class="text-field" type="text" name="Precio">
+                <input class="text-field" type="text" name="price" id="price" value="<%=productoEncontrado.price%>">
            </div>
             <div>
                 <button class="botonForm botonSubmit" type="submit">Modificar</button>
-                <button class="botonForm botonReset" type="submit">Cancelar</button>
             </div>
-
+        </form>
+        <form action="/delete/<%=productoEncontrado.id%>?_method=DELETE" method="post">
+            <button class="botonForm botonReset" type="submit">Eliminar</button>
+        </form>
     </main>
 
     <%- include('./partials/footer')%>

@@ -1,10 +1,92 @@
-[{"id":1,"name":"Tour Gastronómico Palermo Soho","description":"Veni a disfrutar de la gastronomía porteña en el barrio de Palermo.","image":1,"category":"Gastronomía","price":40, "borrado": false},
-{"id":2,"name":"Visita Guiada Teatro Colón","description":"Conoce uno de los mejores teatros del Mundo, donde quedarás maravillado por su acústica","image":2,"category":"Cultura","price":25, "borrado": false},
-{"id":3,"name":"Visita Guiada Bombonera + museo","description":"El templo del fútbol Mundial, donde jugó Maradona, Messi, Riquelme, Pelé, entre otros. Viví la experiencia de la hinchada xeneize","image":3,"category":"Entretenimiento","price":30, "borrado": false},
-{"id":4,"name":"Visita Guiada Monumental + museo","description":"El estadio más grande de Argentina y uno de los más grandes de América. El estadio donde la selección argentina hace de local","image":4,"category":"Entretenimiento","price":30, "borrado": false},
-{"id":5,"name":"Recorrida por Bodegones","description":"Un recorrido por los bodegones de Buenos Aires donde se mezcla la hitoria y las culturas","image":5,"category":"Gastronomía","price":35, "borrado": false},
-{"id":6,"name":"Tour Gastronómico Español","description":"Encotrarás la auténtica cocina española , en el país que tiene la mayor colectividad fuera de España. Rabas, tortillas, paellas..todas las regiones en un mismo lugar","image":6,"category":"Gastronomía","price":35, "borrado": false},
-{"id":7,"name":"Tour Gastronómico Italiano","description":"Experimentá el camino de la cocina italiana, auténticas raíces de Argentina","image":7,"category":"Gastronomía","price":38, "borrado": false},
-{"id":8,"name":"Escape Room","description":"Vivi una experiencia única, donde tu creatividad e ingenio te harán poder escapar. Ideal para grupos de amigos","image":8,"category":"Entretenimiento","price":15, "borrado": false},
-{"id":9,"name":"Show de Tango","description":"Una noche de tango con artistas del más alto nivel","image":9,"category":"Cultura","price":15, "borrado": false},
-{"id":10,"name":"Peña Folklore","description":"Vivenciá el más auténtico folklore de distintas regiones de Argentina","image":10,"category":"Cultura","price":10, "borrado": false}]
+[
+  {
+    "id": 1,
+    "name": "Tour Gastronómico en Palermo Soho",
+    "description": "Veni a disfrutar de la gastronomía porteña en el barrio de Palermo.",
+    "image": "",
+    "category": "Gastronomía",
+    "price": "40",
+    "borrado": false
+  },
+  {
+    "id": 2,
+    "name": "Visita Guiada Teatro Colón",
+    "description": "Conoce uno de los mejores teatros del Mundo, donde quedarás maravillado por su acústica",
+    "image": 2,
+    "category": "Cultura",
+    "price": 25,
+    "borrado": false
+  },
+  {
+    "id": 3,
+    "name": "Visita Guiada Bombonera + museo",
+    "description": "El templo del fútbol Mundial, donde jugó Maradona, Messi, Riquelme, Pelé, entre otros. Viví la experiencia de la hinchada xeneize",
+    "image": 3,
+    "category": "Entretenimiento",
+    "price": 30,
+    "borrado": false
+  },
+  {
+    "id": 4,
+    "name": "Visita Guiada Monumental + museo",
+    "description": "El estadio más grande de Argentina y uno de los más grandes de América. El estadio donde la selección argentina hace de local",
+    "image": 4,
+    "category": "Entretenimiento",
+    "price": 30,
+    "borrado": false
+  },
+  {
+    "id": 5,
+    "name": "Recorrida por Bodegones",
+    "description": "Un recorrido por los bodegones de Buenos Aires donde se mezcla la hitoria y las culturas",
+    "image": 5,
+    "category": "Gastronomía",
+    "price": 35,
+    "borrado": false
+  },
+  {
+    "id": 6,
+    "name": "Tour Gastronómico Español",
+    "description": "Encotrarás la auténtica cocina española , en el país que tiene la mayor colectividad fuera de España. Rabas, tortillas, paellas..todas las regiones en un mismo lugar",
+    "image": 6,
+    "category": "Gastronomía",
+    "price": 35,
+    "borrado": false
+  },
+  {
+    "id": 7,
+    "name": "Tour Gastronómico Italiano",
+    "description": "Experimentá el camino de la cocina italiana, auténticas raíces de Argentina",
+    "image": 7,
+    "category": "Gastronomía",
+    "price": 38,
+    "borrado": false
+  },
+  {
+    "id": 8,
+    "name": "Escape Room",
+    "description": "Vivi una experiencia única, donde tu creatividad e ingenio te harán poder escapar. Ideal para grupos de amigos",
+    "image": 8,
+    "category": "Entretenimiento",
+    "price": 15,
+    "borrado": false
+  },
+  {
+    "id": 9,
+    "name": "Show de Tango",
+    "description": "Una noche de tango con artistas del más alto nivel",
+    "image": 9,
+    "category": "Cultura",
+    "price": 15,
+    "borrado": false
+  },
+  {
+    "id": 10,
+    "name": "Peña Folklore",
+    "description": "Vivenciá el más auténtico folklore de distintas regiones de Argentina",
+    "image": 10,
+    "category": "Cultura",
+    "price": 10,
+    "borrado": false
+  }
+]
