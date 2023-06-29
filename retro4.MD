@@ -1,3 +1,5 @@
+RETRO EQUIPO 1 - SPRINT 4
+
 COMENZAR A HACER:
 Integrar de manera más natural las observaciones de sprints anteriores en el proceso de trabajo de los sprints.  
 
