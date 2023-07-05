@@ -34,7 +34,7 @@ router.delete('/delete/:id', controller.deleteProduct)
 
 //FORM CREATE
 router.get('/products/create', controller.createProduct);
-//router.post('/products', fileUpload.single("image"),controller.processCreate);
+router.post('/products', fileUpload.single("image"),controller.processCreate);
 
 
 module.exports = router;
