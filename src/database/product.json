@@ -4,6 +4,7 @@
     "name": "Tour Gastronómico en Palermo Soho",
     "description": "Veni a disfrutar de la gastronomía porteña en el barrio de Palermo.",
     "image": "Gastronomía.jpeg",
+    "title": "Nuevas Experiencias",
     "category": "Gastronomía",
     "price": "40",
     "borrado": false
@@ -13,6 +14,7 @@
     "name": "Visita Guiada Teatro Colón",
     "description": "Conoce uno de los mejores teatros del Mundo, donde quedarás maravillado por su acústica",
     "image": 2,
+    "title": "Oportunidades",
     "category": "Cultura",
     "price": 25,
     "borrado": false
@@ -22,6 +24,7 @@
     "name": "Visita Guiada Bombonera + museo",
     "description": "El templo del fútbol Mundial, donde jugó Maradona, Messi, Riquelme, Pelé, entre otros. Viví la experiencia de la hinchada xeneize",
     "image": 3,
+    "title": "Imperdibles",
     "category": "Entretenimiento",
     "price": 30,
     "borrado": false
@@ -31,6 +34,7 @@
     "name": "Visita Guiada Monumental + museo",
     "description": "El estadio más grande de Argentina y uno de los más grandes de América. El estadio donde la selección argentina hace de local",
     "image": 4,
+    "title": "Nuevas Experiencias",
     "category": "Entretenimiento",
     "price": 30,
     "borrado": false
@@ -40,6 +44,7 @@
     "name": "Recorrida por Bodegones",
     "description": "Un recorrido por los bodegones de Buenos Aires donde se mezcla la hitoria y las culturas",
     "image": 5,
+    "title": "Imperdibles",
     "category": "Gastronomía",
     "price": 35,
     "borrado": false
@@ -49,6 +54,7 @@
     "name": "Tour Gastronómico Español",
     "description": "Encotrarás la auténtica cocina española , en el país que tiene la mayor colectividad fuera de España. Rabas, tortillas, paellas..todas las regiones en un mismo lugar",
     "image": 6,
+    "title": "Nuevas Experiencias",
     "category": "Gastronomía",
     "price": 35,
     "borrado": false
@@ -58,6 +64,7 @@
     "name": "Tour Gastronómico Italiano",
     "description": "Experimentá el camino de la cocina italiana, auténticas raíces de Argentina",
     "image": 7,
+    "title": "Imperdibles",
     "category": "Gastronomía",
     "price": 38,
     "borrado": false
@@ -67,6 +74,7 @@
     "name": "Escape Room",
     "description": "Vivi una experiencia única, donde tu creatividad e ingenio te harán poder escapar. Ideal para grupos de amigos",
     "image": 8,
+    "title": "Oportunidades",
     "category": "Entretenimiento",
     "price": 15,
     "borrado": false
@@ -77,6 +85,7 @@
     "description": "Una noche de tango con artistas del más alto nivel",
     "image": 9,
     "category": "Cultura",
+    "title": "Nuevas Experiencias",
     "price": 15,
     "borrado": false
   },
@@ -86,6 +95,7 @@
     "description": "Vivenciá el más auténtico folklore de distintas regiones de Argentina",
     "image": 10,
     "category": "Cultura",
+    "title": "Oportunidades",
     "price": 10,
     "borrado": false
   }

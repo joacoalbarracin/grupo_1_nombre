@@ -11,7 +11,10 @@ const rutaArchivo = path.resolve('./src/database/product.json')
     
 module.exports = {
     home: (req, res) => {
-        res.render('home');
+        const imperdible = productos.filter ((row) => row.title == "Imperdibles");
+        const oportunidad = productos.filter ((row) => row.title == "Oportunidades");
+        const nueva = productos.filter ((row) => row.title == "Nuevas Experiencias ");
+        return res.render('home', {imperdibles: imperdible, oportunidades: oportunidad, nuevas: nueva});
     },
     description: (req,res) => {
         const productoEncontrado = productos.find(row => row.id == req.params.id);
