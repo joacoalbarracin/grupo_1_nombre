@@ -501,6 +501,7 @@ header div.burger-menu i {
     position: relative;
     display: flex;
     width: 100vw;
+    height: 30vw;
 }
 
 .presentacion .buenosAires {
@@ -509,7 +510,7 @@ header div.burger-menu i {
 
 .presentacion .texto-presentacion {
     position: absolute;
-    color: #FFF;
+    color: #000;
     padding: 10px;
     text-align: center;
     overflow: hidden;

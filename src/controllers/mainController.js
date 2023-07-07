@@ -13,7 +13,7 @@ module.exports = {
     home: (req, res) => {
         const imperdible = productos.filter ((row) => row.title == "Imperdibles");
         const oportunidad = productos.filter ((row) => row.title == "Oportunidades");
-        const nueva = productos.filter ((row) => row.title == "Nuevas Experiencias ");
+        const nueva = productos.filter ((row) => row.title == "Nuevas");
         return res.render('home', {imperdibles: imperdible, oportunidades: oportunidad, nuevas: nueva});
     },
     description: (req,res) => {
