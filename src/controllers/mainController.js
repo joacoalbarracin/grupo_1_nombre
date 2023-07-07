@@ -18,8 +18,11 @@ module.exports = {
     },
     description: (req,res) => {
         const productoEncontrado = productos.find(row => row.id == req.params.id);
-        if (productoEncontrado && productoEncontrado.borrado != true) return res.render('productList', { producto: productoEncontrado })
-        else return res.send("ERROR 404 NOT FOUND");
+        if (productoEncontrado && !productoEncontrado.borrado) {
+            return res.render('productList', { producto: productoEncontrado });
+        } else {
+            return res.send("ERROR 404 NOT FOUND");
+        }
     },
 
     create: (req, res) => {
