@@ -27,7 +27,7 @@ module.exports = {
     },
     processRegister: (req, res) => {
       let usuarioNuevo = {
-        "id": usuarios.length + 1,
+        "id": usuarios.length+1,
         "name": req.body.name,
         "lastName": req.body.last_name,
         "email": req.body.email,
@@ -37,9 +37,9 @@ module.exports = {
         "borrado": false,
       }
       fs.writeFileSync(rutaArchivoUsers, JSON.stringify([...usuarios, usuarioNuevo], null, 2), "utf-8")
-      console.log(usuarioNuevo);
+   
       //return res.redirect("/userCreate");
-      res.send(usuarioNuevo);
+      return res.send(usuarioNuevo);
     },
 };
   

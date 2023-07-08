@@ -42,8 +42,6 @@ module.exports = {
         return res.redirect("/products/create")
         //res.send(productoNuevo);
     },
-
-
     login: (req, res) => {
         res.render('login');
     },
