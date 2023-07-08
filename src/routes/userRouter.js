@@ -16,23 +16,14 @@ const storage = multer.diskStorage({
 const fileUpload = multer({storage: storage})
 
 router.get('/login', userController.login);
-//router.post('/login', userController.processLogin);
+//router.post('/login', userController.processLogin); aun no creado
 
 router.get('/register', userController.register);
 
-//router.post('/register', fileUpload.single('image'), userController.processRegister);
+router.post('/register', fileUpload.single('image'), userController.processRegister);
 
 
-router.get('/profile', userController.profile);
-app.post('/login', function(req, res){
-    userController.processLogin
-  });
-
-  
-app.post('/register', fileUpload.single('image'), function(req, res){
-    userController.processRegister
-  });
-
+//router.get('/profile', userController.profile);  aun no creado
 module.exports = router;
 
 

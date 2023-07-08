@@ -40,6 +40,7 @@ module.exports = {
         }
         fs.writeFileSync(rutaArchivo, JSON.stringify([...productos, productoNuevo], null, 2), "utf-8")
         return res.redirect("/products/create")
+        //res.send(productoNuevo);
     },
 
 

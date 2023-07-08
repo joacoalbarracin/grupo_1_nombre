@@ -37,7 +37,9 @@ module.exports = {
         "borrado": false,
       }
       fs.writeFileSync(rutaArchivoUsers, JSON.stringify([...usuarios, usuarioNuevo], null, 2), "utf-8")
-      return res.redirect("/userCreate");
+      console.log(usuarioNuevo);
+      //return res.redirect("/userCreate");
+      res.send(usuarioNuevo);
     },
 };
   

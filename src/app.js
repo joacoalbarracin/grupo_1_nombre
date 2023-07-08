@@ -19,5 +19,5 @@ app.listen(3001, ()=>{
     console.log( 'Servidor corriendo en puerto 3001');
 });
 
-app.use(mainRouter);
-app.use(userRouter);
+app.use(mainRouter)
+app.use(userRouter)
