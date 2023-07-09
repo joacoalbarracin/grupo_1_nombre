@@ -1,7 +1,7 @@
 const fs = require('fs');
 const express = require('express');
 const path = require('path');
-const router = express.Router();
+//const router = express.Router();
 
 
 const productos = JSON.parse(fs.readFileSync(path.resolve('./src/database/product.json')));

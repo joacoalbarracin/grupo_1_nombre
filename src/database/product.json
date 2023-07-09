@@ -135,5 +135,14 @@
     "image": "1688846189776.jpg",
     "category": "asdas",
     "borrado": false
+  },
+  {
+    "id": 14,
+    "name": "wsadsa",
+    "description": "dasd",
+    "price": "1564",
+    "image": "1688915365245.jpg",
+    "category": "dasdsa",
+    "borrado": false
   }
 ]
