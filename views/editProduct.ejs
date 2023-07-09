@@ -7,7 +7,7 @@
     <main>
         <h3>Modificá tu producto</h3>
         <form class="formularios" 
-action="/editProduct/<%= productoEncontrado.id %>?_method=PUT" method="post" enctype="multipart/form-data">            <div>
+action="/products/edit/<%= productoEncontrado.id %>?_method=PUT" method="post" enctype="multipart/form-data">            <div>
                 <label>Título del producto:</label>
                 <input class="text-field" type="text" name="name" id="name" value="<%=productoEncontrado.name%>">
             </div>
@@ -32,7 +32,7 @@ action="/editProduct/<%= productoEncontrado.id %>?_method=PUT" method="post" enc
                 <button class="botonForm botonSubmit" type="submit">Modificar</button>
             </div>
         </form>
-        <form action="/delete/<%=productoEncontrado.id%>?_method=DELETE" method="post">
+        <form action="/products/delete/<%=productoEncontrado.id%>?_method=DELETE" method="post">
             <button class="botonForm botonReset" type="submit">Eliminar</button>
         </form>
     </main>

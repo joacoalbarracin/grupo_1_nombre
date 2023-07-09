@@ -17,9 +17,9 @@
     "image": "Teatro Colon.jpeg",
     "title": "Oportunidades",
     "category": "Cultura",
-    "price": 25,
+    "price": "800080",
     "discount": "10 OFF",
-    "borrado": false
+    "borrado": true
   },
   {
     "id": 3,
@@ -144,5 +144,59 @@
     "image": "1688915365245.jpg",
     "category": "dasdsa",
     "borrado": false
+  },
+  {
+    "id": 15,
+    "name": "asdasds",
+    "description": "dasd",
+    "price": "666",
+    "image": "1688941297020.jpg",
+    "category": "asds",
+    "borrado": false
+  },
+  {
+    "id": 16,
+    "name": "asda",
+    "description": "dsa",
+    "price": "888",
+    "image": "1688941402917.jpg",
+    "category": "das",
+    "borrado": false
+  },
+  {
+    "id": 17,
+    "name": "dsasa",
+    "description": "sdda",
+    "price": "185",
+    "image": "1688941420974.jpg",
+    "category": "dsa",
+    "borrado": false
+  },
+  {
+    "id": 18,
+    "name": "dasoasklQ",
+    "description": "dasdsad",
+    "price": "85599",
+    "image": "1688941572035.jpg",
+    "category": "dasas",
+    "borrado": false
+  },
+  {
+    "id": 19,
+    "name": "dasdas",
+    "description": "das",
+    "price": "100000",
+    "image": "1688942169746.jpg",
+    "category": "das",
+    "borrado": false
+  },
+  {
+    "id": 20,
+    "name": "testeo final",
+    "description": "sdffsd",
+    "price": "222222222",
+    "image": "1688944696921.jpg",
+    "category": "fwesfsd",
+    "borrado": true
   }
 ]

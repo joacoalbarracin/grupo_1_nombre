@@ -187,5 +187,15 @@
     "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "Comprador",
     "borrado": false
+  },
+  {
+    "id": 19,
+    "name": "asdsa",
+    "lastName": "dasd",
+    "email": "tesDASASteo@gmail.com",
+    "password": "$2b$10$sLdpHyhOYpJS0nlfrktCnO5rfoOJhl/MDBavT6LPegy9w8EFUAWEO",
+    "repeatPassword": "$2b$10$rgCMJszYN.8zRsD7ZUfKeu7WWV81fsHqCs/L6JVDaZmeasYaLNhy.",
+    "category": "Comprador",
+    "borrado": false
   }
 ]

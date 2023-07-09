@@ -6,7 +6,7 @@
     <%- include('./partials/header')%>
     <main>
         <h3>Modificá tu Usuario</h3>
-        <form class="formularios"action="/editUser/<%= usuarioEncontrado.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+        <form class="formularios"action="/users/edit/<%= usuarioEncontrado.id %>?_method=PUT" method="post" enctype="multipart/form-data">
             <div>
                 <label>Nombre:</label>
                 <input class="text-field" type="text" name="name" value="<%=usuarioEncontrado.name%>">

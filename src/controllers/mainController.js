@@ -1,81 +1,83 @@
-const fs = require('fs');
-const express = require('express');
-const path = require('path');
-//const router = express.Router();
-
-
-const productos = JSON.parse(fs.readFileSync(path.resolve('./src/database/product.json')));
-const rutaArchivo = path.resolve('./src/database/product.json')
+// Requerimientos
+const fs = require('fs'); // Requerimos el módulo File System de Node
+const path = require('path'); // Requerimos el módulo Path de Node
+const productos = JSON.parse(fs.readFileSync(path.resolve('./src/database/product.json'))); // Lee el archivo JSON
+const rutaArchivo = path.resolve('./src/database/product.json'); // Ruta del archivo JSON
 
 
     
-module.exports = {
-    home: (req, res) => {
-        const imperdible = productos.filter ((row) => row.title == "Imperdibles");
-        const oportunidad = productos.filter ((row) => row.title == "Oportunidades");
-        const nueva = productos.filter ((row) => row.title == "Nuevas");
-        return res.render('home', {imperdibles: imperdible, oportunidades: oportunidad, nuevas: nueva});
+module.exports = { // Exportamos un objeto literal con todos los métodos
+    //Muestra la vista productCart.ejs
+    showProductCart: (req, res) => {
+        res.render('productCart'); // Muestra la vista productCart.ejs
     },
-    description: (req,res) => {
-        const productoEncontrado = productos.find(row => row.id == req.params.id);
-        if (productoEncontrado && !productoEncontrado.borrado) {
-            return res.render('productList', { producto: productoEncontrado });
-        } else {
-            return res.send("ERROR 404 NOT FOUND");
+    //Muestra la vista productDetail.ejs
+    showProductDetail: (req, res) => {
+        res.render('productDetail'); // Muestra la vista productDetail.ejs
+    },
+    //Muestra la vista register.ejs
+    showProductRegisterForm: (req, res) => {
+        res.render('register'); // Muestra la vista register.ejs
+    },
+    //Muestra la vista productList.ejs
+    showProductList: (req, res) => {
+        res.render('productList'); // Muestra la vista productList.ejs
+    },
+    //Muestra la vista home.ejs dinámicamente con los productos filtrados por categoría
+    showHome: (req, res) => { // Método home
+        const imperdible = productos.filter ((row) => row.title == "Imperdibles"); // Filtra los productos por categoría
+        const oportunidad = productos.filter ((row) => row.title == "Oportunidades"); // Filtra los productos por categoría
+        const nueva = productos.filter ((row) => row.title == "Nuevas"); // Filtra los productos por categoría
+        return res.render('home', {imperdibles: imperdible, oportunidades: oportunidad, nuevas: nueva}); // Muestra la vista home.ejs con los productos filtrados
+    },
+    //Muestra la vista productList.ejs dinámicamente con el producto encontrado como parámetro
+    showDescription: (req,res) => { // Método description
+        const productoEncontrado = productos.find(row => row.id == req.params.id); // Busca el producto por ID
+        if (productoEncontrado && !productoEncontrado.borrado) { // Si el producto existe y no está borrado
+            return res.render('productList', { producto: productoEncontrado }); // Muestra la vista productList.ejs con el producto encontrado
+        } else { 
+            return res.send("ERROR 404 NOT FOUND"); // Si el producto no existe o está borrado, muestra el mensaje de error
         }
+    },
+    //Muestra la vista createProduct.ejs
+    showCreateProductForm: (req,res) => {
+        res.render('createProduct'); // Muestra la vista createProduct.ejs
+    },
+    //Procesa datos recibidos en [createProduct: (req, res) =>] lo agrega a la base de datos
+    processCreateProductForm: (req, res) => {
+        let productoNuevo = { // Crea un objeto literal con los datos recibidos
+            "id": productos.length+1, // Asigna un ID al producto
+            "name": req.body.name, // Asigna el nombre del producto
+            "description": req.body.description, // Asigna la descripción del producto
+            "price": req.body.price, // Asigna el precio del producto
+            "image": req.file.filename, // Asigna la imagen del producto
+            "category": req.body.category, // Asigna la categoría del producto
+            "borrado": false, // Asigna el estado de borrado del producto
+        }
+        fs.writeFileSync(rutaArchivo, JSON.stringify([...productos, productoNuevo], null, 2), "utf-8"); // Escribe el archivo JSON
+        return res.redirect("/products/create") // Redirecciona a la vista createProduct.ejs
     },
 
-    create: (req, res) => {
-        return res.render('createProduct')
+    //Muestra la vista editProduct.ejs y el producto encontrado como parámetro
+    showEditProductForm: (req,res) => {
+        const productoEncontrado = productos.find(row => row.id == req.params.id); // Busca el producto por ID
+        res.render('editProduct', {productoEncontrado: productoEncontrado}); // Muestra la vista editProduct.ejs con el producto encontrado
     },
-    processCreate: (req, res) => {
-        let productoNuevo = {
-            "id": productos.length+1, 
-            "name": req.body.name,
-            "description": req.body.description,
-            "price": req.body.price,
-            "image": req.file.filename,
-            "category": req.body.category,
-            "borrado": false,
-        }
-        fs.writeFileSync(rutaArchivo, JSON.stringify([...productos, productoNuevo], null, 2), "utf-8")
-        return res.redirect("/products/create")
-        //res.send(productoNuevo);
-    },
-    login: (req, res) => {
-        res.render('login');
-    },
-    productCart: (req, res) => {
-        res.render('productCart');
-    },
-    productDetail: (req, res) => {
-        res.render('productDetail');
-    },
-    register: (req, res) => {
-        res.render('register');
-    },
-    productList: (req, res) => {
-        res.render('productList');
-    },
-    editProduct: (req,res) => {
-        const productoEncontrado = productos.find(row => row.id == req.params.id)
-        res.render('editProduct', {productoEncontrado: productoEncontrado});
-    },
-    processEdit: (req, res) => {
-        const productoEncontrado = productos.find(row => row.id == req.params.id);
-        for (let propiedad in req.body) {
-            productoEncontrado[propiedad] = req.body[propiedad];
+    //Procesa datos recibidos en [editProduct: (req, res) =>] y modifica la base de datos
+    processEditProductForm: (req, res) => {
+        const productoEncontrado = productos.find(row => row.id == req.params.id);  // Busca el producto por ID
+        for (let propiedad in req.body) { // Recorre el objeto req.body
+            productoEncontrado[propiedad] = req.body[propiedad]; // Asigna los valores del objeto req.body al producto encontrado
         };
-        fs.writeFileSync(rutaArchivo, JSON.stringify(productos, null, 2), "utf-8")
-        return res.redirect('/')
+        fs.writeFileSync(rutaArchivo, JSON.stringify(productos, null, 2), "utf-8") // Escribe el archivo JSON
+        return res.redirect('/') // Redirecciona a la vista home.ejs
     },
-    createProduct: (req,res) => {
-        res.render('createProduct');
-    },
-    deleteProduct: (req, res) => {
-        const productoEncontrado = productos.find(row => row.id == req.params.id)
-        productoEncontrado.borrado = true
-        fs.writeFileSync(rutaArchivo, JSON.stringify(productos, null, 2))
-        return res.redirect('/')
+    //Hace ["borrado": true] en la base de datos
+    deleteProduct: (req, res) => { 
+        const productoEncontrado = productos.find(row => row.id == req.params.id); // Busca el producto por ID
+        productoEncontrado.borrado = true; // Asigna el estado de borrado al producto encontrado
+        fs.writeFileSync(rutaArchivo, JSON.stringify(productos, null, 2)); // Escribe el archivo JSON
+        return res.redirect('/'); // Redirecciona a la vista home.ejs
+        alert("Producto borrado :)")
     },
 };

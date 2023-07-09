@@ -1,37 +1,36 @@
-const express = require('express');
-const router = express.Router();
-const controller = require('../controllers/mainController');
-const path = require('path')
-const multer = require('multer')
+const express = require('express'); // Requerimos el módulo express
+const router = express.Router(); // Ejecutamos el módulo Router
+const mainController = require('../controllers/mainController'); // Requerimos el controlador
+const path = require('path') // Requerimos el módulo path
+const multer = require('multer') // Requerimos el módulo multer
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, path.resolve(__dirname, '../../public/img'))
+const storage = multer.diskStorage({ // Configuramos multer  
+    destination: (req, file, cb) => { // Definimos el destino de la imagen
+        cb(null, path.resolve(__dirname, '../../public/img')) // Definimos la ruta
     },
-    filename: (req, file, cb) => {
-        let imageName = Date.now() + path.extname(file.originalname);
-        cb(null, imageName);
+    filename: (req, file, cb) => { // Definimos el nombre de la imagen
+        let imageName = Date.now() + path.extname(file.originalname); // Definimos el nombre de la imagen
+        cb(null, imageName); // Retornamos el nombre de la imagen
     }
 })
-const fileUpload = multer({storage: storage})
+const fileUpload = multer({storage: storage}) // Ejecutamos multer
 
-router.get('/', controller.home);
-router.get('/login', controller.login);
-router.get('/productCart', controller.productCart);
-router.get('/productDetail', controller.productDetail);
-router.get('/register', controller.register);
-router.get('/productList', controller.productList);
+// Vistas en relación a los productos
+router.get('/products/cart', mainController.showProductCart); // Ruta para mostrar la vista productCart.ejs
+router.get('/products/detail', mainController.showProductDetail); // Ruta para mostrar la vista productDetail.ejs
+router.get('/products/list', mainController.showProductList); // Ruta para mostrar la  vista productList.ejs
+router.get('/', mainController.showHome); // Ruta para mostrar la vista home.ejs
+router.get('/products/description', mainController.showDescription); // Ruta para mostrar la vista description.ejs
 
-//FORM EDIT
-router.get('/editProduct/:id', controller.editProduct)
-router.put('/editProduct/:id', fileUpload.single('image'), controller.processEdit);
+//CRUD de procuto: Create product
+router.get('/products/create', mainController.showCreateProductForm); // Ruta para mostrar la vista createProduct.ejs
+router.post('/products/create', fileUpload.single("image"),mainController.processCreateProductForm); //
 
-//DELETE
-router.delete('/delete/:id', controller.deleteProduct)
+//CRUD de procuto: Edit product
+router.get('/products/edit/:id', mainController.showEditProductForm); // Ruta para mostrar la vista editProduct.ejs
+router.put('/products/edit/:id', fileUpload.single('image'), mainController.processEditProductForm); // Ruta para editar el producto
 
-//FORM CREATE
-router.get('/products/create', controller.createProduct);
-router.post('/products', fileUpload.single("image"),controller.processCreate);
+//CRUD de procuto: Delete product
+router.delete('/products/delete/:id', mainController.deleteProduct); // Ruta para eliminar el producto
 
-
-module.exports = router;
+module.exports = router; // Exporta el módulo router
