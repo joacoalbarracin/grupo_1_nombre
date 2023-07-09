@@ -8,7 +8,7 @@
     "category": "Gastronomía",
     "price": "40",
     "discount": "15 OFF",
-    "borrado": false
+    "borrado": true
   },
   {
     "id": 2,
