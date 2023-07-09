@@ -6,8 +6,8 @@
     <%- include('./partials/header')%>
     <main>
         <h3>Modificá tu producto</h3>
-        <form class="formularios" action="/editProduct/<%= productoEncontrado.id %>?_method=PUT" method="post">
-            <div>
+        <form class="formularios" 
+action="/editProduct/<%= productoEncontrado.id %>?_method=PUT" method="post" enctype="multipart/form-data">            <div>
                 <label>Título del producto:</label>
                 <input class="text-field" type="text" name="name" id="name" value="<%=productoEncontrado.name%>">
             </div>

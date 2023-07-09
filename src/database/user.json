@@ -5,6 +5,7 @@
     "last_name": "Grinikhinov",
     "email": "egrinikhinov0@hostgator.com",
     "password": "jB1?~p,lBVw7)Iy",
+    "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "comprador",
     "image": "defaultUser.webp",
     "borrado": "false"
@@ -15,6 +16,7 @@
     "last_name": "Gewer",
     "email": "agewer1@princeton.edu",
     "password": "tY8|W%Dyl\"lRXid",
+    "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "comprador",
     "image": "defaultUser.webp",
     "borrado": "false"
@@ -25,6 +27,7 @@
     "last_name": "Schnieder",
     "email": "lschnieder2@g.co",
     "password": "kZ8}=Y=Z_\\T0x",
+    "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "administrador",
     "image": "defaultUser.webp",
     "borrado": "false"
@@ -35,6 +38,7 @@
     "last_name": "Hallock",
     "email": "challock3@webs.com",
     "password": "iD7)PA=5tO)f",
+    "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "administrador",
     "image": "defaultUser.webp",
     "borrado": "false"
@@ -45,6 +49,7 @@
     "last_name": "Belch",
     "email": "lbelch4@google.co.uk",
     "password": "yP5'=|#ya",
+    "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "comprador",
     "image": "defaultUser.webp",
     "borrado": "false"
@@ -55,6 +60,7 @@
     "last_name": "Balaam",
     "email": "gbalaam5@skype.com",
     "password": "yR3&Ey#wG~N",
+    "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "comprador",
     "image": "defaultUser.webp",
     "borrado": "false"
@@ -65,6 +71,7 @@
     "last_name": "Pomfrett",
     "email": "rpomfrett6@is.gd",
     "password": "rR0\\o(4P.`j",
+    "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "administrador",
     "image": "defaultUser.webp",
     "borrado": "false"
@@ -75,6 +82,7 @@
     "last_name": "Charopen",
     "email": "echaropen7@tuttocitta.it",
     "password": "nL1?&/o_Xiw",
+    "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "comprador",
     "image": "defaultUser.webp",
     "borrado": "false"
@@ -85,6 +93,7 @@
     "last_name": "Gurge",
     "email": "lgurge8@google.fr",
     "password": "rI7/nniX+vqwa`yd",
+    "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "comprador",
     "image": "defaultUser.webp",
     "borrado": "false"
@@ -95,6 +104,7 @@
     "last_name": "Brosh",
     "email": "kbrosh9@gnu.org",
     "password": "kS4%BHaN",
+    "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "administrador",
     "image": "defaultUser.webp",
     "borrado": "false"
@@ -105,7 +115,77 @@
     "lastName": "Holña",
     "email": "hola@gmail.com",
     "password": "$2b$10$M1HzNoU1eQXsrZ5Fc50s6.V/hMNYhga72HwFjB76petvma7SuE/M.",
+    "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "adm",
+    "borrado": false
+  },
+  {
+    "id": 12,
+    "name": "Test",
+    "lastName": "Test",
+    "email": "hola@gmail.com",
+    "password": "$2b$10$wLlWoVpk00YE/dTjVg7/PejoGDkAf.DTXIo8hVJ.GscUoUAxUnULG",
+    "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
+    "category": "adminis",
+    "borrado": false
+  },
+  {
+    "id": 13,
+    "name": "dasd",
+    "lastName": "asd",
+    "email": "asd@gmail.com",
+    "password": "$2b$10$UqeB.jHfcml407jqWNGXZecKswVZhbc/PlyH3cwYNlWWTPXgdWd/G",
+    "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
+    "category": "opcion2",
+    "borrado": false
+  },
+  {
+    "id": 14,
+    "name": "dasd",
+    "lastName": "asd",
+    "email": "asd@gmail.com",
+    "password": "$2b$10$5BNHhCWdxUt35LxnISCu8eqg0kcn3EnXTdQ7MNlD4s3PlGgCFuiF6",
+    "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
+    "category": "opcion2",
+    "borrado": false
+  },
+  {
+    "id": 15,
+    "name": "holsa",
+    "lastName": "chau",
+    "email": "hola@gmail.com",
+    "password": "$2b$10$YLajH5qXGSTJqzM.0ikhXOrIQZXArvaFZDhm2icxZZCSLP8eyebd2",
+    "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
+    "category": "opcion1",
+    "borrado": false
+  },
+  {
+    "id": 16,
+    "name": "asd",
+    "lastName": "das",
+    "email": "asd@gmail.com",
+    "password": "$2b$10$Af5/DmXZP0oxFCecRpxoqO1rknUHaZj5BdzmhI3BywV1zTtkxPrsK",
+    "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
+    "category": "comp",
+    "borrado": false
+  },
+  {
+    "id": 17,
+    "name": "asd",
+    "lastName": "asda",
+    "email": "hola@gmail.com",
+    "password": "$2b$10$v2hHh.auJ3LcRvGTlVGgFeJm3RmR35Da2pdLVKZ4Wsc/oylGGWt4q",
+    "category": "Comprador",
+    "borrado": false
+  },
+  {
+    "id": 18,
+    "name": "asdd",
+    "lastName": "asd",
+    "email": "das@gmail.com",
+    "password": "$2b$10$HrlFMPDol8q0UTe65dEqqeRws/vAPAU384oBslIaQ/j92kDt17h3W",
+    "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
+    "category": "Comprador",
     "borrado": false
   }
 ]

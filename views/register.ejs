@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head', {title: "Register"})%>
+    <%- include('./partials/head', {title: "Home"})%>
 
-<body>
-    <%- include('./partials/header')%>
+    <body>
+        <%- include('./partials/header')%>
 
 
-    <main id="formulario-registro">
-        <h3>Completá tus datos</h3>
-        <form class="formularios" action="/register" method="POST" enctype="multipart/form-data">
+        <main id="formulario-registro">
+            <h3>Completá tus datos</h3>
+            <form class="formularios" action="/register" method="POST" enctype="multipart/form-data">
+                <div>
+                    <label>Nombre:</label>
+                    <input class="text-field" type="text" name="name">
+                </div>
             <div>
-                <label>Nombre:</label>
-                <input class="text-field" type="text" name="name">
+                    <label>Apellido:</label>
+                    <input class="text-field" type="text" name="last_name">
             </div>
-           <div>
-                <label>Apellido:</label>
-                 <input class="text-field" type="text" name="last_name">
-           </div>
-            <div>
-                <label>E-mail:</label>
-                <input class="text-field" type="email" name="email">
-            </div>
-            <div>
-                <label>Contraseña:</label>
-                <input class="text-field" type="password" name="password">
-            </div>
-            <div>
-                <input name="image" type="file">
-            </div>
-            <div>
-                <label>Categoria (hacer input/readius)</label>
-                <input class="text-field" type="text" name="category">
-            </div>
-                <button class="botonForm botonSubmit" type="submit">Registrate</button>
-            </div>
-        </form>
-    </main>
+                <div>
+                    <label>E-mail:</label>
+                    <input class="text-field" type="email" name="email">
+                </div>
+                <div>
+                    <label>Contraseña:</label>
+                    <input class="text-field" type="password" name="password">
+                </div>
+                <div>
+                    <label>Repetí tu contraseña:</label>
+                    <input class="text-field" type="password" name="repeat_password">
+                </div>
+                <div>
+                    <label>Imagen del producto</label>
+                    <input name="image" type="file">
+                </div>
+                <div>
+                    <input type="radio" id="opcion1" name="opcion" value="Comprador">
+                    <label for="opcion1">Comprador</label>
+                    <br>
+                    <input type="radio" id="opcion2" name="opcion" value="Administrador">
+                    <label for="opcion2">Administrador</label>
+                </div>
+                    <button class="botonForm botonSubmit" type="submit">Registrate</button>
+                </div>
+            </form>
+        </main>
 
-    <%- include('./partials/footer')%>
+        <%- include('./partials/footer')%>
 
-</body>
+    </body>
 </html>
