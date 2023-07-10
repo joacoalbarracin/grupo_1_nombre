@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head', {title: "Home"})%>
+
+<body>
+    <%- include('./partials/header')%>
+    <main>
+        <h3>Modificá tu producto</h3>
+        <form class="formularios" action="/products/edit/<%= productoEncontrado.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+            <div>
+                <label>Título del producto:</label>
+                <input class="text-field" type="text" name="name" id="name" value="<%=productoEncontrado.name%>">
+            </div>
+            <div>
+                <label for="descripcion">Descripción del producto:</label>
+                <div>
+                    <input name="description" rows="4" cols="40" id="description" value="<%=productoEncontrado.description%>"></textarea>
+                </div>
+           </div>
+
+            <div>
+                <label>Precio:</label>
+                <input class="text-field" type="text" name="price" id="price" value="<%=productoEncontrado.price%>">
+           </div>
+            <div>
+                <button class="botonForm botonSubmit" type="submit">Modificar</button>
+            </div>
+        </form>
+        <form action="/products/delete/<%=productoEncontrado.id%>?_method=DELETE" method="post">
+            <button class="botonForm botonReset" type="submit">Eliminar</button>
+        </form>
+    </main>
+
+        <%- include('./partials/footer')%>
+    </body>
+</html>

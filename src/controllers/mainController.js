@@ -49,9 +49,10 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
             "id": productos.length+1, // Asigna un ID al producto
             "name": req.body.name, // Asigna el nombre del producto
             "description": req.body.description, // Asigna la descripción del producto
-            "price": req.body.price, // Asigna el precio del producto
             "image": req.file.filename, // Asigna la imagen del producto
-            "category": req.body.category, // Asigna la categoría del producto
+            "price": req.body.price, // Asigna el precio del producto
+            "category": req.body.opcion, // Asigna la categoría del producto
+            "discount": req.body.discount, // Asigna el descuento del producto
             "borrado": false, // Asigna el estado de borrado del producto
         }
         fs.writeFileSync(rutaArchivo, JSON.stringify([...productos, productoNuevo], null, 2), "utf-8"); // Escribe el archivo JSON
@@ -70,14 +71,15 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
             productoEncontrado[propiedad] = req.body[propiedad]; // Asigna los valores del objeto req.body al producto encontrado
         };
         fs.writeFileSync(rutaArchivo, JSON.stringify(productos, null, 2), "utf-8") // Escribe el archivo JSON
-        return res.redirect('/') // Redirecciona a la vista home.ejs
+        //return res.redirect('/') // Redirecciona a la vista home.ejs
+        return res.send(productoEncontrado)
     },
     //Hace ["borrado": true] en la base de datos
     deleteProduct: (req, res) => { 
         const productoEncontrado = productos.find(row => row.id == req.params.id); // Busca el producto por ID
+        console.log(productoEncontrado)
         productoEncontrado.borrado = true; // Asigna el estado de borrado al producto encontrado
         fs.writeFileSync(rutaArchivo, JSON.stringify(productos, null, 2)); // Escribe el archivo JSON
-        return res.redirect('/'); // Redirecciona a la vista home.ejs
-        alert("Producto borrado :)")
+        return res.send(console.log("hiii")); // Redirecciona a la vista home.ejs
     },
 };

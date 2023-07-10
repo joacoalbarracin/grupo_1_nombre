@@ -197,5 +197,15 @@
     "repeatPassword": "$2b$10$rgCMJszYN.8zRsD7ZUfKeu7WWV81fsHqCs/L6JVDaZmeasYaLNhy.",
     "category": "Comprador",
     "borrado": false
+  },
+  {
+    "id": 20,
+    "name": "AAAAAAAAA",
+    "lastName": "AAAAA",
+    "email": "AAAAAAAA@GMAIL.COM",
+    "password": "$2b$10$499aAiFMmfvxfGdjMEdcTuuoF6sK5OvDCVYs/PVhRtpRHbXk3eQy.",
+    "repeatPassword": "$2b$10$J2lM7QojbQehsrNX8t5mMu9POcdgZP6cNntXCXVrWMLtXCDj47SC.",
+    "category": "Comprador",
+    "borrado": false
   }
 ]

@@ -28,9 +28,10 @@
     "image": "bombonera.jpg",
     "title": "Imperdibles",
     "category": "Entretenimiento",
-    "price": 30,
-    "discount": "20 OFF",
-    "borrado": false
+    "price": "30",
+    "discount": "",
+    "borrado": false,
+    "opcion": "Entretenimiento"
   },
   {
     "id": 4,
@@ -40,7 +41,7 @@
     "title": "Nuevas",
     "category": "Entretenimiento",
     "price": 30,
-    "discount": "15 OFF",
+    "discount": "15",
     "borrado": false
   },
   {
@@ -83,9 +84,10 @@
     "image": "escape.jpg",
     "title": "Oportunidades",
     "category": "Entretenimiento",
-    "price": 15,
-    "discount": "10 OFF",
-    "borrado": false
+    "price": "16",
+    "discount": "",
+    "borrado": false,
+    "opcion": "Entretenimiento"
   },
   {
     "id": 9,
@@ -125,7 +127,9 @@
     "price": "77",
     "image": "1688845963446.jpg",
     "category": "asdda",
-    "borrado": false
+    "borrado": false,
+    "opcion": "Cultura",
+    "discount": ""
   },
   {
     "id": 13,
@@ -188,7 +192,7 @@
     "price": "100000",
     "image": "1688942169746.jpg",
     "category": "das",
-    "borrado": false
+    "borrado": true
   },
   {
     "id": 20,
@@ -198,5 +202,16 @@
     "image": "1688944696921.jpg",
     "category": "fwesfsd",
     "borrado": true
+  },
+  {
+    "id": 21,
+    "name": "asadsad",
+    "description": "sdadas",
+    "image": "1689025893567.jpg",
+    "price": "66",
+    "category": "Entretenimiento",
+    "discount": "169",
+    "borrado": true,
+    "opcion": "Entretenimiento"
   }
 ]
