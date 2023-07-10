@@ -37,4 +37,24 @@ module.exports = {
       const usuarioEncontrado = usuarios.find(row => row.id == req.params.id); // Busca el usuario por id
       res.render('editUser', { usuarioEncontrado: usuarioEncontrado }); // Renderiza la vista editUser.ejs
     },
-};
+    /** Procesa el formulario de edición de usuario */
+    processEditUser: (req, res) => {
+      const usuarioEncontrado = usuarios.find(row => row.id == req.params.id);  // Busca el producto por ID
+      for (let propiedad in req.body) { // Recorre el objeto req.body
+          usuarioEncontrado[propiedad] = req.body[propiedad]; // Asigna los valores del objeto req.body al producto encontrado
+      };
+      fs.writeFileSync(rutaArchivoUsers, JSON.stringify(usuarios, null, 2), "utf-8") // Escribe el archivo JSON
+      //return res.redirect('/') // Redirecciona a la vista home.ejs
+      return res.send(usuarioEncontrado);
+    },
+        //Hace ["borrado": true] en la base de datos
+        deleteUser: (req, res) => { 
+          const usuarioEncontrado = usuarios.find(row => row.id == req.params.id); // Busca el producto por ID
+          productoEncontrado.borrado = true; // Asigna el estado de borrado al producto encontrado
+          fs.writeFileSync(rutaArchivoUsers, JSON.stringify(usuarios, null, 2)); // Escribe el archivo JSON
+          return res.send(usuarioEncontrado);
+          /**Terminar de ver este método. Cheqeuar el action del form de editUser.ejs y
+           *  chequear también que deberia estar el buttom submit de delete apuntando a este método y la url a la indicada en el userRoutes.js
+           */
+      },
+  };

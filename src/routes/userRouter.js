@@ -23,8 +23,10 @@ router.post('/users/create', fileUpload.single("image"), userController.processC
 
 //CRUD de usuario: Edit user
 router.get('/users/edit/:id', userController.showEditUserForm); // Ruta para mostrar la vista editUser.ejs
-//router.put('/editProduct/:id', fileUpload.single('image'), userController.processEditUser); // Procesa el formulario de edición de usuario HACER!!!!
+router.put('/users/edit/:id', fileUpload.single('image'), userController.processEditUser); // Procesa el formulario de edición de usuario HACER!!!!
 
+//CRUD de usuario: Delete user
+router.delete('/users/delete/:id', userController.deleteUser); // Ruta para eliminar el producto
 
 
 
