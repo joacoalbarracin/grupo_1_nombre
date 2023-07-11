@@ -50,7 +50,7 @@ module.exports = {
         //Hace ["borrado": true] en la base de datos
         deleteUser: (req, res) => { 
           const usuarioEncontrado = usuarios.find(row => row.id == req.params.id); // Busca el producto por ID
-          productoEncontrado.borrado = true; // Asigna el estado de borrado al producto encontrado
+          usuarioEncontrado.borrado = true; // Asigna el estado de borrado al producto encontrado
           fs.writeFileSync(rutaArchivoUsers, JSON.stringify(usuarios, null, 2)); // Escribe el archivo JSON
           return res.send(usuarioEncontrado);
           /**Terminar de ver este método. Cheqeuar el action del form de editUser.ejs y

@@ -17,7 +17,7 @@
                 </div>
                 <div>
                     <label>Imagen del producto</label>
-                    <img src="../img/<%=productoEncontrado.image%>">
+                    <img src="/img/<%=productoEncontrado.image%>">
                     <div>
                         <input type="file" name="image" id="image">
                     </div>
@@ -39,11 +39,10 @@
                     <label>Descuento (%):</label>
                     <input name="discount" type="number" class="text-field" value="<%=productoEncontrado.discount%>">
                 </div>
-                    <button class="botonForm botonSubmit" type="submit">Editar producto</button>
-                </div>
+                <button class="botonForm botonSubmit" type="submit">Editar producto</button>
                 <br>
             </form>
-            <form  action="/products/delete/<%=productoEncontrado.id%>?_method=DELETE" method="post" display>
+            <form action="/products/delete/<%=productoEncontrado.id%>?_method=DELETE" method="post" display>
                 <button class="botonForm botonReset" type="submit">Eliminar</button>
             </form>      
 

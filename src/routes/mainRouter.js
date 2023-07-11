@@ -17,10 +17,9 @@ const fileUpload = multer({storage: storage}) // Ejecutamos multer
 
 // Vistas en relación a los productos
 router.get('/products/cart', mainController.showProductCart); // Ruta para mostrar la vista productCart.ejs
-router.get('/products/detail', mainController.showProductDetail); // Ruta para mostrar la vista productDetail.ejs
 router.get('/products/list', mainController.showProductList); // Ruta para mostrar la  vista productList.ejs
 router.get('/', mainController.showHome); // Ruta para mostrar la vista home.ejs
-router.get('/products/description', mainController.showDescription); // Ruta para mostrar la vista description.ejs
+router.get('/products/description/:id', mainController.showDescription); // Ruta para mostrar la vista description.ejs
 
 //CRUD de procuto: Create product
 router.get('/products/create', mainController.showCreateProductForm); // Ruta para mostrar la vista createProduct.ejs

@@ -28,7 +28,8 @@
                 <div class="productos">
                     <% oportunidades.forEach((row) => {%>
                     <article>
-                        <img src="/img/<%= row.image %>" alt="imagen">
+                        <a href="/products/description/<%=row.id %>"><img src="/img/<%= row.image %>" alt="imagen"></a>
+
                         <div class="info-articulos">
                             <h4 class = "name"> <%= row.name %><h4></h4>
                             <p class="precio"> $ <%= row.price %></p>
@@ -45,7 +46,7 @@
                 <div class="productos">
                     <% imperdibles.forEach((row) => {%>
                         <article>
-                            <img src="/img/<%= row.image %>" alt="imagen">
+                            <a href="/products/description/<%=row.id %>"><img src="/img/<%= row.image %>" alt="imagen"></a>
                             <div class="info-articulos">
                                 <h4 class = "name"> <%= row.name %><h4></h4>
                                 <p class="precio"> $ <%= row.price %></p>
@@ -61,7 +62,7 @@
                 <div class="productos">
                     <% nuevas.forEach((row) => {%>
                         <article>
-                            <img src="/img/<%= row.image %>" alt="imagen">
+                            <a href="/products/description/<%=row.id %>"><img src="/img/<%= row.image %>" alt="imagen"></a>
                             <div class="info-articulos">
                                 <h4 class = "name"> <%= row.name %><h4></h4>
                                 <p class="precio"> $ <%= row.price %></p>

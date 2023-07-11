@@ -75,7 +75,7 @@
     "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "administrador",
     "image": "defaultUser.webp",
-    "borrado": "false"
+    "borrado": true
   },
   {
     "id": 8,

@@ -8,7 +8,7 @@
     "category": "Gastronomía",
     "price": "40",
     "discount": "15 OFF",
-    "borrado": true
+    "borrado": false
   },
   {
     "id": 2,
@@ -19,7 +19,7 @@
     "category": "Cultura",
     "price": "800080",
     "discount": "10 OFF",
-    "borrado": true
+    "borrado": false
   },
   {
     "id": 3,
@@ -96,9 +96,10 @@
     "image": "tango.jpg",
     "category": "Cultura",
     "title": "Nuevas Experiencias",
-    "price": 15,
-    "discount": "5 OFF",
-    "borrado": false
+    "price": "15",
+    "discount": "",
+    "borrado": false,
+    "opcion": "Cultura"
   },
   {
     "id": 10,
@@ -110,108 +111,5 @@
     "price": 10,
     "discount": "5 OFF",
     "borrado": false
-  },
-  {
-    "id": 11,
-    "name": "HOLA",
-    "description": "HOLA",
-    "price": "96",
-    "image": "1688845713998.jpg",
-    "category": "HOLA",
-    "borrado": false
-  },
-  {
-    "id": 12,
-    "name": "asd",
-    "description": "dasd",
-    "price": "77",
-    "image": "1688845963446.jpg",
-    "category": "asdda",
-    "borrado": false,
-    "opcion": "Cultura",
-    "discount": ""
-  },
-  {
-    "id": 13,
-    "name": "asdasdasd",
-    "description": "dasd",
-    "price": "99",
-    "image": "1688846189776.jpg",
-    "category": "asdas",
-    "borrado": false
-  },
-  {
-    "id": 14,
-    "name": "wsadsa",
-    "description": "dasd",
-    "price": "1564",
-    "image": "1688915365245.jpg",
-    "category": "dasdsa",
-    "borrado": false
-  },
-  {
-    "id": 15,
-    "name": "asdasds",
-    "description": "dasd",
-    "price": "666",
-    "image": "1688941297020.jpg",
-    "category": "asds",
-    "borrado": false
-  },
-  {
-    "id": 16,
-    "name": "asda",
-    "description": "dsa",
-    "price": "888",
-    "image": "1688941402917.jpg",
-    "category": "das",
-    "borrado": false
-  },
-  {
-    "id": 17,
-    "name": "dsasa",
-    "description": "sdda",
-    "price": "185",
-    "image": "1688941420974.jpg",
-    "category": "dsa",
-    "borrado": false
-  },
-  {
-    "id": 18,
-    "name": "dasoasklQ",
-    "description": "dasdsad",
-    "price": "85599",
-    "image": "1688941572035.jpg",
-    "category": "dasas",
-    "borrado": false
-  },
-  {
-    "id": 19,
-    "name": "dasdas",
-    "description": "das",
-    "price": "100000",
-    "image": "1688942169746.jpg",
-    "category": "das",
-    "borrado": true
-  },
-  {
-    "id": 20,
-    "name": "testeo final",
-    "description": "sdffsd",
-    "price": "222222222",
-    "image": "1688944696921.jpg",
-    "category": "fwesfsd",
-    "borrado": true
-  },
-  {
-    "id": 21,
-    "name": "asadsad",
-    "description": "sdadas",
-    "image": "1689025893567.jpg",
-    "price": "66",
-    "category": "Entretenimiento",
-    "discount": "169",
-    "borrado": true,
-    "opcion": "Entretenimiento"
   }
 ]

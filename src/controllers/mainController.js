@@ -11,10 +11,6 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
     showProductCart: (req, res) => {
         res.render('productCart'); // Muestra la vista productCart.ejs
     },
-    //Muestra la vista productDetail.ejs
-    showProductDetail: (req, res) => {
-        res.render('productDetail'); // Muestra la vista productDetail.ejs
-    },
     //Muestra la vista register.ejs
     showProductRegisterForm: (req, res) => {
         res.render('register'); // Muestra la vista register.ejs
@@ -34,10 +30,13 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
     showDescription: (req,res) => { // Método description
         const productoEncontrado = productos.find(row => row.id == req.params.id); // Busca el producto por ID
         if (productoEncontrado && !productoEncontrado.borrado) { // Si el producto existe y no está borrado
-            return res.render('productList', { producto: productoEncontrado }); // Muestra la vista productList.ejs con el producto encontrado
+            console.log(productoEncontrado);
+            return res.render('productDetail', { productoEncontrado: productoEncontrado }); // Muestra la vista productList.ejs con el producto encontrado
         } else { 
             return res.send("ERROR 404 NOT FOUND"); // Si el producto no existe o está borrado, muestra el mensaje de error
+  
         }
+
     },
     //Muestra la vista createProduct.ejs
     showCreateProductForm: (req,res) => {

@@ -10,17 +10,11 @@
         <div class="content">
             
             <div class="descripcionproducto">
-                <span><img  class="imgdetalle" src="./img/Teatro Colon.jpeg" alt="Teatro Colon"></span>
+                <img  class="imgdetalle" src="/img/<%=productoEncontrado.image%>" alt="Teatro Colon">
 
-                <h2 class="detalletitulo">Visita Guíada - Teatro Colón</h2>
+                <h2 class="detalletitulo"><%=productoEncontrado.name%></h2>
 
-                <h5 class="descripcion1"><span>
-                    El Teatro Colón guarda secretos en cada rincón 
-                    y vivir la experiencia 
-                     de una visita guiada es 
-                     conocer una porción de su historia de más de cien 
-                      años al servicio de la cultura argentina y mundial. 
-                    </span></h5>
+                <h5><%=productoEncontrado.description%></h5>
 
 
                 <form id="option-count" id='myform' method='POST' class='quantity' action='#'>

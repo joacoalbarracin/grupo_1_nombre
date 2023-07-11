@@ -29,7 +29,7 @@
             </div>
             <div>
                 <label>Imagen del producto</label>
-                <img src="../img/users/<%=usuarioEncontrado.image%>">
+                <img src="/img/users/<%=usuarioEncontrado.image%>">
                 <div>
                     <input name="image" type="file">
                 </div>
@@ -41,10 +41,12 @@
                 <input type="radio" id="opcion2" name="opcion" value="Administrador" <% if (usuarioEncontrado.category === 'Administrador') { %>checked<% } %>>
                 <label for="opcion2">Administrador</label>
             </div>
-              
                 <button class="botonForm botonSubmit" type="submit">Modificar usuario</button>
             </div>
         </form>
+        <form  action="/users/delete/<%=usuarioEncontrado.id%>?_method=DELETE" method="post" display>
+            <button class="botonForm botonReset" type="submit">Eliminar</button>
+        </form> 
     </main>
 
         <%- include('./partials/footer')%>
