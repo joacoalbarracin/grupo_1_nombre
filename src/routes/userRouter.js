@@ -16,6 +16,9 @@ const storage = multer.diskStorage({ // Configuramos multer
 const fileUpload = multer({storage: storage}); // Ejecutamos multer
 
 router.get('/users/login', userController.showLoginUserForm); // Ruta para mostrar la vista login.ejs
+router.post('/users/login', userController.processLoginUserForm); // Procesa el formulario de login
+
+router.get("/users/profile", userController.showProfile); // Ruta para mostrar la vista perfil.ejs")
 
 //CRUD de usuario: Create user
 router.get('/users/create', userController.showCreateUserForm); // Ruta para mostrar la vista register.ejs

@@ -208,5 +208,35 @@
     "repeatPassword": "$2b$10$J2lM7QojbQehsrNX8t5mMu9POcdgZP6cNntXCXVrWMLtXCDj47SC.",
     "category": "Comprador",
     "borrado": false
+  },
+  {
+    "id": 20,
+    "name": "AAAAAAAAA",
+    "lastName": "AAAAA",
+    "email": "AAAAAAAA@GMAIL.COM",
+    "password": "$2b$10$499aAiFMmfvxfGdjMEdcTuuoF6sK5OvDCVYs/PVhRtpRHbXk3eQy.",
+    "repeatPassword": "$2b$10$J2lM7QojbQehsrNX8t5mMu9POcdgZP6cNntXCXVrWMLtXCDj47SC.",
+    "category": "Comprador",
+    "borrado": false
+  },
+  {
+    "id": 22,
+    "name": "pepe",
+    "lastName": "pepe",
+    "email": "pepe@gmail.com",
+    "password": "$2b$10$rGmXi3V4xLNvyDllyZ43OeTOC7ViTn9LS6ld2I4wdlmwRBm.oazQS",
+    "repeatPassword": "$2b$10$almeP1b8HNmxZh3UaFR3quA8sxqLy8Y5DxRROhrnGSHQ8.MGFQOCS",
+    "category": "Comprador",
+    "borrado": false
+  },
+  {
+    "id": 22,
+    "name": "pedro",
+    "lastName": "pedro",
+    "email": "pedro@gmail.com",
+    "password": "pedro",
+    "repeatPassword": "pedro",
+    "category": "Comprador",
+    "borrado": false
   }
 ]

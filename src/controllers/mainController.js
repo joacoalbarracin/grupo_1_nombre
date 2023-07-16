@@ -24,7 +24,7 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
         const imperdible = productos.filter ((row) => row.title == "Imperdibles"); // Filtra los productos por categoría
         const oportunidad = productos.filter ((row) => row.title == "Oportunidades"); // Filtra los productos por categoría
         const nueva = productos.filter ((row) => row.title == "Nuevas"); // Filtra los productos por categoría
-        return res.render('home', {imperdibles: imperdible, oportunidades: oportunidad, nuevas: nueva}); // Muestra la vista home.ejs con los productos filtrados
+        return res.render('home', {imperdibles: imperdible, oportunidades: oportunidad, nuevas: nueva, usuarioEncontrado : null}); // Muestra la vista home.ejs con los productos filtrados
     },
     //Muestra la vista productList.ejs dinámicamente con el producto encontrado como parámetro
     showDescription: (req,res) => { // Método description

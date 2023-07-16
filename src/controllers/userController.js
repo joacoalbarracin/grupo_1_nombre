@@ -1,7 +1,8 @@
 const fs = require('fs'); // Requerimos el módulo File System de Node
 const path = require('path'); // Requerimos el módulo Path de Node
 const bcrypt = require('bcrypt'); // Requerimos el módulo Bcrypt
-
+const mainController = require('./mainController'); // Requerimos el controlador mainController
+const { validationResult } = require('express-validator'); // Requerimos el módulo express-validator
 const usuarios = JSON.parse(fs.readFileSync(path.resolve('./src/database/user.json'))); // Lee el archivo user.json
 const rutaArchivoUsers = path.resolve('./src/database/user.json'); // Ruta del archivo user.json
 
@@ -11,6 +12,23 @@ module.exports = {
     showLoginUserForm: (req, res) => {
         return res.render('login'); // Renderiza la vista login.ejs
     },
+    processLoginUserForm: (req, res) => {
+      const usuarioEncontrado = usuarios.find(row => row.email == req.body.email); // Busca el usuario por id
+      if (usuarioEncontrado && bcrypt.compareSync(req.body.password, usuarioEncontrado.password)) {
+          req.session.usuarioLogueado = usuarioEncontrado; // Crea la sesión del usuario
+        return res.render('profile', { usuarioEncontrado: usuarioEncontrado }); // Renderiza la vista profile.ejs
+      
+      }else {
+        return res.render("login")
+      }
+    },
+      showProfile: (req, res) => {
+      const usuarioEncontrado = req.session.usuarioLogueado; // Busca el usuario por id
+        return res.render('profile', { usuarioEncontrado: usuarioEncontrado }); // Renderiza la vista profile.ejs
+
+    },
+  
+  
     /** Muestra el formulario de registro de usuario */
     showCreateUserForm: (req, res) => { //
         res.render('register'); // Renderiza la vista register.ejs
@@ -29,7 +47,6 @@ module.exports = {
         "borrado": false, // Crea un campo borrado con valor false
       }
       fs.writeFileSync(rutaArchivoUsers, JSON.stringify([...usuarios, usuarioNuevo], null, 2), "utf-8") // Escribe el archivo user.json
-      console.log(usuarioNuevo); // Muestra el usuario creado en consola
       return res.send(usuarioNuevo); // Retorna el usuario creado
     },
     /** Muestra el formulario de edición de usuario */
