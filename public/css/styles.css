@@ -385,6 +385,9 @@ form div {
     width: 100%;
 }
 
+.error {
+    color: red;
+}
 
 .botonForm{
     width: 40%;

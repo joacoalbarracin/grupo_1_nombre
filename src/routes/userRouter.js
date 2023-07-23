@@ -15,14 +15,17 @@ const storage = multer.diskStorage({ // Configuramos multer
 })
 const fileUpload = multer({storage: storage}); // Ejecutamos multer
 
+const logMiddleware = require('../middlewares/logMiddleware') // Traemos el middleware de logueo
+const registerValidation = require('../middlewares/registerValidation')
+
 router.get('/users/login', userController.showLoginUserForm); // Ruta para mostrar la vista login.ejs
 router.post('/users/login', userController.processLoginUserForm); // Procesa el formulario de login
 
-router.get("/users/profile", userController.showProfile); // Ruta para mostrar la vista perfil.ejs")
+router.get("/users/profile/:id", /*logMiddleware,*/ userController.showProfile); // Ruta para mostrar la vista perfil.ejs")
 
 //CRUD de usuario: Create user
 router.get('/users/create', userController.showCreateUserForm); // Ruta para mostrar la vista register.ejs
-router.post('/users/create', fileUpload.single("image"), userController.processCreateUserForm); // Procesa el formulario de registro
+router.post('/users/create', fileUpload.single("image"), registerValidation, userController.processCreateUserForm); // Procesa el formulario de registro
 
 //CRUD de usuario: Edit user
 router.get('/users/edit/:id', userController.showEditUserForm); // Ruta para mostrar la vista editUser.ejs

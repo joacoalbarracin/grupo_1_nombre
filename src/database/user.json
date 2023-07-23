@@ -8,7 +8,8 @@
     "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "comprador",
     "image": "defaultUser.webp",
-    "borrado": "false"
+    "borrado": "false",
+    "logueado": true
   },
   {
     "id": 2,
@@ -20,7 +21,8 @@
     "category": "comprador",
     "image": "defaultUser.webp",
     "borrado": "false",
-    "repeat_password": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm"
+    "repeat_password": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
+    "logueado": true
   },
   {
     "id": 3,
@@ -31,7 +33,8 @@
     "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "administrador",
     "image": "defaultUser.webp",
-    "borrado": "false"
+    "borrado": "false",
+    "logueado": false
   },
   {
     "id": 4,
@@ -42,7 +45,8 @@
     "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "administrador",
     "image": "defaultUser.webp",
-    "borrado": "false"
+    "borrado": "false",
+    "logueado": false
   },
   {
     "id": 5,
@@ -53,7 +57,8 @@
     "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "comprador",
     "image": "defaultUser.webp",
-    "borrado": "false"
+    "borrado": "false",
+    "logueado": false
   },
   {
     "id": 6,
@@ -64,7 +69,8 @@
     "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "comprador",
     "image": "defaultUser.webp",
-    "borrado": "false"
+    "borrado": "false",
+    "logueado": true
   },
   {
     "id": 7,
@@ -75,7 +81,8 @@
     "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "administrador",
     "image": "defaultUser.webp",
-    "borrado": true
+    "borrado": true,
+    "logueado": false
   },
   {
     "id": 8,
@@ -86,7 +93,8 @@
     "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "comprador",
     "image": "defaultUser.webp",
-    "borrado": "false"
+    "borrado": "false",
+    "logueado": true
   },
   {
     "id": 9,
@@ -97,7 +105,8 @@
     "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "comprador",
     "image": "defaultUser.webp",
-    "borrado": "false"
+    "borrado": "false",
+    "logueado": false
   },
   {
     "id": 10,
@@ -108,7 +117,8 @@
     "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "administrador",
     "image": "defaultUser.webp",
-    "borrado": "false"
+    "borrado": "false",
+    "logueado": false
   },
   {
     "id": 11,
@@ -118,7 +128,8 @@
     "password": "$2b$10$M1HzNoU1eQXsrZ5Fc50s6.V/hMNYhga72HwFjB76petvma7SuE/M.",
     "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "adm",
-    "borrado": false
+    "borrado": false,
+    "logueado": false
   },
   {
     "id": 12,
@@ -128,7 +139,8 @@
     "password": "$2b$10$wLlWoVpk00YE/dTjVg7/PejoGDkAf.DTXIo8hVJ.GscUoUAxUnULG",
     "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "adminis",
-    "borrado": false
+    "borrado": false,
+    "logueado": true
   },
   {
     "id": 13,
@@ -138,7 +150,8 @@
     "password": "$2b$10$UqeB.jHfcml407jqWNGXZecKswVZhbc/PlyH3cwYNlWWTPXgdWd/G",
     "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "opcion2",
-    "borrado": false
+    "borrado": false,
+    "logueado": true
   },
   {
     "id": 14,
@@ -148,7 +161,8 @@
     "password": "$2b$10$5BNHhCWdxUt35LxnISCu8eqg0kcn3EnXTdQ7MNlD4s3PlGgCFuiF6",
     "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "opcion2",
-    "borrado": false
+    "borrado": false,
+    "logueado": false
   },
   {
     "id": 15,
@@ -158,7 +172,8 @@
     "password": "$2b$10$YLajH5qXGSTJqzM.0ikhXOrIQZXArvaFZDhm2icxZZCSLP8eyebd2",
     "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "opcion1",
-    "borrado": false
+    "borrado": false,
+    "logueado": false
   },
   {
     "id": 16,
@@ -168,7 +183,8 @@
     "password": "$2b$10$Af5/DmXZP0oxFCecRpxoqO1rknUHaZj5BdzmhI3BywV1zTtkxPrsK",
     "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "comp",
-    "borrado": false
+    "borrado": false,
+    "logueado": true
   },
   {
     "id": 17,
@@ -177,7 +193,8 @@
     "email": "hola@gmail.com",
     "password": "$2b$10$v2hHh.auJ3LcRvGTlVGgFeJm3RmR35Da2pdLVKZ4Wsc/oylGGWt4q",
     "category": "Comprador",
-    "borrado": false
+    "borrado": false,
+    "logueado": false
   },
   {
     "id": 18,
@@ -187,7 +204,8 @@
     "password": "$2b$10$HrlFMPDol8q0UTe65dEqqeRws/vAPAU384oBslIaQ/j92kDt17h3W",
     "repeatPassword": "$2b$10$AoDollvD98LslhVXoK1txu9n.TNN8KSnHwa3KiqiEGArl3FjJQRlm",
     "category": "Comprador",
-    "borrado": false
+    "borrado": false,
+    "logueado": false
   },
   {
     "id": 19,
@@ -197,7 +215,8 @@
     "password": "$2b$10$sLdpHyhOYpJS0nlfrktCnO5rfoOJhl/MDBavT6LPegy9w8EFUAWEO",
     "repeatPassword": "$2b$10$rgCMJszYN.8zRsD7ZUfKeu7WWV81fsHqCs/L6JVDaZmeasYaLNhy.",
     "category": "Comprador",
-    "borrado": false
+    "borrado": false,
+    "logueado": true
   },
   {
     "id": 20,
@@ -207,17 +226,19 @@
     "password": "$2b$10$499aAiFMmfvxfGdjMEdcTuuoF6sK5OvDCVYs/PVhRtpRHbXk3eQy.",
     "repeatPassword": "$2b$10$J2lM7QojbQehsrNX8t5mMu9POcdgZP6cNntXCXVrWMLtXCDj47SC.",
     "category": "Comprador",
-    "borrado": false
+    "borrado": false,
+    "logueado": false
   },
   {
-    "id": 20,
+    "id": 21,
     "name": "AAAAAAAAA",
     "lastName": "AAAAA",
     "email": "AAAAAAAA@GMAIL.COM",
     "password": "$2b$10$499aAiFMmfvxfGdjMEdcTuuoF6sK5OvDCVYs/PVhRtpRHbXk3eQy.",
     "repeatPassword": "$2b$10$J2lM7QojbQehsrNX8t5mMu9POcdgZP6cNntXCXVrWMLtXCDj47SC.",
     "category": "Comprador",
-    "borrado": false
+    "borrado": false,
+    "logueado": true
   },
   {
     "id": 22,
@@ -227,7 +248,8 @@
     "password": "$2b$10$rGmXi3V4xLNvyDllyZ43OeTOC7ViTn9LS6ld2I4wdlmwRBm.oazQS",
     "repeatPassword": "$2b$10$almeP1b8HNmxZh3UaFR3quA8sxqLy8Y5DxRROhrnGSHQ8.MGFQOCS",
     "category": "Comprador",
-    "borrado": false
+    "borrado": false,
+    "logueado": true
   },
   {
     "id": 22,
@@ -237,6 +259,7 @@
     "password": "pedro",
     "repeatPassword": "pedro",
     "category": "Comprador",
-    "borrado": false
+    "borrado": false,
+    "logueado": false
   }
 ]

@@ -11,19 +11,35 @@
             <form class="formularios" action="/users/create" method="POST" enctype="multipart/form-data">
                 <div>
                     <label>Nombre:</label>
-                    <input class="text-field" type="text" name="name">
+                    <input class="text-field" type="text" name="name" value="<%= locals.oldData ? oldData.name : null%>">
+                    <% if(locals.errors && errors.name) { %>
+                        <p class="error">
+                        <%= errors.name.msg %></p>
+                    <% } %>
                 </div>
             <div>
                     <label>Apellido:</label>
-                    <input class="text-field" type="text" name="last_name">
+                    <input class="text-field" type="text" name="last_name" value="<%= locals.oldData ? oldData.last_name : null%>">
+                    <% if(locals.errors && errors.last_name) { %>
+                        <p class="error">
+                        <%= errors.last_name.msg %></p>
+                    <% } %>
             </div>
                 <div>
                     <label>E-mail:</label>
-                    <input class="text-field" type="email" name="email">
+                    <input class="text-field" type="email" name="email" value="<%= locals.oldData ? oldData.email : null%>">
+                    <% if(locals.errors && errors.email) { %>
+                        <p class="error">
+                        <%= errors.email.msg %></p>
+                    <% } %>
                 </div>
                 <div>
                     <label>Contraseña:</label>
                     <input class="text-field" type="password" name="password">
+                    <% if(locals.errors && errors.password) { %>
+                        <p class="error">
+                        <%= errors.password.msg %></p>
+                    <% } %>
                 </div>
                 <div>
                     <label>Repetí tu contraseña:</label>

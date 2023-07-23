@@ -6,8 +6,6 @@ const { validationResult } = require('express-validator'); // Requerimos el mód
 const usuarios = JSON.parse(fs.readFileSync(path.resolve('./src/database/user.json'))); // Lee el archivo user.json
 const rutaArchivoUsers = path.resolve('./src/database/user.json'); // Ruta del archivo user.json
 
-
-
 module.exports = {
     showLoginUserForm: (req, res) => {
         return res.render('login'); // Renderiza la vista login.ejs
@@ -45,6 +43,12 @@ module.exports = {
         "image": req.file.image, // Toma el dato del campo image
         "category": req.body.opcion, // Toma el dato del campo opcion
         "borrado": false, // Crea un campo borrado con valor false
+      }
+      const resultadoValidacion = validationResult(req) //Guarda un obj literal con los erroes
+      console.log(resultadoValidacion.errors)
+
+      if(resultadoValidacion.errors.length > 0) {
+        return res.render('register', { errors:  resultadoValidacion.mapped(), oldData: req.body})
       }
       fs.writeFileSync(rutaArchivoUsers, JSON.stringify([...usuarios, usuarioNuevo], null, 2), "utf-8") // Escribe el archivo user.json
       return res.send(usuarioNuevo); // Retorna el usuario creado

@@ -5,6 +5,7 @@ const mainRouter = require('./routes/mainRouter'); // Requerimos el módulo main
 const userRouter = require('./routes/userRouter'); // Requerimos el módulo userRouter
 const methodOverride = require('method-override'); // Requerimos el módulo method-override
 const session = require('express-session'); // Requerimos el módulo express-session
+const logs = require('./middlewares/logs') //Traemos el middleware del log
 
 app.use(express.urlencoded({extended: false})); // Para leer lo que llega en el req.body
 app.use(express.json()); // Para leer lo que llega en el req.body
@@ -15,6 +16,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 })); // Para poder usar las sesiones
+app.use(logs)
 app.set('views', path.join(__dirname,'../views')); // Para indicar la ruta de la carpeta de las vistas
 app.set('view engine', 'ejs'); // Para indicar el motor de plantillas
 
