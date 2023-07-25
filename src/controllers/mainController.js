@@ -59,10 +59,10 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
         console.log(resultadoValidacion.errors)
 
         if(resultadoValidacion.errors.length > 0) {
-            return res.render('createProduct', { errors:  resultadoValidacion.mapped(), oldData: req.body})
+            return res.render('createProduct', {errors:  resultadoValidacion.mapped(), oldData: req.body})
         }
         fs.writeFileSync(rutaArchivo, JSON.stringify([...productos, productoNuevo], null, 2), "utf-8"); // Escribe el archivo JSON
-        return res.redirect("/products/description/:" + req.body.id) // Redirecciona a la vista createProduct.ejs
+        return res.redirect("/products/list") // Redirecciona a la lista de productos
 
     },
 
