@@ -21,7 +21,7 @@ const registerValidation = require('../middlewares/registerValidation')
 router.get('/users/login', userController.showLoginUserForm); // Ruta para mostrar la vista login.ejs
 router.post('/users/login', userController.processLoginUserForm); // Procesa el formulario de login
 
-router.get("/users/profile/:id", /*logMiddleware,*/ userController.showProfile); // Ruta para mostrar la vista perfil.ejs")
+router.get("/users/profile", logMiddleware, userController.showProfile); // Ruta para mostrar la vista perfil.ejs")
 
 //CRUD de usuario: Create user
 router.get('/users/create', userController.showCreateUserForm); // Ruta para mostrar la vista register.ejs

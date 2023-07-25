@@ -13,17 +13,27 @@ module.exports = {
     processLoginUserForm: (req, res) => {
       const usuarioEncontrado = usuarios.find(row => row.email == req.body.email); // Busca el usuario por id
       if (usuarioEncontrado && bcrypt.compareSync(req.body.password, usuarioEncontrado.password)) {
-          req.session.usuarioLogueado = usuarioEncontrado; // Crea la sesión del usuario
+        delete usuarioEncontrado.password //Borramos la contraseña de lo que guardamos
+        req.session.usuarioLogueado = usuarioEncontrado; // Crea la sesión del usuario
+        if (req.body.cookie){
+          res.cookie('recordame', usuarioEncontrado.email, {maxAge: 1000*60*60}) //Dura una hora la cookie
+        }
         return res.render('profile', { usuarioEncontrado: usuarioEncontrado }); // Renderiza la vista profile.ejs
-      
-      }else {
-        return res.render("login")
+      }
+      //Se construyen los errores
+      else {
+        return res.render("login", {
+          errors: {
+            datosMal: {
+              msg: "Datos incorrectos"
+            }
+          }
+        })
       }
     },
       showProfile: (req, res) => {
       const usuarioEncontrado = req.session.usuarioLogueado; // Busca el usuario por id
         return res.render('profile', { usuarioEncontrado: usuarioEncontrado }); // Renderiza la vista profile.ejs
-
     },
   
   

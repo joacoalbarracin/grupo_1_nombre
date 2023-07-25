@@ -15,15 +15,21 @@
                 <div>   
                     <label>Contraseña:</label>
                     <input class="text-field" type="password" name="password">
-                </div> 
-
+                </div>
+                <div>   
+                    <label>Recordame</label>
+                    <input class="" type="checkbox" name="cookie">
+                </div>
+                <% if(locals.errors && errors.datosMal) { %>
+                    <p class="error">
+                    <%= errors.datosMal.msg %></p>
+                <% } %>
                 <div>
                     <h6>¿Olvidaste tu contraseña?</h6>
                 </div>
                 <div>
-                    <button class="botonForm botonEnviar" type="submit">Enviar</button>
+                    <button class="botonForm botonEnviar" type="submit">Ingresar</button>
                 </div>
-
             </form>
         </main>
     </header>
