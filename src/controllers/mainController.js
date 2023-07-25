@@ -1,4 +1,5 @@
 // Requerimientos
+const { validationResult } = require('express-validator');
 const fs = require('fs'); // Requerimos el módulo File System de Node
 const path = require('path'); // Requerimos el módulo Path de Node
 const productos = JSON.parse(fs.readFileSync(path.resolve('./src/database/product.json'))); // Lee el archivo JSON
@@ -54,8 +55,15 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
             "discount": req.body.discount, // Asigna el descuento del producto
             "borrado": false, // Asigna el estado de borrado del producto
         }
+        const resultadoValidacion = validationResult(req) //Guarda un obj literal con los erroes
+        console.log(resultadoValidacion.errors)
+
+        if(resultadoValidacion.errors.length > 0) {
+            return res.render('createProduct', { errors:  resultadoValidacion.mapped(), oldData: req.body})
+        }
         fs.writeFileSync(rutaArchivo, JSON.stringify([...productos, productoNuevo], null, 2), "utf-8"); // Escribe el archivo JSON
-        return res.redirect("/products/create") // Redirecciona a la vista createProduct.ejs
+        return res.redirect("/products/description/:" + req.body.id) // Redirecciona a la vista createProduct.ejs
+
     },
 
     //Muestra la vista editProduct.ejs y el producto encontrado como parámetro

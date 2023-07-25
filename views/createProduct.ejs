@@ -9,11 +9,19 @@
             <form class="formularios" action="/products/create" method="POST" enctype="multipart/form-data">
                 <div>
                     <label>Nombre:</label>
-                    <input class="text-field" input="text" name="name">
+                    <input class="text-field" input="text" name="name" value="<%= locals.oldData ? oldData.name : null%>">
+                    <% if(locals.errors && errors.name) { %>
+                        <p class="error">
+                        <%= errors.name.msg %></p>
+                    <% } %>
                 </div>
                 <div>
                     <label>Descripción:</label>
-                    <input name="description" type="text" class="text-field">
+                    <input name="description" type="text" class="text-field" value="<%= locals.oldData ? oldData.description : null%>">
+                    <% if(locals.errors && errors.description) { %>
+                        <p class="error">
+                        <%= errors.description.msg %></p>
+                    <% } %>
                 </div>
                 <div>
                     <label>Imagen del producto</label>
@@ -21,7 +29,11 @@
                 </div>
                 <div>
                     <label>Price:</label>
-                    <input name="price" type="number" class="text-field">
+                    <input name="price" type="number" class="text-field" value="<%= locals.oldData ? oldData.price : null%>">
+                    <% if(locals.errors && errors.price) { %>
+                        <p class="error">
+                        <%= errors.price.msg %></p>
+                    <% } %>
                 <div>
                 <div>
                     <br>
@@ -38,7 +50,11 @@
                 </div>
                 <div>
                     <label>Descuento (%):</label>
-                    <input name="discount" type="number" class="text-field">
+                    <input name="discount" type="number" class="text-field" value="<%= locals.oldData ? oldData.discount : null%>">
+                    <% if(locals.errors && errors.discount) { %>
+                        <p class="error">
+                        <%= errors.discount.msg %></p>
+                    <% } %>
                 <div>
                 </div>
                     <button class="botonForm botonSubmit" type="submit">Crear producto!</button>
