@@ -18,7 +18,7 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
     },
     //Muestra la vista productList.ejs
     showProductList: (req, res) => {
-        res.render('productList'); // Muestra la vista productList.ejs
+        res.render('productList', { productos: productos }); // Muestra la vista productList.ejs
     },
     //Muestra la vista home.ejs dinámicamente con los productos filtrados por categoría
     showHome: (req, res) => { // Método home

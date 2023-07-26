@@ -12,30 +12,18 @@
             <section>
                 <h3>Entretenimiento</h3>
                 <div class="productos">
+                    <% productos.forEach((row) => {%>
                     <article>
-                        <img src="/img/Teatro Colon.jpeg" alt="teatro-colon">
+                        <a href="/products/description/<%=row.id %>"><img src="/img/<%= row.image %>" alt="imagen"></a>
+
                         <div class="info-articulos">
-                            <p class="precio">$8.000</p>
-                            <p class="descuento">20% OFF</p>
-                            <h4 class = "desc-prod">Visita Guiada Teatro Colón<h4>
+                            <h4 class = "name"> <%= row.name %><h4></h4>
+                            <p class="precio"> $ <%= row.price %></p>
+                            <p class="descuento"><%= row.discount %></p>
+                            <h4 class = "desc-prod"> <%= row.description %><h4>
                         </div>
                     </article>
-                    <article>
-                        <img src="/img/Teatro Colon.jpeg" alt="comida-soho">
-                        <div class="info-articulos">
-                        <p class="precio">$12.000</p>
-                        <p class="descuento">10% OFF</p>
-                        <h4 class = "desc-prod">Tour Gastronómico Palermo Soho<h4>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="/img/Teatro Colon.jpeg" alt="bombonera">
-                        <div class="info-articulos">
-                        <p class="precio">$30.000</p>
-                        <p class="descuento">5% OFF</p>
-                        <h4 class = "desc-prod">Tour Museo Boca Juniors + Entrada Copa Libertadores<h4>
-                        </div>
-                    </article>
+                     <% } ) %>
                 </div>
             </section>
             
