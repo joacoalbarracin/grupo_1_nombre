@@ -5,15 +5,23 @@
     <body>
         <%- include('./partials/header')%>
         <main id="formulario-registro">
-            <h3>Completá tus datos</h3>
+            <h3>Editá los datos del producto</h3>
             <form class="formularios" action="/products/edit/<%= productoEncontrado.id %>?_method=PUT" method="post" enctype="multipart/form-data">
                 <div>
                     <label>Nombre:</label>
                     <input class="text-field" input="text" name="name" value="<%=productoEncontrado.name%>">
+                    <% if(locals.errors && errors.name) { %>
+                        <p class="error">
+                        <%= errors.name.msg %></p>
+                    <% } %>
                 </div>
                 <div>
                     <label>Descripción:</label>
                     <input name="description" type="text" class="text-field" value="<%=productoEncontrado.description%>">
+                    <% if(locals.errors && errors.description) { %>
+                        <p class="error">
+                        <%= errors.description.msg %></p>
+                    <% } %>
                 </div>
                 <div>
                     <label>Imagen del producto</label>
@@ -25,6 +33,10 @@
                 <div>
                     <label>Price:</label>
                     <input name="price" type="number" class="text-field" value="<%=productoEncontrado.price%>">
+                    <% if(locals.errors && errors.price) { %>
+                        <p class="error">
+                        <%= errors.price.msg %></p>
+                    <% } %>
                 <div>
                     <input type="radio" id="opcion1" name="opcion" value="Entretenimiento" <% if (productoEncontrado.category === 'Entretenimiento') { %>checked<% } %>>
                     <label for="opcion1">Entretenimiento</label>
@@ -38,6 +50,10 @@
                 <div>
                     <label>Descuento (%):</label>
                     <input name="discount" type="number" class="text-field" value="<%=productoEncontrado.discount%>">
+                    <% if(locals.errors && errors.discount) { %>
+                        <p class="error">
+                        <%= errors.discount.msg %></p>
+                    <% } %>
                 </div>
                 <button class="botonForm botonSubmit" type="submit">Editar producto</button>
                 <br>

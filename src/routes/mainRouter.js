@@ -17,6 +17,8 @@ const fileUpload = multer({storage: storage}) // Ejecutamos multer
 
 const createProdValidation = require('../middlewares/createProdValidation')
 
+const editProdValidation = require('../middlewares/editProdValidation')
+
 // Vistas en relación a los productos
 router.get('/products/cart', mainController.showProductCart); // Ruta para mostrar la vista productCart.ejs
 router.get('/products/list', mainController.showProductList); // Ruta para mostrar la  vista productList.ejs
@@ -29,7 +31,7 @@ router.post('/products/create', fileUpload.single("image"), createProdValidation
 
 //CRUD de procuto: Edit product
 router.get('/products/edit/:id', mainController.showEditProductForm); // Ruta para mostrar la vista editProduct.ejs
-router.put('/products/edit/:id', fileUpload.single('image'), mainController.processEditProductForm); // Ruta para editar el producto
+router.put('/products/edit/:id', fileUpload.single('image'), editProdValidation, mainController.processEditProductForm); // Ruta para editar el producto
 
 //CRUD de procuto: Delete product
 router.delete('/products/delete/:id', mainController.deleteProduct); // Ruta para eliminar el producto

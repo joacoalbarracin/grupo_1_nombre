@@ -77,6 +77,11 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
         for (let propiedad in req.body) { // Recorre el objeto req.body
             productoEncontrado[propiedad] = req.body[propiedad]; // Asigna los valores del objeto req.body al producto encontrado
         };
+        resultadoValidacion = validationResult(req)
+        console.log(resultadoValidacion.errors)
+        if(resultadoValidacion.errors.length > 0) {
+            return res.render('editProduct', {errors:  resultadoValidacion.mapped(), oldData: req.body, productoEncontrado})
+        }
         fs.writeFileSync(rutaArchivo, JSON.stringify(productos, null, 2), "utf-8") // Escribe el archivo JSON
         //return res.redirect('/') // Redirecciona a la vista home.ejs
         return res.send(productoEncontrado)

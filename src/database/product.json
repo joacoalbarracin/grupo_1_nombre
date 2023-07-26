@@ -17,9 +17,10 @@
     "image": "Teatro Colon.jpeg",
     "title": "Oportunidades",
     "category": "Cultura",
-    "price": "800080",
-    "discount": "10 OFF",
-    "borrado": false
+    "price": "450",
+    "discount": "-4",
+    "borrado": false,
+    "opcion": "Cultura"
   },
   {
     "id": 3,
