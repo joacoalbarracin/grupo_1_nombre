@@ -83,8 +83,7 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
             return res.render('editProduct', {errors:  resultadoValidacion.mapped(), oldData: req.body, productoEncontrado})
         }
         fs.writeFileSync(rutaArchivo, JSON.stringify(productos, null, 2), "utf-8") // Escribe el archivo JSON
-        //return res.redirect('/') // Redirecciona a la vista home.ejs
-        return res.send(productoEncontrado)
+        return res.redirect('/products/list') // Redirecciona a la vista home.ejs
     },
     //Hace ["borrado": true] en la base de datos
     deleteProduct: (req, res) => { 
