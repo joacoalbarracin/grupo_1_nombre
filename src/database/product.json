@@ -112,5 +112,24 @@
     "price": 10,
     "discount": "5 OFF",
     "borrado": false
+  },
+  {
+    "id": 11,
+    "name": "Visita a Casa Rosada",
+    "description": "Date un paseo con Visita Guiada por la casa Rosada, la casa de gobierno de la república Argentina, lugar donde se vivieron importantes decisiones.",
+    "image": "1690331935177.jpg",
+    "price": "30",
+    "discount": "10",
+    "borrado": false
+  },
+  {
+    "id": 13,
+    "name": "Visita guiada en La Manzana de las Luces",
+    "description": "La Manzana de las Luces es uno de los principales complejos históricos de la ciudad y alberga varias de las construcciones más antiguas, como la Iglesia de San Ignacio.",
+    "image": "1690332807776.jpg",
+    "price": "20",
+    "category": "Gastronomía",
+    "discount": "5",
+    "borrado": false
   }
 ]
