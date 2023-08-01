@@ -18,6 +18,7 @@ module.exports = {
         if (req.body.cookie){
           res.cookie('recordame', usuarioEncontrado.email, {maxAge: 1000*60*60}) //Dura una hora la cookie
         }
+      console.log(req.session.usuarioLogueado)
         return res.render('profile', { usuarioEncontrado: usuarioEncontrado }); // Renderiza la vista profile.ejs
       }
       //Se construyen los errores

@@ -19,6 +19,8 @@ const createProdValidation = require('../middlewares/createProdValidation')
 
 const editProdValidation = require('../middlewares/editProdValidation')
 
+const permisosAdmin = require('../middlewares/permisosAdmin')
+
 // Vistas en relación a los productos
 router.get('/products/cart', mainController.showProductCart); // Ruta para mostrar la vista productCart.ejs
 router.get('/products/list', mainController.showProductList); // Ruta para mostrar la  vista productList.ejs
@@ -26,7 +28,7 @@ router.get('/', mainController.showHome); // Ruta para mostrar la vista home.ejs
 router.get('/products/description/:id', mainController.showDescription); // Ruta para mostrar la vista description.ejs
 
 //CRUD de procuto: Create product
-router.get('/products/create', mainController.showCreateProductForm); // Ruta para mostrar la vista createProduct.ejs
+router.get('/products/create', permisosAdmin, mainController.showCreateProductForm); // Ruta para mostrar la vista createProduct.ejs
 router.post('/products/create', fileUpload.single("image"), createProdValidation, mainController.processCreateProductForm); //
 
 //CRUD de procuto: Edit product

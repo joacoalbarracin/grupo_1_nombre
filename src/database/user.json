@@ -247,7 +247,7 @@
     "email": "pepe@gmail.com",
     "password": "$2b$10$rGmXi3V4xLNvyDllyZ43OeTOC7ViTn9LS6ld2I4wdlmwRBm.oazQS",
     "repeatPassword": "$2b$10$almeP1b8HNmxZh3UaFR3quA8sxqLy8Y5DxRROhrnGSHQ8.MGFQOCS",
-    "category": "Comprador",
+    "category": "Administrador",
     "borrado": false,
     "logueado": true
   },
@@ -261,5 +261,15 @@
     "category": "Comprador",
     "borrado": false,
     "logueado": false
+  },
+  {
+    "id": 24,
+    "name": "menganito",
+    "lastName": "fernandez",
+    "email": "menganito@gmail.com",
+    "password": "$2b$10$8ujQwqGeLWRVQramnPSAROSDoyPIwPsHaRUIXAuoMHUTq0GG/OmqK",
+    "repeatPassword": "$2b$10$BJMRMgT3sA.kYBrty1Yf2e7v1aLHXw/xzgt6WJCxTaNc9YRMBWlV6",
+    "category": "Comprador",
+    "borrado": false
   }
 ]
