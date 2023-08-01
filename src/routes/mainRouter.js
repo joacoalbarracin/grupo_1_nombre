@@ -32,7 +32,7 @@ router.get('/products/create', permisosAdmin, mainController.showCreateProductFo
 router.post('/products/create', fileUpload.single("image"), createProdValidation, mainController.processCreateProductForm); //
 
 //CRUD de procuto: Edit product
-router.get('/products/edit/:id', mainController.showEditProductForm); // Ruta para mostrar la vista editProduct.ejs
+router.get('/products/edit/:id', permisosAdmin, mainController.showEditProductForm); // Ruta para mostrar la vista editProduct.ejs
 router.put('/products/edit/:id', fileUpload.single('image'), editProdValidation, mainController.processEditProductForm); // Ruta para editar el producto
 
 //CRUD de procuto: Delete product
