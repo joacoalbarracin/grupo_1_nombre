@@ -12,6 +12,8 @@ module.exports = {
     },
     processLoginUserForm: (req, res) => {
       const usuarioEncontrado = usuarios.find(row => row.email == req.body.email); // Busca el usuario por id
+     console.log (usuarioEncontrado)
+     console.log (bcrypt.compareSync(req.body.password, usuarioEncontrado.password))
       if (usuarioEncontrado && bcrypt.compareSync(req.body.password, usuarioEncontrado.password)) {
         delete usuarioEncontrado.password //Borramos la contraseña de lo que guardamos
         req.session.usuarioLogueado = usuarioEncontrado; // Crea la sesión del usuario
@@ -62,7 +64,7 @@ module.exports = {
         return res.render('register', { errors:  resultadoValidacion.mapped(), oldData: req.body})
       }
       fs.writeFileSync(rutaArchivoUsers, JSON.stringify([...usuarios, usuarioNuevo], null, 2), "utf-8") // Escribe el archivo user.json
-      return res.send(usuarioNuevo); // Retorna el usuario creado
+      return res.redirect('/users/login'); // Retorna el usuario creado
     },
     /** Muestra el formulario de edición de usuario */
     showEditUserForm: (req, res) => { 

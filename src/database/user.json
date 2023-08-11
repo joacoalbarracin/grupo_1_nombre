@@ -271,5 +271,25 @@
     "repeatPassword": "$2b$10$BJMRMgT3sA.kYBrty1Yf2e7v1aLHXw/xzgt6WJCxTaNc9YRMBWlV6",
     "category": "Comprador",
     "borrado": false
+  },
+  {
+    "id": 25,
+    "name": "Lucas",
+    "lastName": "Cambon",
+    "email": "luke@algo.algo",
+    "password": "$2b$10$ymdnuUKW3L6Mkqpn5fNInuERH49uBHwkuDynxAVztxgCA7IMkojrq",
+    "repeatPassword": "$2b$10$oxqGhvu1tEBYp9uRHYRKaO2dllbmEVVOOrIhjolZIvNoEAakeLKYu",
+    "category": "Comprador",
+    "borrado": false
+  },
+  {
+    "id": 26,
+    "name": "Maria",
+    "lastName": "Zevaoglu",
+    "email": "maria@algo.algo",
+    "password": "$2b$10$ilGbgXeJ6D7uZ4nMS0skPOGs3QUKofh7WTEzjQaQLEJYE0DBFL18C",
+    "repeatPassword": "$2b$10$IeWjwcoWiMmXIBj4XebRTOIH/IHm15HbJNoV5MJvhsCEwihmC8HaK",
+    "category": "Comprador",
+    "borrado": false
   }
 ]

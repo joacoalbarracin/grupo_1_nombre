@@ -19,7 +19,7 @@ const logMiddleware = require('../middlewares/logMiddleware') // Traemos el midd
 const registerValidation = require('../middlewares/registerValidation')
 const quiereRegistrarse = require('../middlewares/quiereRegistrarse') //Vemos si un usuario ya logueado quiere registrarse
 
-router.get('/users/login', userController.showLoginUserForm); // Ruta para mostrar la vista login.ejs
+router.get('/users/login',quiereRegistrarse,userController.showLoginUserForm); // Ruta para mostrar la vista login.ejs
 router.post('/users/login', userController.processLoginUserForm); // Procesa el formulario de login
 
 router.get("/users/profile", logMiddleware, userController.showProfile); // Ruta para mostrar la vista perfil.ejs")
