@@ -1,72 +1,64 @@
-CREATE TABLE `userCategory`(
-    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `category` VARCHAR(255) NOT NULL
+-- User Categories
+CREATE TABLE `user_category` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `category` VARCHAR(50) NOT NULL
 );
-CREATE TABLE `products`(
-    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+
+-- Images
+CREATE TABLE `images` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(255) NOT NULL,
+    `extension` VARCHAR(10) NOT NULL,
+    `title` VARCHAR(255) NOT NULL
+);
+
+-- Product Categories
+CREATE TABLE `product_categories` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `categoryName` VARCHAR(50) NOT NULL,
+    `categoryDescription` TEXT NOT NULL
+);
+
+-- Users
+CREATE TABLE `users` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(100) NOT NULL,
+    `lastName` VARCHAR(100) NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
+    `password` VARCHAR(255) NOT NULL,
+    `userCategoryId` INT UNSIGNED NOT NULL,
+    CONSTRAINT `users_email_unique` UNIQUE (`email`),
+    CONSTRAINT `fk_users_user_category` FOREIGN KEY (`userCategoryId`) REFERENCES `user_category`(`id`)
+);
+
+-- Products
+CREATE TABLE `products` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `productName` TEXT NOT NULL,
     `productDescription` TEXT NOT NULL,
     `title` TEXT NOT NULL,
     `location` VARCHAR(255) NOT NULL,
-    `price` DECIMAL(8, 2) NOT NULL,
-    `discount` BIGINT NOT NULL,
+    `price` DECIMAL(10, 2) NOT NULL,
+    `discount` INT NOT NULL,
     `date` DATE NOT NULL,
     `time` TIME NOT NULL,
-    `maximunCapacity` BIGINT NOT NULL,
-    `duration` BIGINT NOT NULL,
-    `imagesId` BIGINT NOT NULL,
-    `productCategory` BIGINT NOT NULL
+    `maximumCapacity` INT NOT NULL,
+    `duration` INT NOT NULL,
+    `imagesId` INT UNSIGNED NOT NULL,
+    `productCategory` INT UNSIGNED NOT NULL,
+    CONSTRAINT `fk_products_images` FOREIGN KEY (`imagesId`) REFERENCES `images`(`id`),
+    CONSTRAINT `fk_products_product_category` FOREIGN KEY (`productCategory`) REFERENCES `product_categories`(`id`)
 );
-ALTER TABLE
-    `products` ADD INDEX `products_imagesid_index`(`imagesId`);
-ALTER TABLE
-    `products` ADD INDEX `products_productcategory_index`(`productCategory`);
-CREATE TABLE `purchases`(
-    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `adress` VARCHAR(255) NOT NULL,
+
+-- Purchases
+CREATE TABLE `purchases` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `address` VARCHAR(255) NOT NULL,
     `deliveryDate` DATE NOT NULL,
-    `totalPrice` DECIMAL(8, 2) NOT NULL,
-    `unitCuantity` BIGINT NOT NULL,
-    `userId` BIGINT NOT NULL,
-    `productId` BIGINT NOT NULL
+    `totalPrice` DECIMAL(10, 2) NOT NULL,
+    `unitQuantity` INT NOT NULL,
+    `userId` INT UNSIGNED NOT NULL,
+    `productId` INT UNSIGNED NOT NULL,
+    CONSTRAINT `fk_purchases_users` FOREIGN KEY (`userId`) REFERENCES `users`(`id`),
+    CONSTRAINT `fk_purchases_products` FOREIGN KEY (`productId`) REFERENCES `products`(`id`)
 );
-ALTER TABLE
-    `purchases` ADD INDEX `purchases_userid_index`(`userId`);
-ALTER TABLE
-    `purchases` ADD INDEX `purchases_productid_index`(`productId`);
-CREATE TABLE `users`(
-    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `name` TEXT NOT NULL,
-    `lastName` TEXT NOT NULL,
-    `email` VARCHAR(255) NOT NULL,
-    `password` VARCHAR(255) NOT NULL,
-    `repeatPassword` VARCHAR(255) NOT NULL,
-    `userCategoryId` BIGINT NOT NULL
-);
-ALTER TABLE
-    `users` ADD UNIQUE `users_email_unique`(`email`);
-ALTER TABLE
-    `users` ADD INDEX `users_usercategoryid_index`(`userCategoryId`);
-CREATE TABLE `productCategories`(
-    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `categoryName` TEXT NOT NULL,
-    `categoryDescription` TEXT NOT NULL
-);
-CREATE TABLE `images`(
-    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `name` TEXT NOT NULL,
-    `extension` BIGINT NOT NULL,
-    `title` TEXT NOT NULL
-);
-ALTER TABLE
-    `purchases` ADD CONSTRAINT `purchases_userid_foreign` FOREIGN KEY(`userId`) REFERENCES `users`(`id`);
-ALTER TABLE
-    `users` ADD CONSTRAINT `users_usercategoryid_foreign` FOREIGN KEY(`userCategoryId`) REFERENCES `userCategory`(`id`);
-ALTER TABLE
-    `products` ADD CONSTRAINT `products_imagesid_foreign` FOREIGN KEY(`imagesId`) REFERENCES `images`(`id`);
-ALTER TABLE
-    `productCategories` ADD CONSTRAINT `productcategories_id_foreign` FOREIGN KEY(`id`) REFERENCES `images`(`id`);
-ALTER TABLE
-    `productCategories` ADD CONSTRAINT `productcategories_id_foreign` FOREIGN KEY(`id`) REFERENCES `products`(`id`);
-ALTER TABLE
-    `purchases` ADD CONSTRAINT `purchases_productid_foreign` FOREIGN KEY(`productId`) REFERENCES `products`(`id`);
