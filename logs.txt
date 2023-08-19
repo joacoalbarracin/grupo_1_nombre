@@ -421,3 +421,5 @@ Se ingreso en la página/
 Se ingreso en la página/
 Se ingreso en la página/
 Se ingreso en la página/products/description/8
+Se ingreso en la página/
+Se ingreso en la página/favicon.ico
