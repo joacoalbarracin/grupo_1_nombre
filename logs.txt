@@ -423,3 +423,17 @@ Se ingreso en la página/
 Se ingreso en la página/products/description/8
 Se ingreso en la página/
 Se ingreso en la página/favicon.ico
+Se ingreso en la página/
+Se ingreso en la página/favicon.ico
+Se ingreso en la página/products/description/4
+Se ingreso en la página/products/list
+Se ingreso en la página/products/list
+Se ingreso en la página/products/list
+Se ingreso en la página/products/list
+Se ingreso en la página/products/list
+Se ingreso en la página/
+Se ingreso en la página/users/login
+Se ingreso en la página/users/create
+Se ingreso en la página/products/list
+Se ingreso en la página/
+Se ingreso en la página/

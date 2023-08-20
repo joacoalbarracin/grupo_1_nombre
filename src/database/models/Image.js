@@ -23,9 +23,16 @@ module.exports = (sequelize, DataTypes) => {
         tableName : "images",
         timestamps: false
     }
-    // Definir la relación con la tabla 'user_category'
-    //user.belongsTo(UserCategory, { foreignKey: 'userCategoryId', as: 'category' });
+    // Definir la relación con la tabla 
 
     const image = sequelize.define(alias, cols, config);
+
+    Image.associate = (models) => {
+      image.hasMany (models.products, {
+        as: 'images',
+        foreignKey: 'imagesId'
+      })
+    }
+
     return image;
 }

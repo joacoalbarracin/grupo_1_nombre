@@ -33,7 +33,14 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     }
     // Definir la relación con la tabla 'user_category'
-    user.belongsTo(UserCategory, { foreignKey: 'userCategoryId', as: 'category' });
+    //user.belongsTo(UserCategory, { foreignKey: 'userCategoryId', as: 'category' });
+
+    User.associate = (models) => {
+      user.belongsTo (models.UserCategory, {
+        as: 'category',
+        foreignKey: 'userCategoryId'
+      })
+    }
 
     const user = sequelize.define(alias, cols, config);
     return user;

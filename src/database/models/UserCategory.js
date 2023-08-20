@@ -19,5 +19,14 @@ module.exports = (sequelize, DataTypes) => {
     //user.belongsTo(UserCategory, { foreignKey: 'userCategoryId', as: 'category' });
 
     const userCategory = sequelize.define(alias, cols, config);
+
+    UserCategory.associate = (models) => {
+      userCategory.hasMany (models.User, {
+        as: 'users',
+        foreignKey: 'userCategoryId'
+      })
+    }
+
+
     return userCategory;
 }

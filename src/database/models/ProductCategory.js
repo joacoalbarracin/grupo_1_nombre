@@ -19,9 +19,21 @@ module.exports = (sequelize, DataTypes) => {
         tableName : "product_categories",
         timestamps: false
     }
-    // Definir la relación con la tabla 'user_category'
-    //user.belongsTo(UserCategory, { foreignKey: 'userCategoryId', as: 'category' });
-
+    // Definir la relación con la tabla 
+ 
     const productCategory = sequelize.define(alias, cols, config);
+
+
+    ProductCategory.associate = (models) => {
+      productCategory.hasMany (models.Product, {
+        as: 'products',
+        foreignKey: 'productCategory'
+      })
+    }
+
+   
+
+  
+
     return productCategory;
 }
