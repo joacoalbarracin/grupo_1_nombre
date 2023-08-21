@@ -5,6 +5,7 @@ const mainController = require('./mainController'); // Requerimos el controlador
 const { validationResult } = require('express-validator'); // Requerimos el módulo express-validator
 const usuarios = JSON.parse(fs.readFileSync(path.resolve('./src/database/user.json'))); // Lee el archivo user.json
 const rutaArchivoUsers = path.resolve('./src/database/user.json'); // Ruta del archivo user.json
+const db = require('../database/models')
 
 module.exports = {
     showLoginUserForm: (req, res) => {
@@ -45,8 +46,17 @@ module.exports = {
         res.render('register'); // Renderiza la vista register.ejs
     },
     /** Procesa el formulario de registro de usuario */
-    processCreateUserForm: (req, res) => {
-      let usuarioNuevo = { // Crea un objeto literal con los datos del usuario
+    processCreateUserForm: async (req, res) => {
+      try {
+          await db.User.create({
+              ...req.body
+          })
+          return res.redirect('/users/login')
+      } catch (error) {
+          console.log(error)
+      }
+
+      /* let usuarioNuevo = { // Crea un objeto literal con los datos del usuario
         "id": usuarios.length+1, // Genera un id único
         "name": req.body.name, // Toma el dato del campo name
         "lastName": req.body.last_name, // Toma el dato del campo last_name
@@ -64,22 +74,37 @@ module.exports = {
         return res.render('register', { errors:  resultadoValidacion.mapped(), oldData: req.body})
       }
       fs.writeFileSync(rutaArchivoUsers, JSON.stringify([...usuarios, usuarioNuevo], null, 2), "utf-8") // Escribe el archivo user.json
-      return res.redirect('/users/login'); // Retorna el usuario creado
+      */
     },
     /** Muestra el formulario de edición de usuario */
-    showEditUserForm: (req, res) => { 
-      const usuarioEncontrado = usuarios.find(row => row.id == req.params.id); // Busca el usuario por id
-      res.render('editUser', { usuarioEncontrado: usuarioEncontrado }); // Renderiza la vista editUser.ejs
+    showEditUserForm: async (req,res) => {
+      try {
+          const usuarioEncontrado = await db.User.findByPk(req.params.id)
+          return res.render('editUser', {usuarioEncontrado: usuarioEncontrado}); // Muestra la vista editProduct.ejs con el producto encontrado
+      } catch (error) {
+          console.log(error);
+      }
     },
     /** Procesa el formulario de edición de usuario */
-    processEditUser: (req, res) => {
-      const usuarioEncontrado = usuarios.find(row => row.id == req.params.id);  // Busca el producto por ID
+    processEditUser: async (req, res) => {
+      try {
+        await db.User.update({
+            ...req.body
+        }, {
+            where: {id : req.params.id}
+        })
+        return res.redirect("/") // Redirecciona a la lista de productos
+      } catch (error) {
+          console.log(error)
+      }
+       /*const usuarioEncontrado = usuarios.find(row => row.id == req.params.id);  // Busca el producto por ID
       for (let propiedad in req.body) { // Recorre el objeto req.body
           usuarioEncontrado[propiedad] = req.body[propiedad]; // Asigna los valores del objeto req.body al producto encontrado
       };
       fs.writeFileSync(rutaArchivoUsers, JSON.stringify(usuarios, null, 2), "utf-8") // Escribe el archivo JSON
       //return res.redirect('/') // Redirecciona a la vista home.ejs
-      return res.send(usuarioEncontrado);
+      return res.send(usuarioEncontrado)
+      */
     },
         //Hace ["borrado": true] en la base de datos
         deleteUser: (req, res) => { 

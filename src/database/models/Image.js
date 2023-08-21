@@ -27,12 +27,12 @@ module.exports = (sequelize, DataTypes) => {
 
     const image = sequelize.define(alias, cols, config);
 
-    Image.associate = (models) => {
+    /*Image.associate = (models) => {
       image.hasMany (models.products, {
         as: 'images',
         foreignKey: 'imagesId'
       })
-    }
+    }*/
 
     return image;
 }
