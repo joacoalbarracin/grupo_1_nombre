@@ -71,13 +71,19 @@ module.exports = (sequelize, DataTypes) => {
       })
     }
 
-    Product.associate = (models) => {
+   /* Product.associate = (models) => {
       product.belongsTo (models.Image, {
         as: 'products',
         foreignKey: 'imagesId'
       })
     }
+*/
 
+Product.associate = (models) => {
+  product.hasMany (models.Purchase, {
+    as: 'products_purchases',
+    foreignKey: 'productId'
+  })
 
     return product;
 }
