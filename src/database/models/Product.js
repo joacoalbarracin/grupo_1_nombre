@@ -76,12 +76,12 @@ module.exports = (sequelize, DataTypes) => {
     // Definir la relación con la tabla 'user_category'
     //user.belongsTo(UserCategory, { foreignKey: 'userCategoryId', as: 'category' });
 
-    const product = sequelize.define(alias, cols, config);
+    const Product = sequelize.define(alias, cols, config);
 
     Product.associate = (models) => {
-      product.belongsTo (models.productCategory, {
+      Product.belongsTo(models.ProductCategory, {
         as: 'product_categories',
-        foreignKey: 'productCategory'
+        foreignKey: 'productCategoryId'
       })
     }
 
@@ -94,7 +94,7 @@ module.exports = (sequelize, DataTypes) => {
 */
 
   Product.associate = (models) => {
-    product.hasMany (models.Purchase, {
+    Product.hasMany (models.Purchase, {
       as: 'products_purchases',
       foreignKey: 'productId'
     })

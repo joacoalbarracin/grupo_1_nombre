@@ -38,17 +38,17 @@ module.exports = (sequelize, DataTypes) => {
     // Definir la relación con la tabla 'user_category'
     //user.belongsTo(UserCategory, { foreignKey: 'userCategoryId', as: 'category' });
 
-    const purchase = sequelize.define(alias, cols, config);
+    const Purchase = sequelize.define(alias, cols, config);
 
     Purchase.associate = (models) => {
-      product.belongsTo (models.User, {
+      Product.belongsTo (models.User, {
         as: 'purchases',
         foreignKey: 'UserId'
       })
     }
 
     Purchase.associate = (models) => {
-      product.belongsTo (models.Product, {
+      Product.belongsTo (models.Product, {
         as: 'purchases_products',
         foreignKey: 'productId'
       })

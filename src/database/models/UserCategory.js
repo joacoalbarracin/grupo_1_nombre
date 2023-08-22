@@ -18,10 +18,10 @@ module.exports = (sequelize, DataTypes) => {
     // Definir la relación con la tabla 'user_category'
     //user.belongsTo(UserCategory, { foreignKey: 'userCategoryId', as: 'category' });
 
-    const userCategory = sequelize.define(alias, cols, config);
+    const UserCategory = sequelize.define(alias, cols, config);
 
     UserCategory.associate = (models) => {
-      userCategory.hasMany (models.User, {
+      UserCategory.hasMany (models.User, {
         as: 'users',
         foreignKey: 'userCategoryId'
       })

@@ -21,18 +21,18 @@ module.exports = (sequelize, DataTypes) => {
     }
     // Definir la relación con la tabla 
  
-    const productCategory = sequelize.define(alias, cols, config);
+    const ProductCategory = sequelize.define(alias, cols, config);
 
 
     ProductCategory.associate = (models) => {
-      productCategory.hasMany (models.Product, {
+      ProductCategory.hasMany (models.Product, {
         as: 'products',
         foreignKey: 'productCategory'
       })
     }
 
     ProductCategory.associate = (models) => {
-      productCategory.hasMany (models.User, {
+      ProductCategory.hasMany (models.User, {
         as: 'product_categories',
         foreignKey: 'userCategoryId'
       })
