@@ -32,23 +32,20 @@ module.exports = (sequelize, DataTypes) => {
         tableName : "users",
         timestamps: false
     }
-    // Definir la relación con la tabla 'user_category'
-    //user.belongsTo(UserCategory, { foreignKey: 'userCategoryId', as: 'category' });
+    
+    const User = sequelize.define(alias, cols, config);
 
     User.associate = (models) => {
-      User.belongsTo (models.UserCategory, {
+      User.belongsTo(models.UserCategory, {
         as: 'category',
         foreignKey: 'userCategoryId'
-      })
+      });
+
+      User.hasMany(models.Purchase, {
+        as: 'purchases',
+        foreignKey: 'userId'
+      });
     }
 
-    User.associate = (models) => {
-        User.hasMany (models.Purchase, {
-          as: 'purchases_users',
-          foreignKey: 'UserId'
-        })
-      }
-
-    const user = sequelize.define(alias, cols, config);
-    return user;
+    return User;
 }

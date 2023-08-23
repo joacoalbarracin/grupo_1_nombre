@@ -23,23 +23,20 @@ module.exports = (sequelize, DataTypes) => {
  
     const ProductCategory = sequelize.define(alias, cols, config);
 
-
     ProductCategory.associate = (models) => {
-      ProductCategory.hasMany (models.Product, {
+      ProductCategory.hasMany(models.Product, {
         as: 'products',
         foreignKey: 'productCategory'
-      })
-    }
-
-    ProductCategory.associate = (models) => {
-      ProductCategory.hasMany (models.User, {
-        as: 'product_categories',
+      });
+    
+      ProductCategory.hasMany(models.User, {
+        as: 'user_categories',
         foreignKey: 'userCategoryId'
-      })
+      });
     }
    
 
   
 
-    return productCategory;
+    return ProductCategory;
 }

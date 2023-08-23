@@ -82,22 +82,12 @@ module.exports = (sequelize, DataTypes) => {
       Product.belongsTo(models.ProductCategory, {
         as: 'product_categories',
         foreignKey: 'productCategoryId'
-      })
-    }
-
-   /* Product.associate = (models) => {
-      product.belongsTo (models.Image, {
-        as: 'products',
-        foreignKey: 'imagesId'
-      })
-    }
-*/
-
-  Product.associate = (models) => {
-    Product.hasMany (models.Purchase, {
-      as: 'products_purchases',
-      foreignKey: 'productId'
-    })
-    return product;
+      });
+    
+      Product.hasMany(models.Purchase, {
+        as: 'products_purchases',
+        foreignKey: 'productId'
+      });
+    return Product;
   }
 }
