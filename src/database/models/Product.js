@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TIME,
         allowNull: false,
       },
-      maximumCapacity: {
+      maximunCapacity: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
@@ -77,10 +77,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'productCategory'
       });
     
-      Product.belongsTo(models.Purchase, {
+      /*Product.belongsTo(models.Purchase, {
         as: 'products_purchases',
         foreignKey: 'productId'
-      });
+      }); */
 
       Product.belongsTo(models.Image, {
         as: 'products_images',

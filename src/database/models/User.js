@@ -28,11 +28,8 @@ module.exports = (sequelize, DataTypes) => {
     
     const config = {
         tableName : "users",
-        timestamps: true,
-        paranoid: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: 'deleted_at'
+        timestamps: false,
+    
 
     }
     

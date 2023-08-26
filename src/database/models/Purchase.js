@@ -37,10 +37,10 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'userId'
     });
 
-    Purchase.hasMany(models.Product, {
+   /* Purchase.hasMany(models.Product, {
       as: 'product',
       foreignKey: 'productId'
-    });
+    });*/
   }
 
   return Purchase;
