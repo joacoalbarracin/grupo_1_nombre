@@ -2,10 +2,11 @@ module.exports = {
   "development": {
     "username": "root",
     "password": "root",
-    "database": "structure",
+    "database": "adventureba",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "port": 3306
+    "port": 3306,
+    
   },
   "test": {
     "username": "root",
@@ -22,3 +23,4 @@ module.exports = {
     "dialect": "mysql"
   }
 }
+

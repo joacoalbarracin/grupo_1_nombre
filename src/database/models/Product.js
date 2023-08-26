@@ -74,7 +74,7 @@ module.exports = (sequelize, DataTypes) => {
 
     }
     // Definir la relación con la tabla 'user_category'
-    //user.belongsTo(UserCategory, { foreignKey: 'userCategoryId', as: 'category' });
+   
 
     const Product = sequelize.define(alias, cols, config);
 
