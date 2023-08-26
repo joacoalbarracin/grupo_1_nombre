@@ -46,14 +46,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      imagesId: {
-        type: DataTypes.INTEGER.UNSIGNED,
-        allowNull: false,
-      },
-      productCategory: {
-        type: DataTypes.INTEGER.UNSIGNED,
-        allowNull: false,
-      },
+      
       created_at: {
         type: DataTypes.DATE
       },
@@ -81,7 +74,7 @@ module.exports = (sequelize, DataTypes) => {
     Product.associate = (models) => {
       Product.belongsTo(models.ProductCategory, {
         as: 'product_categories',
-        foreignKey: 'productCategoryId'
+        foreignKey: 'productCategory'
       });
     
       Product.belongsTo(models.Purchase, {
@@ -94,6 +87,8 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'imagesId'
       });
 
+    
+  
+    }
     return Product;
-  }
 }

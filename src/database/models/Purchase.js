@@ -22,14 +22,7 @@ module.exports = (sequelize, DataTypes) => {
           type: DataTypes.INTEGER,
           allowNull: false,
         },
-        userId: {
-          type: DataTypes.INTEGER.UNSIGNED,
-          allowNull: false,
-        },
-        productId: {
-          type: DataTypes.INTEGER.UNSIGNED,
-          allowNull: false,
-        },
+        
   }
   const config = {
       tableName: "purchases",

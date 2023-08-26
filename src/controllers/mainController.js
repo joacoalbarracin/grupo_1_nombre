@@ -87,7 +87,7 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
     //Procesa datos recibidos en [editProduct: (req, res) =>] y modifica la base de datos
     processEditProductForm: async (req, res) => {
         try {
-            await db.Product.update({
+           await db.Product.update({
                 ...req.body
             }, {
                 where: {id : req.params.id}
@@ -127,7 +127,7 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
     },
     restoreProduct: async (req, res) => { //Queda hecho el metodo para restaurar un prod, faltaria hacer la vista y una ruta
         try {
-            await db.Product.restore({
+           await db.Product.restore({
                 where: {id: req.params.id}
             })
         } catch (error) {
