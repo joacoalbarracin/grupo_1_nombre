@@ -35,6 +35,12 @@ module.exports = {
         })
       }
     },
+logout: (req,res) =>{
+req.session.destroy()
+res.clearCookie("recordame")
+return res.redirect("/")
+},
+
       showProfile: (req, res) => {
       const usuarioEncontrado = req.session.usuarioLogueado; // Busca el usuario por id
         return res.render('profile', { usuarioEncontrado: usuarioEncontrado }); // Renderiza la vista profile.ejs
