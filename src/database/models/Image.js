@@ -25,14 +25,20 @@ module.exports = (sequelize, DataTypes) => {
     }
     // Definir la relación con la tabla 
 
-    const image = sequelize.define(alias, cols, config);
+    const Image = sequelize.define(alias, cols, config);
 
-    /*Image.associate = (models) => {
-      image.hasMany (models.products, {
-        as: 'images',
+    Image.associate = (models) => {
+      Image.hasMany (models.Product, {
+        as: 'images_prod',
         foreignKey: 'imagesId'
-      })
-    }*/
+      });
+      
+      Image.hasMany (models.ProductCategory, {
+        as: 'images_prodcat',
+        foreignKey: 'imagesId'
+      });
 
-    return image;
+    }
+
+    return Image;
 }

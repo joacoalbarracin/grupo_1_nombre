@@ -28,11 +28,13 @@ module.exports = (sequelize, DataTypes) => {
         as: 'products',
         foreignKey: 'productCategory'
       });
-    
-      ProductCategory.hasMany(models.User, {
-        as: 'user_categories',
-        foreignKey: 'userCategoryId'
+  
+
+      ProductCategory.belongsTo (models.Image, {
+        as: 'prodcat_images',
+        foreignKey: 'imagesId'
       });
+
     }
    
 
