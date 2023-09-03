@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
           },
           categoryDescription: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             allowNull: false,
           },
     }
@@ -30,10 +30,6 @@ module.exports = (sequelize, DataTypes) => {
       });
   
 
-      ProductCategory.belongsTo (models.Image, {
-        as: 'prodcat_images',
-        foreignKey: 'imagesId'
-      });
 
     }
    

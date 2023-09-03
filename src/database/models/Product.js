@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       price: {
-        type: DataTypes.DECIMAL(10, 2),
+        type: DataTypes.DECIMAL(8, 2),
         allowNull: false,
       },
       discount: {
@@ -31,14 +31,14 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       date: {
-        type: DataTypes.DATEONLY,
+        type: DataTypes.DATE,
         allowNull: false,
       },
       time: {
         type: DataTypes.TIME,
         allowNull: false,
       },
-      maximunCapacity: {
+      maximumCapacity: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
@@ -46,15 +46,25 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      
+      productCategory: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      image: {
+        type: DataTypes.STRING(255),
+        allowNull: false,
+      },
       created_at: {
-        type: DataTypes.DATE
+        type: DataTypes.DATE,
+        allowNull: false,
       },
       updated_at: {
-        type: DataTypes.DATE
+        type: DataTypes.DATE,
+        allowNull: false,
       },
       deleted_at: {
-        type: DataTypes.DATE
+        type: DataTypes.DATE,
+        allowNull: false,
       }
     }
     const config = {
@@ -66,7 +76,6 @@ module.exports = (sequelize, DataTypes) => {
         deletedAt: 'deleted_at'
 
     }
-    // Definir la relación con la tabla 'user_category'
    
 
     const Product = sequelize.define(alias, cols, config);
@@ -77,16 +86,9 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'productCategory'
       });
     
-      /*Product.belongsTo(models.Purchase, {
-        as: 'products_purchases',
-        foreignKey: 'productId'
-      }); */
+     
 
-      Product.belongsTo(models.Image, {
-        as: 'products_images',
-        foreignKey: 'imagesId'
-      });
-
+    
     
   
     }

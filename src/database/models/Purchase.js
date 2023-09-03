@@ -11,16 +11,20 @@ module.exports = (sequelize, DataTypes) => {
           allowNull: false,
         },
         deliveryDate: {
-          type: DataTypes.DATEONLY,
+          type: DataTypes.DATE,
           allowNull: false,
         },
         totalPrice: {
-          type: DataTypes.DECIMAL(10, 2),
+          type: DataTypes.DECIMAL(8, 2),
           allowNull: false,
         },
-        unitQuantity: {
+        unitCuantity: {
           type: DataTypes.INTEGER,
           allowNull: false,
+        },
+        userId: {
+          type: DataTypes.INTEGER.UNSIGNED,
+          autoIncrement: false,
         },
         
   }

@@ -23,6 +23,14 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(255),
             allowNull: false,
         },
+        userCategoryId: {
+            type:DataTypes.INTEGER.UNSIGNED,
+            autoIncrement: false
+        },
+        image: {
+            type: DataTypes.STRING(255),
+            allowNull: false,
+        },
         
     }
     
