@@ -41,10 +41,12 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'userId'
     });
 
-   /* Purchase.hasMany(models.Product, {
-      as: 'product',
-      foreignKey: 'productId'
-    });*/
+    Purchase.belongsToMany(models.Product, {
+      as: 'purchases',
+      through: 'ProductPurchase',
+      foreignKey: 'purchase_id',
+      otherKey: 'product_id',
+    });
   }
 
   return Purchase;
