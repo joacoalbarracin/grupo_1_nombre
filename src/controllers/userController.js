@@ -35,11 +35,11 @@ module.exports = {
         })
       }
     },
-logout: (req,res) =>{
-req.session.destroy()
-res.clearCookie("recordame")
-return res.redirect("/")
-},
+      logout: (req,res) =>{
+      req.session.destroy()
+      res.clearCookie("recordame")
+      return res.redirect("/")
+      },
 
       showProfile: (req, res) => {
       const usuarioEncontrado = req.session.usuarioLogueado; // Busca el usuario por id
@@ -55,32 +55,18 @@ return res.redirect("/")
     processCreateUserForm: async (req, res) => {
       try {
           await db.User.create({
-              ...req.body
+            name: req.body.name,
+            lastName: req.body.last_name,
+            email: req.body.email,
+            password: req.body.password,
+            userCategoryId: 1,
+            image: req.file.image,
           })
           return res.redirect('/users/login')
       } catch (error) {
           console.log(error)
       }
 
-      /* let usuarioNuevo = { // Crea un objeto literal con los datos del usuario
-        "id": usuarios.length+1, // Genera un id único
-        "name": req.body.name, // Toma el dato del campo name
-        "lastName": req.body.last_name, // Toma el dato del campo last_name
-        "email": req.body.email, // Toma el dato del campo email
-        "password": bcrypt.hashSync(req.body.password, 10), // Toma el dato del campo password
-        "repeatPassword": bcrypt.hashSync(req.body.repeat_password, 10), // Toma el dato del campo repeat_password
-        "image": req.file.image, // Toma el dato del campo image
-        "category": req.body.opcion, // Toma el dato del campo opcion
-        "borrado": false, // Crea un campo borrado con valor false
-      }
-      const resultadoValidacion = validationResult(req) //Guarda un obj literal con los erroes
-      console.log(resultadoValidacion.errors)
-
-      if(resultadoValidacion.errors.length > 0) {
-        return res.render('register', { errors:  resultadoValidacion.mapped(), oldData: req.body})
-      }
-      fs.writeFileSync(rutaArchivoUsers, JSON.stringify([...usuarios, usuarioNuevo], null, 2), "utf-8") // Escribe el archivo user.json
-      */
     },
     /** Muestra el formulario de edición de usuario */
     showEditUserForm: async (req,res) => {
@@ -95,7 +81,11 @@ return res.redirect("/")
     processEditUser: async (req, res) => {
       try {
         await db.User.update({
-            ...req.body
+          name: req.body.name,
+          lastName: req.body.last_name,
+          password: req.body.password,
+          image: req.file.image,
+          
         }, {
             where: {id : req.params.id}
         })
@@ -103,14 +93,6 @@ return res.redirect("/")
       } catch (error) {
           console.log(error)
       }
-       /*const usuarioEncontrado = usuarios.find(row => row.id == req.params.id);  // Busca el producto por ID
-      for (let propiedad in req.body) { // Recorre el objeto req.body
-          usuarioEncontrado[propiedad] = req.body[propiedad]; // Asigna los valores del objeto req.body al producto encontrado
-      };
-      fs.writeFileSync(rutaArchivoUsers, JSON.stringify(usuarios, null, 2), "utf-8") // Escribe el archivo JSON
-      //return res.redirect('/') // Redirecciona a la vista home.ejs
-      return res.send(usuarioEncontrado)
-      */
     },
         //Hace ["borrado": true] en la base de datos
         deleteUser: (req, res) => { 
@@ -118,8 +100,5 @@ return res.redirect("/")
           usuarioEncontrado.borrado = true; // Asigna el estado de borrado al producto encontrado
           fs.writeFileSync(rutaArchivoUsers, JSON.stringify(usuarios, null, 2)); // Escribe el archivo JSON
           return res.send(usuarioEncontrado);
-          /**Terminar de ver este método. Cheqeuar el action del form de editUser.ejs y
-           *  chequear también que deberia estar el buttom submit de delete apuntando a este método y la url a la indicada en el userRoutes.js
-           */
       },
   };

@@ -24,6 +24,22 @@
                     <% } %>
                 </div>
                 <div>
+                    <label>Titulo:</label>
+                    <input class="text-field" input="text" name="title" value="<%= locals.oldData ? oldData.title : null%>">
+                    <% if(locals.errors && errors.title) { %>
+                        <p class="error">
+                        <%= errors.title.msg %></p>
+                    <% } %>
+                </div>
+                <div>
+                    <label>Direccion:</label>
+                    <input class="text-field" input="text" name="location" value="<%= locals.oldData ? oldData.location : null%>">
+                    <% if(locals.errors && errors.location) { %>
+                        <p class="error">
+                        <%= errors.location.msg %></p>
+                    <% } %>
+                </div>
+                <div>
                     <label>Imagen del producto</label>
                     <input name="image" type="file">
                 </div>
@@ -55,8 +71,41 @@
                         <p class="error">
                         <%= errors.discount.msg %></p>
                     <% } %>
-                <div>
                 </div>
+                <div>
+                    <label>Fecha:</label>
+                    <input name="date" type="date" class="text-field" value="<%= locals.oldData ? oldData.date : null%>">
+                    <% if(locals.errors && errors.date) { %>
+                        <p class="error">
+                        <%= errors.date.msg %></p>
+                    <% } %>
+                </div>
+                <div>
+                    <label>Hora:</label>
+                    <input name="time" type="time" class="text-field" value="<%= locals.oldData ? oldData.time : null%>">
+                    <% if(locals.errors && errors.time) { %>
+                        <p class="error">
+                        <%= errors.time.msg %></p>
+                    <% } %>
+                </div>
+                <div>
+                    <label>Capacidad:</label>
+                    <input name="maximumCapacity" type="number" class="text-field" value="<%= locals.oldData ? oldData.maximumCapacity : null%>">
+                    <% if(locals.errors && errors.maximumCapacity) { %>
+                        <p class="error">
+                        <%= errors.maximumCapacity.msg %></p>
+                    <% } %>
+                </div>
+                <div>
+                    <label>Duracion (minutos):</label>
+                    <input name="duration" type="time" class="text-field" value="<%= locals.oldData ? oldData.duration : null%>">
+                    <% if(locals.errors && errors.duration) { %>
+                        <p class="error">
+                        <%= errors.duration.msg %></p>
+                    <% } %>
+                </div>
+                  
+                <div>
                     <button class="botonForm botonSubmit" type="submit">Crear producto!</button>
                 </div>
 

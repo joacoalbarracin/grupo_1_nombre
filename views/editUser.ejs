@@ -16,15 +16,11 @@
                  <input class="text-field" type="text" name="last_name" value="<%=usuarioEncontrado.last_name%>">
            </div>
             <div>
-                <label>E-mail:</label>
-                <input class="text-field" type="email" name="email" value="<%=usuarioEncontrado.email%>">
-            </div>
-            <div>
-                <label>Contraseña:</label>
+                <label>Contraseña nueva:</label>
                 <input class="text-field" type="password" name="password" value="<%=usuarioEncontrado.password%>">
             </div>
             <div>
-                <label>Repetí tu contraseña:</label>
+                <label>Repetí tu nueva contraseña:</label>
                 <input class="text-field" type="password" name="repeat_password" value="<%=usuarioEncontrado.repeatPassword%>">
             </div>
             <div>
@@ -33,13 +29,6 @@
                 <div>
                     <input name="image" type="file">
                 </div>
-            </div>
-            <div>
-                <input type="radio" id="opcion1" name="opcion" value="Comprador" <% if (usuarioEncontrado.category === 'Comprador') { %>checked<% } %>>
-                <label for="opcion1">Comprador</label>
-                <br>
-                <input type="radio" id="opcion2" name="opcion" value="Administrador" <% if (usuarioEncontrado.category === 'Administrador') { %>checked<% } %>>
-                <label for="opcion2">Administrador</label>
             </div>
                 <button class="botonForm botonSubmit" type="submit">Modificar usuario</button>
             </div>

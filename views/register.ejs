@@ -46,18 +46,8 @@
                     <input class="text-field" type="password" name="repeat_password">
                 </div>
                 <div>
-                    <label>Imagen del producto</label>
+                    <label>Imagen de perfil</label>
                     <input name="image" type="file">
-                </div>
-                <div>
-                    <input type="radio" id="opcion1" name="opcion" value="Comprador">
-                    <label for="opcion1">Comprador</label>
-                    <input type="radio" id="opcion2" name="opcion" value="Administrador">
-                    <label for="opcion2">Administrador</label>
-                    <% if(locals.errors && errors.opcion) { %>
-                        <p class="error">
-                        <%= errors.opcion.msg %></p>
-                    <% } %>
                 </div>
                     <button class="botonForm botonSubmit" type="submit">Registrate</button>
                 </div>

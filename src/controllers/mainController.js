@@ -49,30 +49,25 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
     processCreateProductForm: async (req, res) => {
         try {
             await db.Product.create({
-                ...req.body
+                //ver id //ver id //ver id //ver id //ver id
+                id : req.body.id.length + 1,
+                productName : req.body.name,
+                productDescription : req.body.description,
+                title : req.body.name,
+                location : req.body.location,
+                price : req.body.price,
+                discount : req.body.discount,
+                date : req.body.date,
+                time : req.body.time,
+                maximumCapacity : req.body.maximumCapacity,
+                duration : req.body.duration,
+                productCategory : req.body.opcion,
+                image : req.file.image
             })
             return res.redirect("/products/list") // Redirecciona a la lista de productos
         } catch (error) {
             console.log(error)
         }
-        /* let productoNuevo = { // Crea un objeto literal con los datos recibidos
-            "id": productos.length+1, // Asigna un ID al producto
-            "name": req.body.name, // Asigna el nombre del producto
-            "description": req.body.description, // Asigna la descripción del producto
-            "image": req.file.filename, // Asigna la imagen del producto
-            "price": req.body.price, // Asigna el precio del producto
-            "category": req.body.opcion, // Asigna la categoría del producto
-            "discount": req.body.discount, // Asigna el descuento del producto
-            "borrado": false, // Asigna el estado de borrado del producto
-        }
-        const resultadoValidacion = validationResult(req) //Guarda un obj literal con los erroes
-        console.log(resultadoValidacion.errors)
-
-        if(resultadoValidacion.errors.length > 0) {
-            return res.render('createProduct', {errors:  resultadoValidacion.mapped(), oldData: req.body})
-        }
-        fs.writeFileSync(rutaArchivo, JSON.stringify([...productos, productoNuevo], null, 2), "utf-8"); // Escribe el archivo JSON
-        */
     },
 
     //Muestra la vista editProduct.ejs y el producto encontrado como parámetro
@@ -88,7 +83,18 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
     processEditProductForm: async (req, res) => {
         try {
            await db.Product.update({
-                ...req.body
+                productName : req.body.name,
+                productDescription : req.body.description,
+                title : req.body.name,
+                location : req.body.location,
+                price : req.body.price,
+                discount : req.body.discount,
+                date : req.body.date,
+                time : req.body.time,
+                maximumCapacity : req.body.maximumCapacity,
+                duration : req.body.duration,
+                productCategory : req.body.opcion,
+                image : req.body.image
             }, {
                 where: {id : req.params.id}
             })
@@ -96,20 +102,7 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
         } catch (error) {
             console.log(error)
         }
-  
-        /* const productoEncontrado = productos.find(row => row.id == req.params.id);  // Busca el producto por ID
-        for (let propiedad in req.body) { // Recorre el objeto req.body
-            productoEncontrado[propiedad] = req.body[propiedad]; // Asigna los valores del objeto req.body al producto encontrado
-        };
-        resultadoValidacion = validationResult(req)
-        console.log(resultadoValidacion.errors)
-        if(resultadoValidacion.errors.length > 0) {
-            return res.render('editProduct', {errors:  resultadoValidacion.mapped(), oldData: req.body, productoEncontrado})
-        }
-        fs.writeFileSync(rutaArchivo, JSON.stringify(productos, null, 2), "utf-8") // Escribe el archivo JSON
-        return res.redirect('/products/list') // Redirecciona a la vista de lista de productos */
     },
-    //Hace ["borrado": true] en la base de datos
     deleteProduct: async (req, res) => {
         try {
             await db.Product.destroy({
@@ -118,12 +111,6 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
         } catch (error) {
             console.log(error)
         }
-        
-        /* const productoEncontrado = productos.find(row => row.id == req.params.id); // Busca el producto por ID
-        console.log(productoEncontrado)
-        productoEncontrado.borrado = true; // Asigna el estado de borrado al producto encontrado
-        fs.writeFileSync(rutaArchivo, JSON.stringify(productos, null, 2)); // Escribe el archivo JSON
-        return res.send(console.log("hiii")); // Redirecciona a la vista home.ejs */
     },
     restoreProduct: async (req, res) => { //Queda hecho el metodo para restaurar un prod, faltaria hacer la vista y una ruta
         try {
