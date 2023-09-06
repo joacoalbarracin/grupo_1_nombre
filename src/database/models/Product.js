@@ -6,11 +6,11 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         autoIncrement: true,
         },
-      productName: {
+      name: {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      productDescription: {
+      description: {
         type: DataTypes.TEXT,
         allowNull: false,
       },
@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       discount: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       date: {
         type: DataTypes.DATE,
@@ -64,7 +64,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       deleted_at: {
         type: DataTypes.DATE,
-        allowNull: false,
+        allowNull: true,
       }
     }
     const config = {
