@@ -8,97 +8,96 @@ const rutaArchivoUsers = path.resolve('./src/database/user.json'); // Ruta del a
 const db = require('../database/models')
 
 module.exports = {
-    showLoginUserForm: (req, res) => {
-        return res.render('login'); // Renderiza la vista login.ejs
-    },
-    processLoginUserForm: (req, res) => {
-      const usuarioEncontrado = usuarios.find(row => row.email == req.body.email); // Busca el usuario por id
-     console.log (usuarioEncontrado)
-     console.log (bcrypt.compareSync(req.body.password, usuarioEncontrado.password))
+  showLoginUserForm: (req, res) => {
+      return res.render('login'); // Renderiza la vista login.ejs
+  },
+  processLoginUserForm: async (req, res) => {
+    try {
+      const usuarioEncontrado = await db.User.findOne({where: {email: req.body.email}})
+      console.log(usuarioEncontrado);
       if (usuarioEncontrado && bcrypt.compareSync(req.body.password, usuarioEncontrado.password)) {
-        delete usuarioEncontrado.password //Borramos la contraseña de lo que guardamos
-        req.session.usuarioLogueado = usuarioEncontrado; // Crea la sesión del usuario
+        delete usuarioEncontrado.password
+        req.session.usuarioLogueado = usuarioEncontrado.email
         if (req.body.cookie){
           res.cookie('recordame', usuarioEncontrado.email, {maxAge: 1000*60*60}) //Dura una hora la cookie
         }
-      console.log(req.session.usuarioLogueado)
-        return res.render('profile', { usuarioEncontrado: usuarioEncontrado }); // Renderiza la vista profile.ejs
+        return res.render('profile', { usuarioEncontrado: usuarioEncontrado })
       }
-      //Se construyen los errores
-      else {
-        return res.render("login", {
-          errors: {
-            datosMal: {
-              msg: "Datos incorrectos"
-            }
+    } catch (error) {
+      return res.render("login", {
+        errors: {
+          datosMal: {
+            msg: "Datos incorrectos"
           }
-        })
-      }
-    },
-      logout: (req,res) =>{
-      req.session.destroy()
-      res.clearCookie("recordame")
-      return res.redirect("/")
-      },
+        }
+      })
+    }
+  },
+  logout: (req,res) => {
+    req.session.destroy()
+    res.clearCookie("recordame")
+    return res.redirect("/")
+  },
+  showProfile: async (req, res) => {
+    try {
+      const usuarioEncontrado = await db.User.findOne({where: {email: req.session.usuarioLogueado}}); // Busca el usuario por id
+      return res.render('profile', { usuarioEncontrado: usuarioEncontrado }); // Renderiza la vista profile.ejs
+    }
+    catch (error) {
+      console.log(error)
+    }
+  },
+  showCreateUserForm: (req, res) => { //
+      res.render('register'); // Renderiza la vista register.ejs
+  },
+  /** Procesa el formulario de registro de usuario */
+  processCreateUserForm: async (req, res) => {
+    try {
+      await db.User.create({
+        name: req.body.name,
+        lastName: req.body.last_name,
+        email: req.body.email,
+        password: bcrypt.hashSync(req.body.password, 10),
+        userCategoryId: 1,
+        image: req.body.image || 'defaultUser.webp',
+      })
+      return res.redirect('/users/login')
+    } catch (error) {
+        console.log(error)
+    }
 
-      showProfile: (req, res) => {
-      const usuarioEncontrado = req.session.usuarioLogueado; // Busca el usuario por id
-        return res.render('profile', { usuarioEncontrado: usuarioEncontrado }); // Renderiza la vista profile.ejs
+  },
+  /** Muestra el formulario de edición de usuario */
+  showEditUserForm: async (req,res) => {
+    try {
+        const usuarioEncontrado = await db.User.findByPk(req.params.id)
+        return res.render('editUser', {usuarioEncontrado: usuarioEncontrado}); // Muestra la vista editProduct.ejs con el producto encontrado
+    } catch (error) {
+        console.log(error);
+    }
+  },
+  /** Procesa el formulario de edición de usuario */
+  processEditUser: async (req, res) => {
+    try {
+      await db.User.update({
+        name: req.body.name,
+        lastName: req.body.lastName,
+        password: bcrypt.hashSync(req.body.password, 10),
+        image: req.file.image,
+        
+      }, {
+          where: {id : req.params.id}
+      })
+      return res.redirect("/") // Redirecciona a la lista de productos
+    } catch (error) {
+        console.log(error)
+    }
+  },
+      //Hace ["borrado": true] en la base de datos
+    deleteUser: (req, res) => { 
+      const usuarioEncontrado = usuarios.find(row => row.id == req.params.id); // Busca el producto por ID
+      usuarioEncontrado.borrado = true; // Asigna el estado de borrado al producto encontrado
+      fs.writeFileSync(rutaArchivoUsers, JSON.stringify(usuarios, null, 2)); // Escribe el archivo JSON
+      return res.send(usuarioEncontrado);
     },
-  
-  
-    /** Muestra el formulario de registro de usuario */
-    showCreateUserForm: (req, res) => { //
-        res.render('register'); // Renderiza la vista register.ejs
-    },
-    /** Procesa el formulario de registro de usuario */
-    processCreateUserForm: async (req, res) => {
-      try {
-          await db.User.create({
-            name: req.body.name,
-            lastName: req.body.last_name,
-            email: req.body.email,
-            password: req.body.password,
-            userCategoryId: 1,
-            image: req.file.image,
-          })
-          return res.redirect('/users/login')
-      } catch (error) {
-          console.log(error)
-      }
-
-    },
-    /** Muestra el formulario de edición de usuario */
-    showEditUserForm: async (req,res) => {
-      try {
-          const usuarioEncontrado = await db.User.findByPk(req.params.id)
-          return res.render('editUser', {usuarioEncontrado: usuarioEncontrado}); // Muestra la vista editProduct.ejs con el producto encontrado
-      } catch (error) {
-          console.log(error);
-      }
-    },
-    /** Procesa el formulario de edición de usuario */
-    processEditUser: async (req, res) => {
-      try {
-        await db.User.update({
-          name: req.body.name,
-          lastName: req.body.last_name,
-          password: req.body.password,
-          image: req.file.image,
-          
-        }, {
-            where: {id : req.params.id}
-        })
-        return res.redirect("/") // Redirecciona a la lista de productos
-      } catch (error) {
-          console.log(error)
-      }
-    },
-        //Hace ["borrado": true] en la base de datos
-        deleteUser: (req, res) => { 
-          const usuarioEncontrado = usuarios.find(row => row.id == req.params.id); // Busca el producto por ID
-          usuarioEncontrado.borrado = true; // Asigna el estado de borrado al producto encontrado
-          fs.writeFileSync(rutaArchivoUsers, JSON.stringify(usuarios, null, 2)); // Escribe el archivo JSON
-          return res.send(usuarioEncontrado);
-      },
   };
