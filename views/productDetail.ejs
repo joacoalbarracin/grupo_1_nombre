@@ -25,7 +25,7 @@
 
                 
 
-                <p class="option-price">$4.000</p>
+                <p class="option-price"><%=productoEncontrado.price%></p>
 
                 <div><i id="trash" class="fa-solid fa-trash"></i></div>
 
@@ -34,9 +34,9 @@
 
             <div class="optiondetalle">
                 <h2 class="option-tittle">Detalle</h2>
-                <h3>Horario</h3> <span>10 hs </span>
-                <h3>Duración</h3> <span>2 hs</span>
-                <h3>Cupo</h3><span>15</span>
+                <h3>Horario</h3> <span><%=productoEncontrado.time%></span>
+                <h3>Duración</h3> <span><%=productoEncontrado.duration%></span>
+                <h3>Cupo</h3><span><%=productoEncontrado.maximumCapacity%></span>
             </div>
         
          
