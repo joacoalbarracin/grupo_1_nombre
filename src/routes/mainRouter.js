@@ -31,6 +31,9 @@ router.get('/products/housing', mainController.showAlojamiento)
 router.get('/products/attraction', mainController.showAtracciones)
 router.get('/products/culture', mainController.showCultura)
 
+//Busqueda de productos
+router.post('/products/search', mainController.search)
+
 //CRUD de procuto: Create product
 router.get('/products/create', /*permisosAdmin,*/ mainController.showCreateProductForm); // Ruta para mostrar la vista createProduct.ejs
 router.post('/products/create', fileUpload.single("image"), createProdValidation, mainController.processCreateProductForm); //

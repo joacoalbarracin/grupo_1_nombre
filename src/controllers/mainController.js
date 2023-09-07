@@ -5,6 +5,7 @@ const path = require('path'); // Requerimos el módulo Path de Node
 const productos = JSON.parse(fs.readFileSync(path.resolve('./src/database/product.json'))); // Lee el archivo JSON
 const rutaArchivo = path.resolve('./src/database/product.json'); // Ruta del archivo JSON
 const db = require('../database/models')
+const OP = db.Sequelize.Op
 
     
 module.exports = { // Exportamos un objeto literal con todos los métodos
@@ -160,5 +161,20 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
         } catch (error) {
             console.log(error)
         }
+    },
+    search: async (req, res) => {
+        try {
+            let busqueda = req.body.busqueda
+            let productos = await db.Product.findAll({
+                where: {
+                    [OP.or]: [
+                    {name: {[OP.like]: '%' + busqueda +'%'}},
+                    {description: {[OP.like]: '%' + busqueda +'%'}}
+                ]}
+            })
+            return res.render('busqueda', {productos: productos})
+        } catch (error) {
+            console.log(error);
+        }
     }
-};
+}
