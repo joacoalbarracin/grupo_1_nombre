@@ -22,7 +22,6 @@ body header div.top-bar{
     border-radius: 10px; /* Ajusta el valor según el grado de redondez que desees */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ajusta el valor de desenfoque y opacidad según tus preferencias */
     width: 100vw;
-    
 }
 
 body header div div ul{
@@ -44,23 +43,45 @@ body header div div ul li{
     display: flex;
     flex-direction: row;
     background-color: #3c6e71;
-    margin-bottom: 0;
-    margin-bottom: 0;
     display: flex;
     justify-content: space-around;
     width: 100%;
-    
-
 }
 
-.search-bar{
-
-    background-color: #3c6e71;
-    border-radius: 0.5em;
-    background: #ebebeb;
-    color: #bfbfbf;
-
-}
+/* Estilos para el contenedor del buscador */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    padding: 3px;
+    margin: 10px;
+  }
+  
+  /* Estilos para el campo de búsqueda */
+  .search-bar input[type="search"] {
+    flex: 4;
+    border: none;
+    padding: 8px;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+  }
+  
+  /* Estilos para el botón de búsqueda */
+  .search-bar button[type="submit"] {
+    background-color: #3c6e71; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none;
+    border-radius: 0 4px 4px 0;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Estilos para el icono de búsqueda dentro del botón */
+  .search-bar button[type="submit"] i {
+    margin-right: 5px;
+  }
 
 b{
     padding-right: 10em;
@@ -102,6 +123,12 @@ nav ul li a{
 .logo-container{
     width: 20%;
 }
+
+
+main {
+    margin-top: 15px;
+}
+
 .content{
     display: flex;
     flex-direction: row;
