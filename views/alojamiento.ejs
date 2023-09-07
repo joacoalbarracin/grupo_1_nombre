@@ -11,7 +11,7 @@
         <main>
             <section>
                 <div class="productos">
-                    <% productos.forEach((row) => {%>
+                    <% alojamiento.forEach((row) => {%>
                     <article>
                         <a href="/products/description/<%=row.id %>"><img src="/img/<%= row.image %>" alt="imagen"></a>
 
@@ -21,6 +21,8 @@
                     </article>
                      <% } ) %>
                 </div>
+            </section>
+            
             </section>
         </main>
         

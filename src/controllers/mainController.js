@@ -41,6 +41,46 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
             console.log(error)
         }
     },
+    showGastronomia: async (req, res) => {
+        try {
+            const gastronomia = await db.Product.findAll(
+                {where: {productCategory: 1}}
+            ) //Busca todos los productos
+            res.render('gastronomia', { gastronomia: gastronomia }); // Muestra la vista productList.ejs
+        } catch (error) {
+            console.log(error)
+        }
+    },
+    showAlojamiento: async (req, res) => {
+        try {
+            const gastronomia = await db.Product.findAll(
+                {where: {productCategory: 2}}
+            ) //Busca todos los productos
+            res.render('alojamiento', { alojamiento: alojamiento }); // Muestra la vista productList.ejs
+        } catch (error) {
+            console.log(error)
+        }
+    },
+    showAtracciones: async (req, res) => {
+        try {
+            const atracciones = await db.Product.findAll(
+                {where: {productCategory: 3}}
+            ) //Busca todos los productos
+            res.render('atracciones', {atracciones: atracciones}); // Muestra la vista productList.ejs
+        } catch (error) {
+            console.log(error)
+        }
+    },
+    showCultura: async (req, res) => {
+        try {
+            const cultura = await db.Product.findAll(
+                {where: {productCategory: 4}}
+            ) //Busca todos los productos
+            res.render('cultura', {cultura: cultura}); // Muestra la vista productList.ejs
+        } catch (error) {
+            console.log(error)
+        }
+    },
     //Muestra la vista createProduct.ejs
     showCreateProductForm: (req,res) => {
         res.render('createProduct'); // Muestra la vista createProduct.ejs

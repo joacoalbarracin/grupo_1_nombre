@@ -26,13 +26,17 @@ router.get('/products/cart', mainController.showProductCart); // Ruta para mostr
 router.get('/products/list', mainController.showProductList); // Ruta para mostrar la  vista productList.ejs
 router.get('/', mainController.showHome); // Ruta para mostrar la vista home.ejs
 router.get('/products/description/:id', mainController.showDescription); // Ruta para mostrar la vista description.ejs
+router.get('/products/food', mainController.showGastronomia)
+router.get('/products/housing', mainController.showAlojamiento)
+router.get('/products/attraction', mainController.showAtracciones)
+router.get('/products/culture', mainController.showCultura)
 
 //CRUD de procuto: Create product
-router.get('/products/create', permisosAdmin, mainController.showCreateProductForm); // Ruta para mostrar la vista createProduct.ejs
+router.get('/products/create', /*permisosAdmin,*/ mainController.showCreateProductForm); // Ruta para mostrar la vista createProduct.ejs
 router.post('/products/create', fileUpload.single("image"), createProdValidation, mainController.processCreateProductForm); //
 
 //CRUD de procuto: Edit product
-router.get('/products/edit/:id', permisosAdmin, mainController.showEditProductForm); // Ruta para mostrar la vista editProduct.ejs
+router.get('/products/edit/:id', /*permisosAdmin,*/ mainController.showEditProductForm); // Ruta para mostrar la vista editProduct.ejs
 router.put('/products/edit/:id', fileUpload.single('image'), editProdValidation, mainController.processEditProductForm); // Ruta para editar el producto
 
 //CRUD de procuto: Delete product

@@ -91,13 +91,6 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'product_id',
         otherKey: 'purchase_id',
       });
-    
-    
-     
-
-    
-    
-  
     }
     return Product;
 }
