@@ -36,7 +36,11 @@ body header div div ul li{
     margin: 0.3em;
     padding: 0.3em;
     list-style: none;
+}
 
+
+body header div div ul i {
+    color: #3c6e71;
 }
 
 .navbar{
@@ -47,41 +51,6 @@ body header div div ul li{
     justify-content: space-around;
     width: 100%;
 }
-
-/* Estilos para el contenedor del buscador */
-.search-bar {
-    display: flex;
-    align-items: center;
-    background-color: #f2f2f2;
-    border-radius: 4px;
-    padding: 3px;
-    margin: 10px;
-  }
-  
-  /* Estilos para el campo de búsqueda */
-  .search-bar input[type="search"] {
-    flex: 4;
-    border: none;
-    padding: 8px;
-    border-radius: 4px 0 0 4px;
-    font-size: 16px;
-  }
-  
-  /* Estilos para el botón de búsqueda */
-  .search-bar button[type="submit"] {
-    background-color: #3c6e71; /* Color de fondo del botón */
-    color: #fff; /* Color del texto del botón */
-    border: none;
-    border-radius: 0 4px 4px 0;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  /* Estilos para el icono de búsqueda dentro del botón */
-  .search-bar button[type="submit"] i {
-    margin-right: 5px;
-  }
 
 b{
     padding-right: 10em;
@@ -117,13 +86,51 @@ nav ul li a{
     height: 100%;
     width: 60%;
     padding: 10px;
-
-    
 }
 .logo-container{
     width: 20%;
 }
 
+/* Estilos para el contenedor del buscador */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    padding: 3px;
+    margin: 30px 120px;
+  }
+  
+  /* Estilos para el campo de búsqueda */
+  .search-bar input[type="search"] {
+    flex: 4;
+    border: none;
+    padding: 8px;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+  }
+  
+  /* Estilos para el botón de búsqueda */
+  .search-bar button[type="submit"] {
+    background-color: #3c6e71; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none;
+    border-radius: 0 4px 4px 0;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Estilos para el icono de búsqueda dentro del botón */
+  .search-bar button[type="submit"] i {
+    margin-right: 5px;
+    color: #fff;
+  }
+
+  .links {
+    display: flex;
+    margin-top: 30px;
+  }
 
 main {
     margin-top: 15px;
@@ -133,9 +140,6 @@ main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
-   
-
     justify-content: space-around;
 
 }
