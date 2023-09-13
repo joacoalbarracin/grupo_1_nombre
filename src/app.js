@@ -5,6 +5,9 @@ const mainRouter = require('./routes/mainRouter'); // Requerimos el módulo main
 const userRouter = require('./routes/userRouter'); // Requerimos el módulo userRouter
 const methodOverride = require('method-override'); // Requerimos el módulo method-override
 const session = require('express-session'); // Requerimos el módulo express-session
+const userApiRouter = require('./routes/apis/userApiRoutes'); // Requerimos el módulo userRouter}
+const productApiRouter = require('./routes/apis/productApiRoutes'); // Requerimos el módulo userRouter}
+
 
 const cookie = require('cookie-parser')
 
@@ -30,3 +33,5 @@ app.listen(3001, ()=>{ // Para poner a escuchar el servidor en el puerto 3001
 
 app.use(mainRouter); // Para indicar que use el módulo mainRouter
 app.use(userRouter); // Para indicar que use el módulo userRouter
+app.use('/api/user', userApiRouter);
+app.use('/api/product', productApiRouter)
