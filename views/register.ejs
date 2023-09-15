@@ -1,60 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head', {title: "Home"})%>
+<%- include('./partials/head', {title: "Home"})%>
 
-    <body>
-        <%- include('./partials/header')%>
+<body>
+    <%- include('./partials/header')%>
 
-
-        <main id="formulario-registro">
-            <h3>Completá tus datos</h3>
-            <form class="formularios" action="/users/create" method="POST" enctype="multipart/form-data">
-                <div>
-                    <label>Nombre:</label>
-                    <input class="text-field" type="text" name="name" value="<%= locals.oldData ? oldData.name : null%>">
-                    <% if(locals.errors && errors.name) { %>
-                        <p class="error">
-                        <%= errors.name.msg %></p>
-                    <% } %>
-                </div>
+    <main id="formulario-registro">
+        <h3>Completá tus datos</h3>
+        <form class="formularios" action="/users/create" method="POST" enctype="multipart/form-data" id="register_form">
             <div>
-                    <label>Apellido:</label>
-                    <input class="text-field" type="text" name="last_name" value="<%= locals.oldData ? oldData.last_name : null%>">
-                    <% if(locals.errors && errors.last_name) { %>
-                        <p class="error">
-                        <%= errors.last_name.msg %></p>
-                    <% } %>
+                <label>Nombre:</label>
+                <input class="text-field" type="text" name="name" id="name" value="<%= locals.oldData ? oldData.name : null%>">
+                <p class="error-message" id="name-error"></p>
             </div>
-                <div>
-                    <label>E-mail:</label>
-                    <input class="text-field" type="email" name="email" value="<%= locals.oldData ? oldData.email : null%>">
-                    <% if(locals.errors && errors.email) { %>
-                        <p class="error">
-                        <%= errors.email.msg %></p>
-                    <% } %>
-                </div>
-                <div>
-                    <label>Contraseña:</label>
-                    <input class="text-field" type="password" name="password">
-                    <% if(locals.errors && errors.password) { %>
-                        <p class="error">
-                        <%= errors.password.msg %></p>
-                    <% } %>
-                </div>
-                <div>
-                    <label>Repetí tu contraseña:</label>
-                    <input class="text-field" type="password" name="repeat_password">
-                </div>
-                <div>
-                    <label>Imagen de perfil</label>
-                    <input name="image" type="file">
-                </div>
-                    <button class="botonForm botonSubmit" type="submit">Registrate</button>
-                </div>
-            </form>
-        </main>
+            <div>
+                <label>Apellido:</label>
+                <input class="text-field" type="text" name="last_name" id="last_name" value="<%= locals.oldData ? oldData.last_name : null%>">
+                <p class="error-message" id="last_name-error"></p>
+            </div>
+            <div>
+                <label>E-mail:</label>
+                <input class="text-field" type="email" name="email" id="email" value="<%= locals.oldData ? oldData.email : null%>">
+                <p class="error-message" id="email-error"></p>
+            </div>
+            <div>
+                <label>Contraseña:</label>
+                <input class="text-field" type="password" name="password" id="password">
+                <p class="error-message" id="password-error"></p>
+            </div>
+            <div>
+                <label>Repetí tu contraseña:</label>
+                <input class="text-field" type="password" name="repeat_password" id="repeat_password">
+                <p class="error-message" id="repeat_password-error"></p>
+            </div>
+            <div>
+                <label>Imagen de perfil</label>
+                <input name="image" type="file" id="image">
+                <p class="error-message" id="image-error"></p>
+            </div>
+            <button class="botonForm botonSubmit" type="submit">Registrate</button>
+        </form>
+    </main>
 
-        <%- include('./partials/footer')%>
-
-    </body>
+    <%- include('./partials/footer')%>
+    <script src="/js/register.js"></script>
+</body>
 </html>

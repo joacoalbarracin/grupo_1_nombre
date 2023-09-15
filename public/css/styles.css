@@ -687,3 +687,7 @@ form div {
     background-color: #0022AA ;
 
 }
+
+.error-message {
+    color: red;
+}
