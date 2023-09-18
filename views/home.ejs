@@ -24,16 +24,15 @@
 
         <main>
             <section>
-                <h3>Oportunidades</h3>
+                <h3 class="secciones">Oportunidades</h3>
                 <div class="productos">
                     <% oportunidades.forEach((row) => {%>
-                    <article>
-                        <a href="/products/description/<%=row.id %>"><img src="/img/<%= row.image %>" alt="imagen"></a>
-
+                    <article class="prod">
+                        <div class="foto-container">
+                            <a href="/products/description/<%=row.id %>"><img src="/img/<%= row.image %>" alt="imagen"></a>
+                        </div>
                         <div class="info-articulos">
-                            <h4 class="name"> <%= row.name %><h4></h4>
-                            
-                        
+                            <h4 class="name"> <%= row.name %></h4>
                         </div>
                     </article>
                      <% } ) %>
@@ -41,25 +40,28 @@
                 </div>
             </section>
             <section>
-                <h3>Imperdibles</h3>
+                <h3 class="secciones">Imperdibles</h3>
                 <div class="productos">
                     <% imperdibles.forEach((row) => {%>
-                        <article>
-                            <a href="/products/description/<%=row.id %>"><img src="/img/<%= row.image %>" alt="imagen"></a>
+                        <article class="prod">
+                            <div class="foto-container">
+                                <a href="/products/description/<%=row.id %>"><img src="/img/<%= row.image %>" alt="imagen"></a>
+                            </div>
                             <div class="info-articulos">
                                 <h4 class = "name"> <%= row.name %><h4></h4>
-                                
                             </div>
                         </article>
                          <% } ) %>
                 </div>
             </section>
             <section>
-                <h3>¡Nuevas Experiencias!</h3>
+                <h3 class="secciones">¡Nuevas Experiencias!</h3>
                 <div class="productos">
                     <% nuevas.forEach((row) => {%>
-                        <article>
-                            <a href="/products/description/<%=row.id %>"><img src="/img/<%= row.image %>" alt="imagen"></a>
+                        <article class="prod">
+                            <div class="foto-container">
+                                <a href="/products/description/<%=row.id %>"><img src="/img/<%= row.image %>" alt="imagen"></a>
+                            </div>
                             <div class="info-articulos">
                                 <h4 class = "name"> <%= row.name %><h4></h4>
                             </div>

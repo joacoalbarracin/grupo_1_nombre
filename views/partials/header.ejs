@@ -4,23 +4,22 @@
                 <a href="/"> <img class="logo" src="/img/aBA 2.png" alt="Logo-AdventureBA" > </a>
                
             </div>
-            <div>
-                <ul class="test">
-                    <form class="search-bar" action='/products/search' method="POST">
-                        <input type="search" name="busqueda" placeholder="Busca tu experiencia" value="">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
-                    <li class="links"><a href="/users/login">Inicia sesión</a></li>
-                    <li class="links"><a href="/users/create">Registrate</a></li>
-                    <li class="links"><a href="/"><i class="fa-solid fa-cart-shopping"></a></i></li>
-                    <li class="links"><a href="/users/profile"><i class="fa-solid fa-user"></i></a></li>                        
-                </ul>
+            <div class="buscador">
+                <form class="search-bar" action='/products/search' method="POST">
+                    <input type="search" name="busqueda" placeholder="Busca tu experiencia" value="">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
             </div>
+            <ul class="accesos">
+                <li class="links"><a href="/users/login">Inicia sesión</a></li>
+                <li class="links"><a href="/users/create">Registrate</a></li>
+                <li class="links"><a href="/"><i class="fa-solid fa-cart-shopping"></a></i></li>
+                <li class="links"><a href="/users/profile"><i class="fa-solid fa-user"></i></a></li>                        
+            </ul>
         </div>
 
         <nav>
-            <div class="navbar">
-                <ul>
+                <ul class="categorias">
                     <li>
                         <a href="/products/attraction"> Atracciones </a>
                     </li>
@@ -34,7 +33,6 @@
                         <a href="/products/list">Todos los productos</a>
                     </li>
                 </ul>
-            </div>
         </nav>
 
 

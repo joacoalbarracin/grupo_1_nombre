@@ -5,42 +5,54 @@
 <body>
     <%- include('./partials/header')%>
 
-    <main>
-        <h2 class="cart-tittle">Cada vez mas cerca de tu nueva experiencia</h2>
-        <div class="content">
-            
-            <div class="descripcionproducto">
-                <img  class="imgdetalle" src="/img/<%=productoEncontrado.image%>" alt="Teatro Colon">
-
-                <h2 class="detalletitulo"><%=productoEncontrado.name%></h2>
-
-                <h5><%=productoEncontrado.description%></h5>
-
-                <form id="option-count" id='myform' method='POST' class='quantity' action='#'>
-                    <input type='button' value='-' class='qtyminus minus' field='quantity' />
-                    <input type='text' name='quantity' value='0' class='qty' />
-                    <input type='button' value='+' class='qtyplus plus' field='quantity' />
-                </form>
-
-                
-
-                <p class="option-price"><%=productoEncontrado.price%></p>
-
-                <div><i id="trash" class="fa-solid fa-trash"></i></div>
-
-               
+    <main class="detalleproducto">
+        <article>
+            <div class="titulo-descripcion">
+                <h1 class="detalletitulo"><%=productoEncontrado.name%></h1>
+                <p class="detalledescripcion"><%=productoEncontrado.description%></p>
             </div>
-
-            <div class="optiondetalle">
-                <h2 class="option-tittle">Detalle</h2>
-                <h3>Fecha</h3> <span><%=productoEncontrado.date%></span>
-                <h3>Horario</h3> <span><%=productoEncontrado.time%></span>
-                <h3>Duración</h3> <span><%=productoEncontrado.duration%></span>
-                <h3>Cupo</h3><span><%=productoEncontrado.maximumCapacity%></span>
+            <div class="contenido"> 
+                <div class="imagen">
+                    <img  class="imgdetalle" src="/img/<%=productoEncontrado.image%>" alt="Imagen Producto">
+                </div>
+                <div class="especificaciones">
+                    <h2 class="option-title">Más detalles acerca de esta experiencia:</h2>
+                    <div class="detalle-info">
+                        <div>
+                            <i class="fa-solid fa-calendar-day"></i>
+                            <p>Podrás usar tu experiencia hasta el día:</p>
+                        </div>
+                        <span><%=productoEncontrado.date%></span>
+                    </div>
+                    <div class="detalle-info">
+                        <div>
+                            <i class="fa-solid fa-clock"></i>
+                            <p>Horario:</p>
+                        </div>
+                        <span><%=productoEncontrado.time%></span>
+                    </div>
+                    <div class="detalle-info">
+                        <div>
+                            <i class="fa-solid fa-hourglass-end"></i>
+                            <p>Duración de la experiencia:</p>
+                        </div>
+                        <span><%=productoEncontrado.duration%></span>
+                    </div>
+                    <div class="detalle-info">
+                        <div>
+                            <i class="fa-solid fa-people-group"></i>
+                            <p>Cupo restante:</p>
+                        </div>
+                        <span><%=productoEncontrado.maximumCapacity%></span>
+                    </div>
+                    <p class="detalleprecio">$<%=productoEncontrado.price%></p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
             </div>
-        <div>
-
-        </div>
+            <div>
+                <i id="trash" class="fa-solid fa-trash"></i>
+            </div>
+        </article>
     </main>
 
     <%- include('./partials/footer')%>
