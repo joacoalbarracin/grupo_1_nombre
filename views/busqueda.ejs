@@ -12,9 +12,10 @@
             <section>
                 <div class="productos">
                     <% productos.forEach((row) => {%>
-                    <article>
-                        <a href="/products/description/<%=row.id %>"><img src="/img/<%= row.image %>" alt="imagen"></a>
-
+                    <article class="prod">
+                        <div class="foto-container">
+                            <a href="/products/description/<%=row.id %>"><img src="/img/<%= row.image %>" alt="imagen"></a>
+                        </div>
                         <div class="info-articulos">
                             <h4 class = "name"> <%= row.name %></h4>
                         </div>
