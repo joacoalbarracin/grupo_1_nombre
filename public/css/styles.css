@@ -254,11 +254,12 @@ footer div ul li a{
 .contenido {
     display: flex;
     justify-content: space-between;
-    margin: 0 15px 0 15px;
+    margin: 20px 15px 0 15px;
 }
 
 .imagen {
     width: 50%;
+    height: 60%;
 }
 
 .imgdetalle {
@@ -315,6 +316,7 @@ span {
 }
 
 .btn-comprar {
+    
     background-color: #3c6e71; /* Color de fondo del botón */
     color: #fff; /* Color del texto del botón */
     padding: 10px 20px; /* Espaciado interno del botón */
@@ -324,6 +326,7 @@ span {
     cursor: pointer; /* Cambia el cursor al pasar el ratón sobre el botón */
     transition: background-color 0.3s; /* Transición suave para el color de fondo */
     width: 50%;
+    margin-left: 20px;
 }
 
 .btn-comprar:hover {
@@ -448,7 +451,7 @@ form div {
     .descripcion {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+       
     }
     
     .descripcion1 {
@@ -464,8 +467,29 @@ form div {
         justify-content: space-around;
 
     }
+    .detalletitulo {
+        font-size: 20px;
+      }
+      .detalledescripcion {
+        font-size: 14px;
+      }
+      .imagen {
+        width: 70%;
+      }
+      .especificaciones {
+        font-size: 16px;
+      }
+      .detalleprecio {
+        font-size: 20px;
+      }
+      .btn-comprar {
+        font-size: 16px;
+        width: 70%;
+      }
+    }
+    
 
-}
+
 
 @media (min-width: 769px){
     main section article {
