@@ -5,13 +5,13 @@
 }  
 body{
     background-color: #efeff1d7;
-    width: 100vw;
+    width: 100%;
     font-family: "Roboto", sans-serif;
     
 }
 header{
     background-color: #E0E1E6;
-    width: 100vw;
+    width: 100%;
 } 
 
 body header div.top-bar{
@@ -20,7 +20,7 @@ body header div.top-bar{
     justify-content: space-around;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ajusta el valor de desenfoque y opacidad según tus preferencias */
-    width: 100vw;
+    width: 100%;
 }
 
 .logo{
@@ -131,12 +131,12 @@ main {
 .presentacion{
     position: relative;
     display: flex;
-    width: 100vw;
+    width: 100%;
     height: 30vw;
 }
 
 .presentacion .buenosAires {
-    width: 100vw;
+    width: 100%;
 }
 
 .presentacion .texto-presentacion {
