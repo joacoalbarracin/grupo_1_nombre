@@ -5,13 +5,13 @@
 }  
 body{
     background-color: #efeff1d7;
-    width: 100vw;
+    width: 100%;
     font-family: "Roboto", sans-serif;
     
 }
 header{
     background-color: #E0E1E6;
-    width: 100vw;
+    width: 100%;
 } 
 
 body header div.top-bar{
@@ -21,7 +21,7 @@ body header div.top-bar{
     align-items: center;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ajusta el valor de desenfoque y opacidad según tus preferencias */
-    width: 100vw;
+    width: 100%;
 }
 
 .logo{
@@ -132,23 +132,30 @@ main {
 .presentacion{
     position: relative;
     display: flex;
-    width: 100vw;
+    width: 100%;
     height: 30vw;
 }
 
 .presentacion .buenosAires {
-    width: 100vw;
+    width: 100%;
 }
 
 .presentacion .texto-presentacion {
     position: absolute;
     color: #000;
-    padding: 10px;
+    /* Cambiar text-decoration por font-weight para hacer el texto más legible */
+    font-weight: bold;
+    padding: 20px;
     text-align: center;
     overflow: hidden;
-    max-width: 37.5%;
-    max-height: 100%;
-}
+    width: 100%;
+    height: 100%;
+    /* Ajustar el tamaño de fuente */
+    font-size: 1.5rem;
+    
+    /* Agregar sombra al texto para resaltarlo del fondo */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
 
 .secciones {
     margin-bottom: 10px;
@@ -202,6 +209,19 @@ main {
     width: 100%;
     justify-content: center;
 }
+
+.price {
+    color: #3c6e71;
+   
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+    width: 80%;
+    height: 80%;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
 
 footer {
     background-color: #3c6e71;
@@ -257,11 +277,12 @@ footer div ul li a{
 .contenido {
     display: flex;
     justify-content: space-between;
-    margin: 0 15px 0 15px;
+    margin: 20px 15px 0 15px;
 }
 
 .imagen {
     width: 50%;
+    height: 60%;
 }
 
 .imgdetalle {
@@ -318,6 +339,7 @@ span {
 }
 
 .btn-comprar {
+    
     background-color: #3c6e71; /* Color de fondo del botón */
     color: #fff; /* Color del texto del botón */
     padding: 10px 20px; /* Espaciado interno del botón */
@@ -327,6 +349,7 @@ span {
     cursor: pointer; /* Cambia el cursor al pasar el ratón sobre el botón */
     transition: background-color 0.3s; /* Transición suave para el color de fondo */
     width: 50%;
+    margin-left: 20px;
 }
 
 .btn-comprar:hover {
@@ -451,7 +474,7 @@ form div {
     .descripcion {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+       
     }
     
     .descripcion1 {
@@ -467,8 +490,29 @@ form div {
         justify-content: space-around;
 
     }
+    .detalletitulo {
+        font-size: 20px;
+      }
+      .detalledescripcion {
+        font-size: 14px;
+      }
+      .imagen {
+        width: 70%;
+      }
+      .especificaciones {
+        font-size: 16px;
+      }
+      .detalleprecio {
+        font-size: 20px;
+      }
+      .btn-comprar {
+        font-size: 16px;
+        width: 70%;
+      }
+    }
+    
 
-}
+
 
 @media (min-width: 769px){
     main section article {
