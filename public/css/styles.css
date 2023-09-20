@@ -18,6 +18,7 @@ body header div.top-bar{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ajusta el valor de desenfoque y opacidad según tus preferencias */
     width: 100vw;
@@ -157,10 +158,12 @@ main {
     color: #3c6e71;
 }
 
+
 .prod {
     background-color: #FFF;
     border-radius: 6px;
     margin-bottom: 15px;
+    padding: 4px;
 }
 
 .prod:hover {

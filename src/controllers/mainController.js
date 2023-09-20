@@ -89,11 +89,10 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
     //Procesa datos recibidos en [createProduct: (req, res) =>] lo agrega a la base de datos
     processCreateProductForm: async (req, res) => {
         try {
+            console.log(req.body)
             await db.Product.create({
-                //ver id //ver id //ver id //ver id //ver id
-                id : req.body.id.length + 1,
-                productName : req.body.name,
-                productDescription : req.body.description,
+                name : req.body.name,
+                description : req.body.description,
                 title : req.body.name,
                 location : req.body.location,
                 price : req.body.price,
@@ -103,7 +102,7 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
                 maximumCapacity : req.body.maximumCapacity,
                 duration : req.body.duration,
                 productCategory : req.body.opcion,
-                image : req.file.image
+                image : 'default.jpg'
             })
             return res.redirect("/products/list") // Redirecciona a la lista de productos
         } catch (error) {

@@ -1,12 +1,13 @@
 const db = require('../../database/models');
 const Product = db.Product
+const ProductCategory = db.ProductCategory
 
 module.exports = {
     list: async (req, res) => {
         let response = {};
         try {
 
-            const [productos, categorias] = await Promise.all([Product.findAll(), Category.findAll({ include: [{ association: "products" }] })])
+            const [productos, categorias] = await Promise.all([Product.findAll(), ProductCategory.findAll({ include: [{ association: "products" }] })])
             response.count = productos.length 
             response.countByCategory = {}
             categorias.forEach((categoria) => {
@@ -23,9 +24,10 @@ module.exports = {
     return res.json(response);
 
     } catch (e) {
+        console.log(e)
         response.msg = "Hubo un error"
         return res.json(response)
     }
         
-        }
+    }
 }

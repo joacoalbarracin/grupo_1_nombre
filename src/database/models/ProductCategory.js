@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
           },
     }
     const config = {
-        tableName : "product_categories",
+        tableName : "productcategories",
         timestamps: false
     }
     // Definir la relación con la tabla 
