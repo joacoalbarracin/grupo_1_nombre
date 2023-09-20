@@ -1,9 +1,11 @@
 const permisosAdmin = (req,res,next) => {
-    if (req.session.usuarioLogueado.userCategoryId != '2') {
-        return res.redirect ('/')
+    if (req.session.usuarioLogueado) {
+        if(req.session.usuarioLogueado.userCategoryId === 2) {
+            next()
+        }
     }
     else {
-        next()
+        return res.redirect ('/')
     }
 }
 

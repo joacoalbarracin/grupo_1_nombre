@@ -35,11 +35,11 @@ router.get('/products/culture', mainController.showCultura)
 router.post('/products/search', mainController.search)
 
 //CRUD de procuto: Create product
-router.get('/products/create', /*permisosAdmin,*/ mainController.showCreateProductForm); // Ruta para mostrar la vista createProduct.ejs
+router.get('/products/create', permisosAdmin, mainController.showCreateProductForm); // Ruta para mostrar la vista createProduct.ejs
 router.post('/products/create', fileUpload.single("image"), createProdValidation, mainController.processCreateProductForm); //
 
 //CRUD de procuto: Edit product
-router.get('/products/edit/:id', /*permisosAdmin,*/ mainController.showEditProductForm); // Ruta para mostrar la vista editProduct.ejs
+router.get('/products/edit/:id', permisosAdmin, mainController.showEditProductForm); // Ruta para mostrar la vista editProduct.ejs
 router.put('/products/edit/:id', fileUpload.single('image'), editProdValidation, mainController.processEditProductForm); // Ruta para editar el producto
 
 //CRUD de procuto: Delete product

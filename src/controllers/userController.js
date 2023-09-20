@@ -17,7 +17,7 @@ module.exports = {
       console.log(usuarioEncontrado);
       if (usuarioEncontrado && bcrypt.compareSync(req.body.password, usuarioEncontrado.password)) {
         delete usuarioEncontrado.password
-        req.session.usuarioLogueado = usuarioEncontrado.email
+        req.session.usuarioLogueado = usuarioEncontrado
         if (req.body.cookie){
           res.cookie('recordame', usuarioEncontrado.email, {maxAge: 1000*60*60}) //Dura una hora la cookie
         }

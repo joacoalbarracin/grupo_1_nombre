@@ -4,104 +4,22 @@
 
 <body>
     <%- include('./partials/header')%>
-
-
     <main>
-        <h2 class="cart-tittle">Cada vez mas cerca de tu nueva experiencia!</h2>
+        <h2 class="cart-tittle">Tu carrito de compras:</h2>
         <div class="content">
-            <div class="option">
-                <img src="./img/Teatro Colon.jpeg" alt="Teatro Colon">
-
-                <h3 class="option-tittle">Visita Guíada - Teatro Colón</h3>
-
-                <form id="option-count"id='myform' method='POST' class='quantity' action='#'>
-                    <input type='button' value='-' class='qtyminus minus' field='quantity' />
-                    <input type='text' name='quantity' value='0' class='qty' />
-                    <input type='button' value='+' class='qtyplus plus' field='quantity' />
+            <div class="prodcart">
+                <img src="/img/Teatro Colon.jpeg" alt="Teatro Colon">
+                <h3 class="tituloprodcart">Visita Guíada - Teatro Colón</h3>
+                <form method='POST' class='quantity' action=''>
+                    <button class="quantity-button decrement" type="button">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1">
+                    <button class="quantity-button increment" type="button">+</button>
                 </form>
 
                 <p class="option-price">$4.000</p>
 
                 <div><i id="trash" class="fa-solid fa-trash"></i></div>
             </div>
-            <div class="option">
-                <img src="./img/Teatro Colon.jpeg" alt="Teatro Colon">
-
-                <h3 class="option-tittle">Almuerzo - 2 Personas</h3>
-
-                <form id="option-count" id='myform' method='POST' class='quantity' action='#'>
-                    <input type='button' value='-' class='qtyminus minus' field='quantity' />
-                    <input type='text' name='quantity' value='0' class='qty' />
-                    <input type='button' value='+' class='qtyplus plus' field='quantity' />
-                </form>
-
-                <p class="option-price">$7.000</p>
-
-                <div><i id="trash" class="fa-solid fa-trash"></i></div>
-            </div>
-
-            <div class="option">
-                <img  class="img" src="./img/Teatro Colon.jpeg" alt="Teatro Colon">
-
-                <h3 class="option-tittle">Visita Guíada - Teatro Colón</h3>
-
-                <form id="option-count" id='myform' method='POST' class='quantity' action='#'>
-                    <input type='button' value='-' class='qtyminus minus' field='quantity' />
-                    <input type='text' name='quantity' value='0' class='qty' />
-                    <input type='button' value='+' class='qtyplus plus' field='quantity' />
-                </form>
-
-                <p class="option-price">$4.000</p>
-
-                <div><i id="trash" class="fa-solid fa-trash"></i></div>
-            </div>
-            <div class="option">
-                <img src="./img/Teatro Colon.jpeg" alt="Teatro Colon">
-
-                <h3 class="option-tittle">Visita Guíada - Teatro Colón</h3>
-
-                <form id="option-count" id='myform' method='POST' class='quantity' action='#'>
-                    <input type='button' value='-' class='qtyminus minus' field='quantity' />
-                    <input type='text' name='quantity' value='0' class='qty' />
-                    <input type='button' value='+' class='qtyplus plus' field='quantity' />
-                </form>
-
-                <p class="option-price">$4.000</p>
-
-                <div><i id="trash" class="fa-solid fa-trash"></i></div>
-            </div>
-            <div class="option">
-                <img src="./img/Teatro Colon.jpeg" alt="Teatro Colon">
-
-                <h3 class="option-tittle">Visita Guíada - Teatro Colón</h3>
-
-                <form id="option-count" id='myform' method='POST' class='quantity' action='#'>
-                    <input type='button' value='-' class='qtyminus minus' field='quantity' />
-                    <input type='text' name='quantity' value='0' class='qty' />
-                    <input type='button' value='+' class='qtyplus plus' field='quantity' />
-                </form>
-
-                <p class="option-price">$4.000</p>
-
-                <div><i id="trash" class="fa-solid fa-trash"></i></div>
-            </div>
-            <div class="option">
-                <img src="./img/Teatro Colon.jpeg" alt="Teatro Colon">
-
-                <h3 class="option-tittle">Visita Guíada - Teatro Colón</h3>
-
-                <form id="option-count" id='myform' method='POST' class='quantity' action='#'>
-                    <input type='button' value='-' class='qtyminus minus' field='quantity' />
-                    <input type='text' name='quantity' value='0' class='qty' />
-                    <input type='button' value='+' class='qtyplus plus' field='quantity' />
-                </form>
-
-                <p class="option-price">$4.000</p>
-
-                <div><i id="trash" class="fa-solid fa-trash"></i></div>
-            </div>
-        </div>
-
         <div class="pay">
             <p>Total: $11.000</p>
 
