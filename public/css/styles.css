@@ -9,47 +9,46 @@ body{
     font-family: "Roboto", sans-serif;
     
 }
-header{
-    background-color: #E0E1E6;
-    width: 100%;
-} 
 
-body header div.top-bar{
+.header {
+       
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ajusta el valor de desenfoque y opacidad según tus preferencias */
     width: 100%;
+    height: 30vw;
+
 }
 
 .logo{
     height: 100%;
-    width: 60%;
+    width: 100%;
     padding: 10px;
 }
 .logo-container{
-    width: 20%;
+    width: 40%;
+    height: 30%;
 }
 
-.accesos{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 20px;
-    padding: 10px;
+ /* Estilos para el botón de búsqueda */
+ .search-bar button[type="submit"] {
+    background-color: #3c6e71; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none;
+    border-radius: 0 4px 4px 0;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-/* Estilos para el contenedor del buscador */
-.search-bar {
-    display: flex;
-    align-items: center;
-    border-radius: 4px;
+/* Estilos para el icono de búsqueda dentro del botón */
+.search-bar button[type="submit"] i {
+    margin-right: 5px;
+    color: #fff;
 }
-  
-/* Estilos para el campo de búsqueda */
-.search-bar input[type="search"] {
+
+  /* Estilos para el campo de búsqueda */
+  .search-bar input[type="search"] {
     flex: 4;
     border: none;
     padding: 8px;
@@ -68,11 +67,6 @@ body header div.top-bar{
     font-size: 16px;
 }
 
-/* Estilos para el icono de búsqueda dentro del botón */
-.search-bar button[type="submit"] i {
-    margin-right: 5px;
-    color: #fff;
-}
 
 .links{
     margin: 0.3em;
@@ -92,41 +86,44 @@ body header div.top-bar{
     color: #3c6e71;
 }
 
-header nav{
-    display: flex;
-    flex-direction: row;
-    background-color: #3c6e71;
-    display: flex;
-    justify-content: space-around;
+.categorias {
     width: 100%;
+
 }
+
+.categorias li {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 20%;
+    padding: 10px;
+    margin: 0;
+  }
+
+.categorias li a{
+    display: inline-block;
+    text-decoration: none;
+    color: #FFF;
+    background-color: #3c6e71;
+    font-weight: bold;
+    padding: 0.5em;
+    justify-content: space-between;
+   
+}
+
+.nav {
+    display: flex;
+}
+
+.nav li {
+    display: flex;
+    list-style: none;
+}
+
 .presentacion {
     display: none;
 }
 
-.categorias{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    font-weight: 500;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    width: 100%;
-}
 
-.categorias li {
-    list-style: none;
-    padding-top: 0.5em;
-    font-weight: 500;
-    font-size: large;
-}
-
-.categorias li a{
-    text-decoration: none;
-    color: #FFF;
-    font-weight: bold;
-    padding: 0.5em;
-}
 
 main {
     margin-top: 15px;
@@ -501,6 +498,117 @@ form div {
 
 
 @media (min-width: 769px){
+
+    header{
+        background-color: #E0E1E6;
+        width: 100%;
+    } 
+    
+    body header div.top-bar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ajusta el valor de desenfoque y opacidad según tus preferencias */
+        width: 100%;
+    }
+    
+    .logo{
+        height: 100%;
+        width: 60%;
+        padding: 10px;
+    }
+    .logo-container{
+        width: 20%;
+    }
+    
+    .accesos{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 20px;
+        padding: 10px;
+    }
+    
+    /* Estilos para el contenedor del buscador */
+    .search-bar {
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+    }
+      
+    /* Estilos para el campo de búsqueda */
+    .search-bar input[type="search"] {
+        flex: 4;
+        border: none;
+        padding: 8px;
+        border-radius: 4px 0 0 4px;
+        font-size: 16px;
+    }
+    
+    /* Estilos para el botón de búsqueda */
+    .search-bar button[type="submit"] {
+        background-color: #3c6e71; /* Color de fondo del botón */
+        color: #fff; /* Color del texto del botón */
+        border: none;
+        border-radius: 0 4px 4px 0;
+        padding: 8px 12px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    /* Estilos para el icono de búsqueda dentro del botón */
+    .search-bar button[type="submit"] i {
+        margin-right: 5px;
+        color: #fff;
+    }
+    
+    .links{
+        margin: 0.3em;
+        padding: 0.3em;
+        list-style: none;
+        display: flex;
+        margin-top: 30px;
+    }
+    
+    .links a {
+        text-decoration: none;
+        color: #3c6e71;
+        font-weight: bold;
+    }
+    
+    .links i {
+        color: #3c6e71;
+    }
+    
+    header nav{
+        display: flex;
+        flex-direction: row;
+        background-color: #3c6e71;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .categorias{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        font-weight: 500;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        width: 100%;
+    }
+    
+    .categorias li {
+        list-style: none;
+        padding-top: 0.5em;
+        font-weight: 500;
+        font-size: large;
+    }
+    
+   
 
     .presentacion{
         position: relative;
