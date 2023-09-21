@@ -3,6 +3,12 @@
     margin: 0;
     padding: 0;
 }  
+
+header{
+    background-color: #E0E1E6;
+   
+} 
+
 body{
     background-color: #efeff1d7;
     width: 100%;
