@@ -5,7 +5,8 @@ const mainController = require('./mainController'); // Requerimos el controlador
 const { validationResult } = require('express-validator'); // Requerimos el módulo express-validator
 const usuarios = JSON.parse(fs.readFileSync(path.resolve('./src/database/user.json'))); // Lee el archivo user.json
 const rutaArchivoUsers = path.resolve('./src/database/user.json'); // Ruta del archivo user.json
-const db = require('../database/models')
+const db = require('../database/models');
+const { error } = require('console');
 
 module.exports = {
   showLoginUserForm: (req, res) => {
@@ -14,14 +15,18 @@ module.exports = {
   processLoginUserForm: async (req, res) => {
     try {
       const usuarioEncontrado = await db.User.findOne({where: {email: req.body.email}})
-      console.log(usuarioEncontrado);
-      if (usuarioEncontrado && bcrypt.compareSync(req.body.password, usuarioEncontrado.password)) {
-        delete usuarioEncontrado.password
-        req.session.usuarioLogueado = usuarioEncontrado
-        if (req.body.cookie){
-          res.cookie('recordame', usuarioEncontrado.email, {maxAge: 1000*60*60}) //Dura una hora la cookie
+      if (usuarioEncontrado) { 
+        if (bcrypt.compareSync(req.body.password, usuarioEncontrado.password)){
+          delete usuarioEncontrado.password
+          req.session.usuarioLogueado = usuarioEncontrado
+          if (req.body.cookie){
+            res.cookie('recordame', usuarioEncontrado.email, {maxAge: 1000*60*60}) //Dura una hora la cookie
+          }
+          return res.redirect('profile')
         }
-        return res.render('profile', { usuarioEncontrado: usuarioEncontrado })
+      }
+      else {
+        throw new error
       }
     } catch (error) {
       return res.render("login", {
@@ -39,13 +44,7 @@ module.exports = {
     return res.redirect("/")
   },
   showProfile: async (req, res) => {
-    try {
-      const usuarioEncontrado = await db.User.findOne({where: {email: req.session.usuarioLogueado}}); // Busca el usuario por id
-      return res.render('profile', { usuarioEncontrado: usuarioEncontrado }); // Renderiza la vista profile.ejs
-    }
-    catch (error) {
-      console.log(error)
-    }
+      return res.render('profile', {usuarioEncontrado: req.session.usuarioLogueado}); // Renderiza la vista profile.ejs
   },
   showCreateUserForm: (req, res) => { //
       res.render('register'); // Renderiza la vista register.ejs
@@ -59,7 +58,7 @@ module.exports = {
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
         userCategoryId: 1,
-        image: req.body.image || 'defaultUser.webp',
+        image: req.file.filename || 'defaultUser.webp',
       })
       return res.redirect('/users/login')
     } catch (error) {

@@ -101,8 +101,8 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
                 time : req.body.time,
                 maximumCapacity : req.body.maximumCapacity,
                 duration : req.body.duration,
-                productCategory : req.body.opcion,
-                image : 'default.jpg'
+                productCategory : req.body.categoria,
+                image : req.file.filename
             })
             return res.redirect("/products/list") // Redirecciona a la lista de productos
         } catch (error) {

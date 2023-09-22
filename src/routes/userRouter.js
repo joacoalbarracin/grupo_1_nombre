@@ -17,16 +17,17 @@ const fileUpload = multer({storage: storage}); // Ejecutamos multer
 
 const logMiddleware = require('../middlewares/logMiddleware') // Traemos el middleware de logueo
 const registerValidation = require('../middlewares/registerValidation')
-const quiereRegistrarse = require('../middlewares/quiereRegistrarse') //Vemos si un usuario ya logueado quiere registrarse
+const quiereRegistrarse = require('../middlewares/quiereRegistrarse')
+const estaLogueado = require('../middlewares/estaLogueado') //Vemos si un usuario ya logueado quiere registrarse
 
-router.get('/users/login',quiereRegistrarse,userController.showLoginUserForm); // Ruta para mostrar la vista login.ejs
-router.post('/users/login', userController.processLoginUserForm); // Procesa el formulario de login
+router.get('/users/login', estaLogueado, userController.showLoginUserForm); // Ruta para mostrar la vista login.ejs
+router.post('/users/login', quiereRegistrarse, userController.processLoginUserForm); // Procesa el formulario de login
 router.get("/users/logout",userController.logout)
 
 router.get("/users/profile", logMiddleware, userController.showProfile); // Ruta para mostrar la vista perfil.ejs")
 
 //CRUD de usuario: Create user
-router.get('/users/create', quiereRegistrarse, userController.showCreateUserForm); // Ruta para mostrar la vista register.ejs
+router.get('/users/create', estaLogueado, userController.showCreateUserForm); // Ruta para mostrar la vista register.ejs
 router.post('/users/create', fileUpload.single("image"), registerValidation, userController.processCreateUserForm); // Procesa el formulario de registro
 
 //CRUD de usuario: Edit user

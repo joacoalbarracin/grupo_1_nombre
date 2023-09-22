@@ -41,13 +41,13 @@
                     <br>
                     <label for="">Categoría: </label>
                     <br>
-                    <input type="radio" id="5" name="opcion">
+                    <input type="radio" value="5" name="categoria">
                     <label for="opcion1">Entretenimiento</label>
                     <br>
-                    <input type="radio" id="1" name="opcion">
+                    <input type="radio" value="1" name="categoria">
                     <label for="opcion2">Gastronomía</label>
                     <br>
-                    <input type="radio" id="4" name="opcion">
+                    <input type="radio" value="4" name="categoria">
                     <label for="opcion2">Cultura</label>
                 </div>
                 <div>
@@ -72,7 +72,7 @@
                 </div>
                 <div>
                     <label>Duracion (minutos):</label>
-                    <input name="duration" type="time" class="text-field" id="duration" value="<%= locals.oldData ? oldData.duration : null%>">
+                    <input name="duration" type="number" class="text-field" id="duration" value="<%= locals.oldData ? oldData.duration : null%>">
                     <p class="error-message" id="duration-error"></p>
                 </div>
                 <div>
