@@ -82,7 +82,7 @@ module.exports = {
         name: req.body.name,
         lastName: req.body.lastName,
         password: bcrypt.hashSync(req.body.password, 10),
-        image: req.file.image,
+        image: req.file.filename,
         
       }, {
           where: {id : req.params.id}

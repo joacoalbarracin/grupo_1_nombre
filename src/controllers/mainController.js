@@ -123,8 +123,8 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
     processEditProductForm: async (req, res) => {
         try {
            await db.Product.update({
-                productName : req.body.name,
-                productDescription : req.body.description,
+                name : req.body.name,
+                description : req.body.description,
                 title : req.body.name,
                 location : req.body.location,
                 price : req.body.price,
@@ -134,7 +134,7 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
                 maximumCapacity : req.body.maximumCapacity,
                 duration : req.body.duration,
                 productCategory : req.body.opcion,
-                image : req.body.image
+                image : req.file.filename
             }, {
                 where: {id : req.params.id}
             })
