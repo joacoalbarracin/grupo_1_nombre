@@ -44,7 +44,13 @@ module.exports = {
     return res.redirect("/")
   },
   showProfile: async (req, res) => {
-      return res.render('profile', {usuarioEncontrado: req.session.usuarioLogueado}); // Renderiza la vista profile.ejs
+    try {
+      const usuarioEncontrado = await db.User.findOne({where:{email:req.session.usuarioLogueado.email}})
+      return res.render('profile', {usuarioEncontrado: usuarioEncontrado}); // Renderiza la vista profile.ejs
+    } catch (error) {
+      console.log (error)
+    }
+   
   },
   showCreateUserForm: (req, res) => { //
       res.render('register'); // Renderiza la vista register.ejs
@@ -87,7 +93,7 @@ module.exports = {
       }, {
           where: {id : req.params.id}
       })
-      return res.redirect("/") // Redirecciona a la lista de productos
+      return res.redirect("/users/profile") // Redirecciona a la lista de productos
     } catch (error) {
         console.log(error)
     }
