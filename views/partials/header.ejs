@@ -11,10 +11,33 @@
                 </form>
             </div>
             <ul class="accesos">
-                <li class="links"><a href="/users/login">Inicia sesión</a></li>
-                <li class="links"><a href="/users/create">Registrate</a></li>
-                <li class="links"><a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li class="links"><a href="/users/profile"><i class="fa-solid fa-user"></i></a></li>                        
+                <% if (user === null) { %> 
+                    <li class="links"><a href="/users/login">Inicia sesión</a></li>
+                    <li class="links"><a href="/users/create">Registrate</a></li>
+                <% } else { %>
+                    <li class="links"><a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li class="links">
+                        <i class="fa-solid fa-user" id="iconouser"></i>
+                        <div class="user-profile" id="user-profile">
+                            <ul class="opciones-perfil">
+                                <p class="saludo"> Hola <%= user.name %></p>
+                                <li>
+                                    <a href="/users/profile">Ver mi perfil</button></a>
+                                </li>
+                                <li>
+                                    <form action="/users/logout" method="POST">
+                                        <button class="btn-logout" type="submit">Cerrar sesión</button>
+                                    </form>
+                                </li>
+                                <% if (user.userCategoryId === 2) { %> 
+                                <li class="opciones-perfil admin">
+                                    <a href="/products/create">Crear nueva experiencia</a>
+                                </li>
+                                <% } %>
+                            </ul>
+                        </div>
+                    </li>
+                <% } %>                     
             </ul>
         </div>
 
@@ -35,5 +58,5 @@
                 </ul>
         </nav>
 
-
+        <script src="/js/header.js"></script>
 </header>

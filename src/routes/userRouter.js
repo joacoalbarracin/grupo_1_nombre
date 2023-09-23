@@ -37,6 +37,8 @@ router.put('/users/edit/:id', fileUpload.single('image'), userController.process
 //CRUD de usuario: Delete user
 router.delete('/users/delete/:id', userController.deleteUser); // Ruta para eliminar el producto
 
+router.post('/users/logout', userController.logout)
+
 
 
 

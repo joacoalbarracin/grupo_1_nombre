@@ -80,6 +80,7 @@ body{
     list-style: none;
     display: flex;
     margin-top: 30px;
+    position: relative;
 }
 
 .links a {
@@ -92,9 +93,55 @@ body{
     color: #3c6e71;
 }
 
+.links .user-profile {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: #F0F1F6;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+}
+
+.links .user-profile.mostrar{
+    display: flex;
+    flex-direction: column;
+}
+
+.links .user-profile .opciones-perfil {
+    list-style: none;
+}
+
+.links .user-profile .opciones-perfil .saludo {
+    font-size: 18px;
+}
+
+.links .user-profile .opciones-perfil li {
+    border-top: 1px solid #b8b9bc;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.links .user-profile .opciones-perfil a{
+    font-weight: normal;
+    color: #333;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+.links .user-profile button {
+    background: none;
+    border: none;
+    size: 30%;
+    cursor: pointer;
+    color: #333;
+    font-size: 14px;
+}
+
+
 .categorias {
     width: 100%;
-
 }
 
 .categorias li {
