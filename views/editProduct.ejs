@@ -9,7 +9,7 @@
             <form class="formularios" action="/products/edit/<%= productoEncontrado.id %>?_method=PUT" method="post" enctype="multipart/form-data">
                 <div>
                     <label>Nombre:</label>
-                    <input class="text-field" input="text" name="name" value="<%= locals.oldData ? oldData.name : null%>">
+                    <input class="text-field" input="text" name="name" value="<%= locals.oldData ? oldData.name : productoEncontrado.name%>">
                     <% if(locals.errors && errors.name) { %>
                         <p class="error">
                         <%= errors.name.msg %></p>
@@ -17,7 +17,7 @@
                 </div>
                 <div>
                     <label>Descripción:</label>
-                    <input name="description" type="text" class="text-field" value="<%= locals.oldData ? oldData.description : null%>">
+                    <input name="description" type="text" class="text-field" value="<%= locals.oldData ? oldData.description : productoEncontrado.description%>">
                     <% if(locals.errors && errors.description) { %>
                         <p class="error">
                         <%= errors.description.msg %></p>
@@ -25,7 +25,7 @@
                 </div>
                 <div>
                     <label>Titulo:</label>
-                    <input class="text-field" input="text" name="title" value="<%= locals.oldData ? oldData.title : null%>">
+                    <input class="text-field" input="text" name="title" value="<%= locals.oldData ? oldData.title : productoEncontrado.title%>">
                     <% if(locals.errors && errors.title) { %>
                         <p class="error">
                         <%= errors.title.msg %></p>
@@ -33,7 +33,7 @@
                 </div>
                 <div>
                     <label>Direccion:</label>
-                    <input class="text-field" input="text" name="location" value="<%= locals.oldData ? oldData.location : null%>">
+                    <input class="text-field" input="text" name="location" value="<%= locals.oldData ? oldData.location : productoEncontrado.location%>">
                     <% if(locals.errors && errors.location) { %>
                         <p class="error">
                         <%= errors.location.msg %></p>
@@ -41,11 +41,12 @@
                 </div>
                 <div>
                     <label>Imagen del producto</label>
-                    <input name="image" type="file">
+                    <img src="/img/<%=productoEncontrado.image%>" alt="Imagen Producto" height="50px">
+                    <input name="image" type="file" value="<%= locals.oldData ? oldData.image : productoEncontrado.image%>">
                 </div>
                 <div>
                     <label>Price:</label>
-                    <input name="price" type="number" class="text-field" value="<%= locals.oldData ? oldData.price : null%>">
+                    <input name="price" type="number" class="text-field" value="<%= locals.oldData ? oldData.price : productoEncontrado.price%>">
                     <% if(locals.errors && errors.price) { %>
                         <p class="error">
                         <%= errors.price.msg %></p>
@@ -55,18 +56,18 @@
                     <br>
                     <label for="">Categoría: </label>
                     <br>
-                    <input type="radio" id="opcion1" name="opcion" value="Entretenimiento">
+                    <input type="radio" id="5" name="categoria" value="Entretenimiento">
                     <label for="opcion1">Entretenimiento</label>
                     <br>
-                    <input type="radio" id="opcion2" name="opcion" value="Gastronomía">
+                    <input type="radio" id="1" name="categoria" value="Gastronomía">
                     <label for="opcion2">Gastronomía</label>
                     <br>
-                    <input type="radio" id="opcion3" name="opcion" value="Cultura">
+                    <input type="radio" id="4" name="opcion" value="Cultura">
                     <label for="opcion2">Cultura</label>
                 </div>
                 <div>
                     <label>Descuento (%):</label>
-                    <input name="discount" type="number" class="text-field" value="<%= locals.oldData ? oldData.discount : null%>">
+                    <input name="discount" type="number" class="text-field" value="<%= locals.oldData ? oldData.discount : productoEncontrado.discount%>">
                     <% if(locals.errors && errors.discount) { %>
                         <p class="error">
                         <%= errors.discount.msg %></p>
@@ -74,7 +75,7 @@
                 </div>
                 <div>
                     <label>Fecha:</label>
-                    <input name="date" type="date" class="text-field" value="<%= locals.oldData ? oldData.date : null%>">
+                    <input name="date" type="date" class="text-field" value="<%= locals.oldData ? oldData.date : productoEncontrado.date%>">
                     <% if(locals.errors && errors.date) { %>
                         <p class="error">
                         <%= errors.date.msg %></p>
@@ -82,7 +83,7 @@
                 </div>
                 <div>
                     <label>Hora:</label>
-                    <input name="time" type="time" class="text-field" value="<%= locals.oldData ? oldData.time : null%>">
+                    <input name="time" type="time" class="text-field" value="<%= locals.oldData ? oldData.time : productoEncontrado.time%>">
                     <% if(locals.errors && errors.time) { %>
                         <p class="error">
                         <%= errors.time.msg %></p>
@@ -90,7 +91,7 @@
                 </div>
                 <div>
                     <label>Capacidad:</label>
-                    <input name="maximumCapacity" type="number" class="text-field" value="<%= locals.oldData ? oldData.maximumCapacity : null%>">
+                    <input name="maximumCapacity" type="number" class="text-field" value="<%= locals.oldData ? oldData.maximumCapacity : productoEncontrado.maximumCapacity%>">
                     <% if(locals.errors && errors.maximumCapacity) { %>
                         <p class="error">
                         <%= errors.maximumCapacity.msg %></p>
@@ -98,7 +99,7 @@
                 </div>
                 <div>
                     <label>Duracion (minutos):</label>
-                    <input name="duration" type="time" class="text-field" value="<%= locals.oldData ? oldData.duration : null%>">
+                    <input name="duration" type="number" class="text-field" value="<%= locals.oldData ? oldData.duration : productoEncontrado.duration%>">
                     <% if(locals.errors && errors.duration) { %>
                         <p class="error">
                         <%= errors.duration.msg %></p>

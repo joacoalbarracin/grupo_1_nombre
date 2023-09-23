@@ -93,7 +93,7 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
             await db.Product.create({
                 name : req.body.name,
                 description : req.body.description,
-                title : req.body.name,
+                title : req.body.title,
                 location : req.body.location,
                 price : req.body.price,
                 discount : req.body.discount,
@@ -125,7 +125,7 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
            await db.Product.update({
                 name : req.body.name,
                 description : req.body.description,
-                title : req.body.name,
+                title : req.body.title,
                 location : req.body.location,
                 price : req.body.price,
                 discount : req.body.discount,
@@ -133,7 +133,7 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
                 time : req.body.time,
                 maximumCapacity : req.body.maximumCapacity,
                 duration : req.body.duration,
-                productCategory : req.body.opcion,
+                productCategory : req.body.categoria,
                 image : req.file.filename
             }, {
                 where: {id : req.params.id}
