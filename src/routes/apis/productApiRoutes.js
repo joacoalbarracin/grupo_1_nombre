@@ -1,10 +1,8 @@
-const express = require('express'); // Requerimos el módulo express
+const express = require('express'); 
 const router = express.Router();
 const productApiController = require('../../controllers/apis/productApiController');
 
 router.get('/list', productApiController.list);
-//router.get('/detail', userApiController.detail);
-
 
 module.exports = router;
 
