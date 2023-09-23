@@ -17,7 +17,7 @@ module.exports = {
                 return {
                     id: producto.id,
                     name: producto.name,
-                    category: producto.description,
+                    category: producto.description.name,
                     detail: `/api/products/${producto.id}`
             }
     })
