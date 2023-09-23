@@ -3,11 +3,11 @@ const User = db.User
 
 module.exports = {
     list: async (req, res) => {
-        let response = {}; //inicializa
+        let response = {data:{}}; //inicializa
         try {
         const usuarios = await User.findAll()
-        response.count = usuarios.length
-        response.users = usuarios.map((usuario) => {
+        response.data.count = usuarios.length
+        response.data.users = usuarios.map((usuario) => {
             return {
             id: usuario.id,
             name: usuario.name,

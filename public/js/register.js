@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const repeatPasswordError = document.querySelector('#repeat_password-error');
         const imageError = document.querySelector('#image-error');
 
-        // Clear previous error messages
+        // Limpiar mensajes de error previos
         nameError.textContent = '';
         lastNameError.textContent = '';
         emailError.textContent = '';
@@ -27,19 +27,19 @@ document.addEventListener('DOMContentLoaded', function () {
         repeatPasswordError.textContent = '';
         imageError.textContent = '';
 
-        // Check if the 'name' field is empty
+        // Verificar si el campo 'nombre' está vacío
         if (name.value.trim() === '') {
             errores.push('El campo Nombre debe llenarse');
             nameError.textContent = 'El campo Nombre debe llenarse';
         }
 
-        // Check if the 'last_name' field is empty
+        // Verificar si el campo 'apellido' está vacío
         if (lastName.value.trim() === '') {
             errores.push('El campo Apellido debe llenarse');
             lastNameError.textContent = 'El campo Apellido debe llenarse';
         }
 
-        // Check if the 'email' field is empty
+        // Verificar si el campo 'email' está vacío
         if (email.value.trim() === '') {
             errores.push('El campo Email debe llenarse');
             emailError.textContent = 'El campo Email debe llenarse';
@@ -51,13 +51,20 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        // Check if the 'password' field is empty
+        // Verificar si el campo 'contraseña' está vacío
         if (password.value.trim() === '') {
             errores.push('El campo Contraseña debe llenarse');
             passwordError.textContent = 'El campo Contraseña debe llenarse';
+        } else {
+            // Verificar si la contraseña cumple con los requisitos
+            const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            if (!passwordPattern.test(password.value)) {
+                errores.push('La contraseña debe contener al menos una minúscula, una mayúscula, un carácter especial y tener al menos 8 caracteres.');
+                passwordError.textContent = 'La contraseña debe contener al menos una minúscula, una mayúscula, un carácter especial y tener al menos 8 caracteres.';
+            }
         }
 
-        // Check if the 'repeat_password' field is empty and matches the 'password'
+        // Verificar si el campo 'repetir_contraseña' está vacío y coincide con 'contraseña'
         if (repeatPassword.value.trim() === '') {
             errores.push('El campo Repetir Contraseña debe llenarse');
             repeatPasswordError.textContent = 'El campo Repetir Contraseña debe llenarse';
@@ -66,8 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
             repeatPasswordError.textContent = 'Las contraseñas no coinciden';
         }
 
-        // Check if an image file is selected (assuming this is an image upload field)
-// Check if an image file is selected (assuming this is an image upload field)
+        // Verificar si se selecciona un archivo de imagen (suponiendo que este es un campo de carga de imágenes)
         if (image.files.length === 0) {
             errores.push('Debe seleccionar una imagen');
             imageError.textContent = 'Debe seleccionar una imagen';
@@ -82,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
         if (errores.length === 0) {
-            form.submit(); // Submit the form if there are no errors
+            form.submit(); // Enviar el formulario si no hay errores
         }
     });
 });

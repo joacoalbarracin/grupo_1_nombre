@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head', {title: "ProductDetail"})%>
+
+<body>
+    <%- include('./partials/header')%>
+
+    <main class="detalleproducto">
+        <article>
+            <div class="titulo-descripcion">
+                <h1 class="detalletitulo"><%=productoEncontrado.name%></h1>
+                <p class="detalledescripcion"><%=productoEncontrado.description%></p>
+            </div>
+            <div class="contenido"> 
+                <div class="imagen">
+                    <img  class="imgdetalle" src="/img/<%=productoEncontrado.image%>" alt="Imagen Producto">
+                </div>
+                <div class="especificaciones">
+                    <h2 class="option-title">Más detalles acerca de esta experiencia:</h2>
+                    <div class="detalle-info">
+                        <div>
+                            <i class="fa-solid fa-calendar-day"></i>
+                            <p>Podrás usar tu experiencia hasta el día:</p>
+                        </div>
+                        <span><%=productoEncontrado.date%></span>
+                    </div>
+                    <div class="detalle-info">
+                        <div>
+                            <i class="fa-solid fa-clock"></i>
+                            <p>Horario:</p>
+                        </div>
+                        <span><%=productoEncontrado.time%></span>
+                    </div>
+                    <div class="detalle-info">
+                        <div>
+                            <i class="fa-solid fa-hourglass-end"></i>
+                            <p>Duración de la experiencia:</p>
+                        </div>
+                        <span><%=productoEncontrado.duration%></span>
+                    </div>
+                    <div class="detalle-info">
+                        <div>
+                            <i class="fa-solid fa-people-group"></i>
+                            <p>Cupo restante:</p>
+                        </div>
+                        <span><%=productoEncontrado.maximumCapacity%></span>
+                    </div>
+                    <p class="detalleprecio">$<%=productoEncontrado.price%></p>
+                    <a href="/products/cart"><button class="btn-comprar">Comprar</button></a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <%- include('./partials/footer')%>
+
+</body>
+</html>

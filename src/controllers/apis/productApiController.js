@@ -4,24 +4,27 @@ const ProductCategory = db.ProductCategory
 
 module.exports = {
     list: async (req, res) => {
-        let response = {};
+        let response = {data:{}};
         try {
 
             const [productos, categorias] = await Promise.all([Product.findAll(), ProductCategory.findAll({ include: [{ association: "products" }] })])
-            response.count = productos.length 
-            response.countByCategory = {}
+            response.data.count = productos.length 
+            response.data.countByCategory = {}
             categorias.forEach((categoria) => {
-                response.countByCategory[categoria.name] = categoria.products.length
+                response.data.countByCategory[categoria.name] = categoria.products.length
             });
-            response.products = productos.map ((producto) => {
+            response.data.products = productos.map ((producto) => {
                 return {
                     id: producto.id,
                     name: producto.name,
-                    categogry: producto.description,
+                    category: producto.description,
                     detail: `/api/products/${producto.id}`
             }
     })
-    return res.json(response);
+
+    response.data.lastProduct = productos[productos.length - 1]
+    return res.json(response)
+   
 
     } catch (e) {
         console.log(e)

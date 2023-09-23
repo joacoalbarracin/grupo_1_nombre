@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head', {title: "Home"})%>
+
+<body>
+    <%- include('./partials/header')%>
+    <main>
+        <h3>Modificá tu Usuario</h3>
+        <form class="formularios" action="/users/edit/<%= usuarioEncontrado.id %>?_method=PUT" method="post" enctype="multipart/form-data" id="edit_user_form">
+            <div>
+                <label>Nombre:</label>
+                <input class="text-field" type="text" name="name" value="<%=usuarioEncontrado.name%>">
+            </div>
+            <div>
+                <label>Apellido:</label>
+                <input class="text-field" type="text" name="last_name" value="<%=usuarioEncontrado.lastName%>">
+            </div>
+            <div>
+                <label>Contraseña nueva:</label>
+                <input class="text-field" type="password" name="password" id="password" value="">
+                <div id="password-error" class="error-message"></div>
+            </div>
+            <div>
+                <label>Repetí tu nueva contraseña:</label>
+                <input class="text-field" type="password" name="repeat_password" id="repeat_password" value="">
+                <div id="repeat_password-error" class="error-message"></div>
+            </div>
+            <div>
+                <label>Imagen de perfil</label>
+                <img src="/img/users/<%=usuarioEncontrado.image%>">
+                <div>
+                    <input name="image" type="file" id="image">
+                    <div id="image-error" class="error-message"></div>
+                </div>
+            </div>
+            <button class="botonForm botonSubmit" type="submit">Modificar usuario</button>
+        </form>
+        <form action="/users/delete/<%=usuarioEncontrado.id%>?_method=DELETE" method="post" display>
+            <button class="botonForm botonReset" type="submit">Eliminar</button>
+        </form>
+    </main>
+
+        <%- include('./partials/footer')%>
+        <script src="/js/editUser.js"></script>
+    </body>
+</html>
