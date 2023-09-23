@@ -1,7 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('#register_form');
+    let busqueda = [];
+    let encontrado = undefined;
 
-    form.addEventListener('submit', function (event) {
+  // me traigo la info de usuarios
+
+  fetch("/api/user/list", {
+    method: "GET",
+  })
+    .then((response) => response.json())
+    .then((info) => {
+      busqueda = info.data.users;
+      console.log(busqueda)
+    });
+    form.addEventListener('submit', async function (event) {
         event.preventDefault();
         let errores = [];
 
@@ -48,8 +60,25 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!emailPattern.test(email.value)) {
                 errores.push('El campo Email no es válido');
                 emailError.textContent = 'El campo Email no es válido';
+                const existeEmail = busqueda.some(user=>user.email === email.value);
+                console.log (existeEmail)
+                if ( existeEmail ) 
+                errores.push ("El mail ya se encuentra registrado");
+                emailError.textContent = ("El mail ya se encuentra registrado");
+
+                
+                /*encontrado = busqueda.find((row) => row.email == email.value);
+                console.log(encontrado)
+                if (encontrado) {
+                
+                  errores.push ("Este mail ya se encuentra registrado")
+                  emailError.textContent = "Este mail ya se encuentra registrado";
+                  
+                }*/ 
+             }
             }
-        }
+            
+        
 
         // Verificar si el campo 'contraseña' está vacío
         if (password.value.trim() === '') {
