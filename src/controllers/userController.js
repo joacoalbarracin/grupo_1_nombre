@@ -75,8 +75,8 @@ module.exports = {
   /** Muestra el formulario de edición de usuario */
   showEditUserForm: async (req,res) => {
     try {
-        const usuarioEncontrado = await db.User.findByPk(req.params.id)
-        return res.render('editUser', {usuarioEncontrado: usuarioEncontrado}); // Muestra la vista editProduct.ejs con el producto encontrado
+      const usuarioEncontrado = await db.User.findOne({where:{email:req.session.usuarioLogueado.email}})
+      return res.render('editUser', {usuarioEncontrado: usuarioEncontrado}); // Muestra la vista editProduct.ejs con el producto encontrado
     } catch (error) {
         console.log(error);
     }

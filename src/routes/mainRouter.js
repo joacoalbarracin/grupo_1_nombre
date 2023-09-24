@@ -20,9 +20,11 @@ const createProdValidation = require('../middlewares/createProdValidation')
 const editProdValidation = require('../middlewares/editProdValidation')
 
 const permisosAdmin = require('../middlewares/permisosAdmin')
+const logMiddleware = require('../middlewares/logMiddleware') // Traemos el middleware de logueo
+ 
 
 // Vistas en relación a los productos
-router.get('/products/cart', mainController.showProductCart); // Ruta para mostrar la vista productCart.ejs
+router.get('/products/cart', logMiddleware, mainController.showProductCart); // Ruta para mostrar la vista productCart.ejs
 router.get('/products/list', mainController.showProductList); // Ruta para mostrar la  vista productList.ejs
 router.get('/', mainController.showHome); // Ruta para mostrar la vista home.ejs
 router.get('/products/description/:id', mainController.showDescription); // Ruta para mostrar la vista description.ejs
@@ -39,6 +41,7 @@ router.get('/products/create', permisosAdmin, mainController.showCreateProductFo
 router.post('/products/create', fileUpload.single("image"), createProdValidation, mainController.processCreateProductForm); //
 
 //CRUD de procuto: Edit product
+router.get('/products/edit', permisosAdmin, mainController.showEditList)
 router.get('/products/edit/:id', permisosAdmin, mainController.showEditProductForm); // Ruta para mostrar la vista editProduct.ejs
 router.put('/products/edit/:id', fileUpload.single('image'), editProdValidation, mainController.processEditProductForm); // Ruta para editar el producto
 

@@ -114,6 +114,7 @@ body{
 
 .links .user-profile .opciones-perfil .saludo {
     font-size: 18px;
+    color:#3c6e71;
 }
 
 .links .user-profile .opciones-perfil li {
@@ -192,6 +193,14 @@ main {
     color: #3c6e71;
 }
 
+.edicion {
+    text-align: center;
+    justify-content: center;
+    color: #3c6e71;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
 
 .prod {
     background-color: #FFF;
@@ -202,6 +211,11 @@ main {
 
 .prod:hover {
     box-shadow: 0 0 10px rgb(100, 100, 100);
+}
+
+.prod .prodEdit {
+    text-decoration: none;
+    color: inherit;
 }
 
 .foto-container{

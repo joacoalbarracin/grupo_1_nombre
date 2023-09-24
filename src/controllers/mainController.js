@@ -109,7 +109,14 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
             console.log(error)
         }
     },
-
+    showEditList: async (req,res) => {
+        try {
+            const productos = await db.Product.findAll() //Busca todos los productos
+            res.render('editList', { productos: productos }); // Muestra la vista productList.ejs
+        } catch (error) {
+            console.log(error)
+        }
+    },
     //Muestra la vista editProduct.ejs y el producto encontrado como parámetro
     showEditProductForm: async (req,res) => {
         try {

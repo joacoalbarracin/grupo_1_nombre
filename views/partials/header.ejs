@@ -1,62 +1,65 @@
- <header>
-        <div class="top-bar">
-            <div class="logo-container">
-                <a href="/"> <img class="logo" src="/img/aBA 2.png" alt="Logo-AdventureBA" > </a>
-               
-            </div>
-            <div class="buscador">
-                <form class="search-bar" action='/products/search' method="POST">
-                    <input type="search" name="busqueda" placeholder="Busca tu experiencia" value="">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
-            <ul class="accesos">
-                <% if (user === null) { %> 
-                    <li class="links"><a href="/users/login">Inicia sesión</a></li>
-                    <li class="links"><a href="/users/create">Registrate</a></li>
-                <% } else { %>
-                    <li class="links"><a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                    <li class="links">
-                        <i class="fa-solid fa-user" id="iconouser"></i>
-                        <div class="user-profile" id="user-profile">
-                            <ul class="opciones-perfil">
-                                <p class="saludo"> Hola <%= user.name %></p>
-                                <li>
-                                    <a href="/users/profile">Ver mi perfil</button></a>
-                                </li>
-                                <li>
-                                    <form action="/users/logout" method="POST">
-                                        <button class="btn-logout" type="submit">Cerrar sesión</button>
-                                    </form>
-                                </li>
-                                <% if (user.userCategoryId === 2) { %> 
-                                <li class="opciones-perfil admin">
-                                    <a href="/products/create">Crear nueva experiencia</a>
-                                </li>
-                                <% } %>
-                            </ul>
-                        </div>
-                    </li>
-                <% } %>                     
-            </ul>
+<header>
+    <div class="top-bar">
+        <div class="logo-container">
+            <a href="/"> <img class="logo" src="/img/aBA 2.png" alt="Logo-AdventureBA" > </a>
+           
         </div>
+        <div class="buscador">
+            <form class="search-bar" action='/products/search' method="POST">
+                <input type="search" name="busqueda" placeholder="Busca tu experiencia" value="">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <ul class="accesos">
+            <% if (user === null) { %> 
+                <li class="links"><a href="/users/login">Inicia sesión</a></li>
+                <li class="links"><a href="/users/create">Registrate</a></li>
+            <% } else { %>
+                <li class="links"><a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li class="links">
+                    <i class="fa-solid fa-user" id="iconouser"></i>
+                    <div class="user-profile" id="user-profile">
+                        <ul class="opciones-perfil">
+                            <p class="saludo"> Hola <%= user.name %></p>
+                            <li>
+                                <a href="/users/profile"> Ver mi perfil </button></a>
+                            </li>
+                            <% if (user.userCategoryId === 2) { %> 
+                            <li class="opciones-perfil admin">
+                                <a href="/products/create"> Nueva experiencia <i class="fa-solid fa-plus"></i></a>
+                            </li>
+                            <li class="opciones-perfil admin">
+                                <a href="/products/edit"> Editar experiencias <i class="fa-solid fa-pen-to-square"></i></a>
+                            </li>
+                            <% } %>
+                            <li>
+                                <form action="/users/logout" method="POST">
+                                    <button class="btn-logout" type="submit"> Cerrar sesión <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            <% } %>                     
+        </ul>
+    </div>
 
-        <nav>
-                <ul class="categorias">
-                    <li>
-                        <a href="/products/attraction"> Atracciones </a>
-                    </li>
-                    <li>
-                        <a href="/products/food"> Gastronomía</a>
-                    </li>
-                    <li>
-                        <a href="/products/culture">Cultura</a>
-                    </li>
-                    <li>
-                        <a href="/products/list">Catálogo</a>
-                    </li>
-                </ul>
-        </nav>
+    <nav>
+            <ul class="categorias">
+                <li>
+                    <a href="/products/attraction"> Atracciones </a>
+                </li>
+                <li>
+                    <a href="/products/food"> Gastronomía</a>
+                </li>
+                <li>
+                    <a href="/products/culture">Cultura</a>
+                </li>
+                <li>
+                    <a href="/products/list">Catálogo</a>
+                </li>
+            </ul>
+    </nav>
 
-        <script src="/js/header.js"></script>
+    <script src="/js/header.js"></script>
 </header>

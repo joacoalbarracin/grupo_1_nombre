@@ -45,7 +45,7 @@
             </div>
             <div>
                 <label>Imagen del producto</label>
-                <input name="image" type="file" id="image">
+                <input name="image" type="file" id="image" value="<%= locals.oldData ? oldData.location : productoEncontrado.image>">
                 <div id="image-error" class="error-message"></div>
             </div>
             <div>
@@ -60,15 +60,15 @@
             <div>
                 <br>
                 <label for="">Categoría: </label>
-                <br>
-                <input type="radio" id="opcion1" name="opcion" value="Entretenimiento">
-                <label for="opcion1">Entretenimiento</label>
-                <br>
-                <input type="radio" id="opcion2" name="opcion" value="Gastronomía">
-                <label for="opcion2">Gastronomía</label>
-                <br>
-                <input type="radio" id="opcion3" name="opcion" value="Cultura">
-                <label for="opcion2">Cultura</label>
+                    <br>
+                    <input type="radio" value="5" name="categoria">
+                    <label for="opcion1">Entretenimiento</label>
+                    <br>
+                    <input type="radio" value="1" name="categoria">
+                    <label for="opcion2">Gastronomía</label>
+                    <br>
+                    <input type="radio" value="4" name="categoria">
+                    <label for="opcion2">Cultura</label>
             </div>
             <div>
                 <label>Descuento (%):</label>
