@@ -1,129 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head', {title: "Home"})%>
+<%- include('./partials/head', {title: "Home"})%>
 
-    <body>
-        <%- include('./partials/header')%>
-        <main id="formulario-registro">
-            <h3>Editá los datos del producto</h3>
-            <form class="formularios" action="/products/edit/<%= productoEncontrado.id %>?_method=PUT" method="post" enctype="multipart/form-data">
-                <div>
-                    <label>Nombre:</label>
-                    <input class="text-field" input="text" name="name" value="<%= locals.oldData ? oldData.name : productoEncontrado.name%>">
-                    <% if(locals.errors && errors.name) { %>
-                        <p class="error">
-                        <%= errors.name.msg %></p>
-                    <% } %>
-                </div>
-                <div>
-                    <label>Descripción:</label>
-                    <input name="description" type="text" class="text-field" value="<%= locals.oldData ? oldData.description : productoEncontrado.description%>">
-                    <% if(locals.errors && errors.description) { %>
-                        <p class="error">
-                        <%= errors.description.msg %></p>
-                    <% } %>
-                </div>
-                <div>
-                    <label>Titulo:</label>
-                    <input class="text-field" input="text" name="title" value="<%= locals.oldData ? oldData.title : productoEncontrado.title%>">
-                    <% if(locals.errors && errors.title) { %>
-                        <p class="error">
-                        <%= errors.title.msg %></p>
-                    <% } %>
-                </div>
-                <div>
-                    <label>Direccion:</label>
-                    <input class="text-field" input="text" name="location" value="<%= locals.oldData ? oldData.location : productoEncontrado.location%>">
-                    <% if(locals.errors && errors.location) { %>
-                        <p class="error">
-                        <%= errors.location.msg %></p>
-                    <% } %>
-                </div>
-                <div>
-                    <label>Imagen del producto</label>
-                    <img src="/img/<%=productoEncontrado.image%>" alt="Imagen Producto" height="50px">
-                    <input name="image" type="file" value="<%= locals.oldData ? oldData.image : productoEncontrado.image%>">
-                </div>
-                <div>
-                    <label>Price:</label>
-                    <input name="price" type="number" class="text-field" value="<%= locals.oldData ? oldData.price : productoEncontrado.price%>">
-                    <% if(locals.errors && errors.price) { %>
-                        <p class="error">
-                        <%= errors.price.msg %></p>
-                    <% } %>
-                </div>
-                <div>
-                    <br>
-                    <label for="">Categoría: </label>
-                    <br>
-                    <input type="radio" id="5" name="categoria" value="Entretenimiento">
-                    <label for="opcion1">Entretenimiento</label>
-                    <br>
-                    <input type="radio" id="1" name="categoria" value="Gastronomía">
-                    <label for="opcion2">Gastronomía</label>
-                    <br>
-                    <input type="radio" id="4" name="opcion" value="Cultura">
-                    <label for="opcion2">Cultura</label>
-                </div>
-                <div>
-                    <label>Descuento (%):</label>
-                    <input name="discount" type="number" class="text-field" value="<%= locals.oldData ? oldData.discount : productoEncontrado.discount%>">
-                    <% if(locals.errors && errors.discount) { %>
-                        <p class="error">
-                        <%= errors.discount.msg %></p>
-                    <% } %>
-                </div>
-                <div>
-                    <label>Fecha:</label>
-                    <input name="date" type="date" class="text-field" value="<%= locals.oldData ? oldData.date : productoEncontrado.date%>">
-                    <% if(locals.errors && errors.date) { %>
-                        <p class="error">
-                        <%= errors.date.msg %></p>
-                    <% } %>
-                </div>
-                <div>
-                    <label>Hora:</label>
-                    <input name="time" type="time" class="text-field" value="<%= locals.oldData ? oldData.time : productoEncontrado.time%>">
-                    <% if(locals.errors && errors.time) { %>
-                        <p class="error">
-                        <%= errors.time.msg %></p>
-                    <% } %>
-                </div>
-                <div>
-                    <label>Capacidad:</label>
-                    <input name="maximumCapacity" type="number" class="text-field" value="<%= locals.oldData ? oldData.maximumCapacity : productoEncontrado.maximumCapacity%>">
-                    <% if(locals.errors && errors.maximumCapacity) { %>
-                        <p class="error">
-                        <%= errors.maximumCapacity.msg %></p>
-                    <% } %>
-                </div>
-                <div>
-                    <label>Duracion (minutos):</label>
-                    <input name="duration" type="number" class="text-field" value="<%= locals.oldData ? oldData.duration : productoEncontrado.duration%>">
-                    <% if(locals.errors && errors.duration) { %>
-                        <p class="error">
-                        <%= errors.duration.msg %></p>
-                    <% } %>
-                </div>
-                <button class="botonForm botonSubmit" type="submit">Editar producto</button>
+<body>
+    <%- include('./partials/header')%>
+
+    <main id="formulario-registro">
+        <h3>Editá los datos del producto</h3>
+        <form class="formularios" action="/products/edit/<%= productoEncontrado.id %>?_method=PUT" method="post" enctype="multipart/form-data" id="edit_product_form">
+            
+            <div>
+                <label>Nombre:</label>
+                <input class="text-field" type="text" name="name" id="name" value="<%= locals.oldData ? oldData.name : productoEncontrado.name%>">
+                <p class="error-message" id="name-error"></p>
+            </div>
+            
+            <!-- Descripción -->
+            <div>
+                <label>Descripción:</label>
+                <input class="text-field" type="text" name="description" id="description" value="<%= locals.oldData ? oldData.description : productoEncontrado.description%>">
+                <p class="error-message" id="description-error"></p>
+            </div>
+
+            <div>
+                <label>Titulo:</label>
+                <input class="text-field" type="text" name="title" id="title" value="<%= locals.oldData ? oldData.title : productoEncontrado.title%>">
+                <p class="error-message" id="title-error"></p>
+            </div>
+
+            <!-- Direccion -->
+            <div>
+                <label>Direccion:</label>
+                <input class="text-field" type="text" name="location" id="location" value="<%= locals.oldData ? oldData.location : productoEncontrado.location%>">
+                <p class="error-message" id="location-error"></p>
+            </div>
+
+            <div>
+                <label>Imagen del producto</label>
+                <img src="/img/<%=productoEncontrado.image%>" alt="Imagen Producto" height="50px">
+                <input name="image" type="file" id="image" value="<%= locals.oldData ? oldData.image : productoEncontrado.image%>">
+                <p class="error-message" id="image-error"></p>
+            </div>
+
+            <div>
+                <label>Price:</label>
+                <input name="price" type="number" class="text-field" id="price" value="<%= locals.oldData ? oldData.price : productoEncontrado.price%>">
+                <p class="error-message" id="price-error"></p>
+            </div>
+
+            <div>
                 <br>
-            </form>
-            <form action="/products/delete/<%=productoEncontrado.id%>?_method=DELETE" method="post" display>
-                <button class="botonForm botonReset" type="submit">Eliminar</button>
-            </form>      
+                <label for="">Categoría: </label>
+                <br>
+                <input type="radio" id="5" name="categoria" value="Entretenimiento">
+                <label for="opcion1">Entretenimiento</label>
+                <br>
+                <input type="radio" id="1" name="categoria" value="Gastronomía">
+                <label for="opcion2">Gastronomía</label>
+                <br>
+                <input type="radio" id="4" name="opcion" value="Cultura">
+                <label for="opcion2">Cultura</label>
+            </div>
 
-        </main>
+            <div>
+                <label>Descuento (%):</label>
+                <input name="discount" type="number" class="text-field" id="discount" value="<%= locals.oldData ? oldData.discount : productoEncontrado.discount%>">
+                <p class="error-message" id="discount-error"></p>
+            </div>
 
-        <%- include('./partials/footer')%>
-        <script src="/js/editProducts.js">
+            <div>
+                <label>Fecha:</label>
+                <input name="date" type="date" class="text-field" id="date" value="<%= locals.oldData ? oldData.date : productoEncontrado.date%>">
+                <p class="error-message" id="date-error"></p>
+            </div>
 
-        </script>
+            <!-- Hora -->
+            <div>
+                <label>Hora:</label>
+                <input name="time" type="time" class="text-field" id="time" value="<%= locals.oldData ? oldData.time : productoEncontrado.time%>">
+                <p class="error-message" id="time-error"></p>
+            </div>
 
-    </body>
+            <div>
+                <label>Capacidad:</label>
+                <input name="maximumCapacity" type="number" class="text-field" id="maximumCapacity" value="<%= locals.oldData ? oldData.maximumCapacity : productoEncontrado.maximumCapacity%>">
+                <p class="error-message" id="maximumCapacity-error"></p>
+            </div>
+
+            <div>
+                <label>Duracion (minutos):</label>
+                <input name="duration" type="number" class="text-field" id="duration" value="<%= locals.oldData ? oldData.duration : productoEncontrado.duration%>">
+                <p class="error-message" id="duration-error"></p>
+            </div>
+
+            <button class="botonForm botonSubmit" type="submit">Editar producto</button>
+            <br>
+
+        </form>
+        <form action="/products/delete/<%=productoEncontrado.id%>?_method=DELETE" method="post" display>
+            <button class="botonForm botonReset" type="submit">Eliminar</button>
+        </form>      
+
+    </main>
+
+    <%- include('./partials/footer')%>
+    <script src="/js/editProducts.js"></script>
+
+</body>
 </html>
-
-
-
-
 
 

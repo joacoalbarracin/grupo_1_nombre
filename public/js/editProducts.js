@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('#create_product_form');
+    const form = document.querySelector('#edit_product_form');
 
     form.addEventListener('submit', function (event) {
         event.preventDefault();

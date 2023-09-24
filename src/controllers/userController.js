@@ -86,7 +86,7 @@ module.exports = {
     try {
       await db.User.update({
         name: req.body.name,
-        lastName: req.body.lastName,
+        lastName: req.body.last_name,
         password: bcrypt.hashSync(req.body.password, 10),
         image: req.file.filename,
         
@@ -98,11 +98,17 @@ module.exports = {
         console.log(error)
     }
   },
-      //Hace ["borrado": true] en la base de datos
-    deleteUser: (req, res) => { 
-      const usuarioEncontrado = usuarios.find(row => row.id == req.params.id); // Busca el producto por ID
-      usuarioEncontrado.borrado = true; // Asigna el estado de borrado al producto encontrado
-      fs.writeFileSync(rutaArchivoUsers, JSON.stringify(usuarios, null, 2)); // Escribe el archivo JSON
-      return res.send(usuarioEncontrado);
-    },
+  deleteUser: async (req, res) => {
+    try {
+        await db.User.destroy({
+            where: {id: req.params.id}
+        }); req.session.destroy();
+        res.clearCookie("recordame");
+         return res.redirect("/")
+    } catch (error) {
+        console.log(error)
+    }
+  },
+    
   };
+  

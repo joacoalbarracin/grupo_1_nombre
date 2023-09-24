@@ -32,8 +32,8 @@ router.get('/users/create', estaLogueado, userController.showCreateUserForm); //
 router.post('/users/create', fileUpload.single("image"), registerValidation, userController.processCreateUserForm); // Procesa el formulario de registro
 
 //CRUD de usuario: Edit user
-router.get('/users/edit', permisosAdmin, userController.showEditUserForm); // Ruta para mostrar la vista editUser.ejs
-router.put('/users/edit', fileUpload.single('image'), userController.processEditUser); // Procesa el formulario de edición de usuario HACER!!!!
+router.get('/users/edit', userController.showEditUserForm); // Ruta para mostrar la vista editUser.ejs
+router.put('/users/edit/:id', fileUpload.single('image'), userController.processEditUser); // Procesa el formulario de edición de usuario HACER!!!!
 
 //CRUD de usuario: Delete user
 router.delete('/users/delete/:id', userController.deleteUser); // Ruta para eliminar el producto

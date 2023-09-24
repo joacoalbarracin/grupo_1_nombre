@@ -21,7 +21,7 @@ module.exports = {
       categorias.forEach((categoria) => {
         response.data.countByCategory[categoria.name] = categoria.products.length;
       });
-
+      
       response.data.products = productos.map((producto) => {
         return {
           id: producto.id,
@@ -30,6 +30,7 @@ module.exports = {
           detail: `/api/products/${producto.id}`
         }
       })
+      
 
       response.data.lastProduct = productos[productos.length - 1];
       return res.json(response);

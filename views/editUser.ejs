@@ -30,7 +30,9 @@
                     <input name="image" type="file">
                 </div>
             </div>
+            <form  action="/users/edit/<%=usuarioEncontrado.id%>?_method=PUT" method="put" display>
                 <button class="botonForm botonSubmit" type="submit">Modificar usuario</button>
+            </form> 
             </div>
         </form>
         <form  action="/users/delete/<%=usuarioEncontrado.id%>?_method=DELETE" method="post" display>

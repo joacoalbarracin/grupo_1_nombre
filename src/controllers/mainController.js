@@ -145,7 +145,7 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
             }, {
                 where: {id : req.params.id}
             })
-            return res.redirect("/products/list") // Redirecciona a la lista de productos
+            return res.redirect("/products/list")// Redirecciona a la lista de productos
         } catch (error) {
             console.log(error)
         }
@@ -154,7 +154,7 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
         try {
             await db.Product.destroy({
                 where: {id: req.params.id}
-            })
+            }); return res.redirect("/")
         } catch (error) {
             console.log(error)
         }
