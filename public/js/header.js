@@ -4,7 +4,9 @@ window.addEventListener('load', function () {
 
     console.log(userProfile);
     console.log(iconoUser);
-    iconoUser.addEventListener('click', function () {
-        userProfile.classList.toggle('mostrar'); // Toggle muestra u oculta el div
-    });
+    if (iconoUser!=undefined){
+        iconoUser.addEventListener('click', function () {
+            userProfile.classList.toggle('mostrar'); // Toggle muestra u oculta el div
+        });
+    }
 });

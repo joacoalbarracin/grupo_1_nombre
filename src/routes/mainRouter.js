@@ -24,7 +24,7 @@ const logMiddleware = require('../middlewares/logMiddleware') // Traemos el midd
  
 
 // Vistas en relación a los productos
-router.get('/products/cart', logMiddleware, mainController.showProductCart); // Ruta para mostrar la vista productCart.ejs
+router.get('/products/cart', mainController.showProductCart); // Ruta para mostrar la vista productCart.ejs
 router.get('/products/list', mainController.showProductList); // Ruta para mostrar la  vista productList.ejs
 router.get('/', mainController.showHome); // Ruta para mostrar la vista home.ejs
 router.get('/products/description/:id', mainController.showDescription); // Ruta para mostrar la vista description.ejs

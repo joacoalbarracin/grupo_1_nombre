@@ -6,19 +6,10 @@
     <%- include('./partials/header')%>
     <main>
         <h2 class="cart-tittle">Tu carrito de compras:</h2>
+        
         <div class="content">
             <div class="prodcart">
-                <img src="/img/Teatro Colon.jpeg" alt="Teatro Colon">
-                <h3 class="tituloprodcart">Visita Guíada - Teatro Colón</h3>
-                <form method='POST' class='quantity' action=''>
-                    <button class="quantity-button decrement" type="button">-</button>
-                    <input type="number" class="quantity-input" value="1" min="1">
-                    <button class="quantity-button increment" type="button">+</button>
-                </form>
-
-                <p class="option-price">$4.000</p>
-
-                <div><i id="trash" class="fa-solid fa-trash"></i></div>
+               
             </div>
         <div class="pay">
             <p>Total: $11.000</p>
@@ -29,6 +20,8 @@
     </main>
 
     <%- include('./partials/footer')%>
+    <script src="/js/cart.js"></script>
+
 
 </body>
 </html>
