@@ -22,7 +22,7 @@ body{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 30vw;
+    height: 10vw;
 
 }
 
@@ -400,11 +400,65 @@ span {
     background-color: #468083; /* Color de fondo al pasar el ratón sobre el botón */
 }
 
-/* Estilo para los íconos */
-.fa-solid.fa-trash:hover {
-    color: #c0392b;
+
+/* Vista de perfil de usuario */
+
+.contenido-perfil {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
+.contenido-perfil .imagen-perfil {
+    display: flex;
+    width: 180px;
+    height: 180px;
+    align-items: center;
+    justify-content: center;
+    border: 7px solid #FFFFFF;
+    background-color: #DFE5F2;
+    box-shadow: 0 0 10px rgb(100, 100, 100);
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.contenido-perfil .imagen-perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: inherit;
+}
+
+.contenido-perfil .perfil-usuario-body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.contenido-perfil .perfil-usuario-body .info-user {
+    margin-bottom: 5px;
+}
+
+.btn-profile {
+    background-color: #3c6e71; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    padding: 5px 5px; /* Espaciado interno del botón */
+    font-size: 18px; /* Tamaño de fuente del botón */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Borde redondeado */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón sobre el botón */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.btn-profile:hover {
+    background-color: #468083; /* Color de fondo al pasar el ratón sobre el botón */
+}
 
 /*De acá hacia abajo en CSS de formulario y registro*/
 
@@ -433,7 +487,6 @@ main form {
     align-items: center;
     justify-content: space-around;
     margin-top: 25px;
-
 }
 
 form div {
@@ -442,9 +495,45 @@ form div {
     width:70%;
 }
 
+.input-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+form div .imagen-perfil {
+    display: flex;
+    width: 180px;
+    height: 180px;
+    align-items: center;
+    justify-content: center;
+    border: 7px solid #FFFFFF;
+    background-color: #DFE5F2;
+    box-shadow: 0 0 10px rgb(100, 100, 100);
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+form div .imagen-perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: inherit;
+}
+
 .text-field {
     padding: 5px;
     width: 100%;
+}
+
+.botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0 20%;
 }
 
 .error {
@@ -452,8 +541,7 @@ form div {
 }
 
 .botonForm{
-    width: 40%;
-
+    width: 50%;
 }
 
 .botonSubmit{
@@ -466,18 +554,58 @@ form div {
     background-color: #3c6e71;
     color:#FFF;
     transition:background-color 0.7s;
-
-    
-}
-.botonEnviar:hover {
-    background-color: #468083;
-}
-
-.botonEnviar{
     width:min-content;
     padding: 0.2em;
     justify-content: space-between;
 }
+
+.botonEnviar:hover {
+    background-color: #468083;
+}
+
+
+.botonDelete {
+    background-color: #4d4d4d;
+    color: #FFF;
+}
+
+.botonDelete:hover {
+    background-color: #8e8e8e;
+}
+
+/* Estilo del botón */
+#borrar-prod {
+    justify-content: right;
+    align-items: end;
+}
+
+#borrar-prod button {
+    background-color: #fff;
+    color: #3c6e71;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px; 
+    cursor: pointer; 
+    transition: background-color 0.3s;
+}
+
+#borrar-prod button:hover {
+    background-color: #3c6e71;
+    color: #fff;
+}
+
+#tacho {
+font-size: 20px;
+}
+
+#borrar-prod button i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+  
 
 .buscador{
     display: flex;
@@ -756,6 +884,7 @@ form div {
 
     
 }
+
 .botonEnviar:hover {
     background-color: #468083;
 }

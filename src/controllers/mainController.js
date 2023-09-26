@@ -154,7 +154,7 @@ module.exports = { // Exportamos un objeto literal con todos los métodos
         try {
             await db.Product.destroy({
                 where: {id: req.params.id}
-            }); return res.redirect("/")
+            }); return res.redirect("/products/list")
         } catch (error) {
             console.log(error)
         }

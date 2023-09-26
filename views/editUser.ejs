@@ -5,16 +5,22 @@
 <body>
     <%- include('./partials/header')%>
     <main>
-        <h3>Modificá tu Usuario</h3>
+        <h2 class="edicion">Modificá tu Usuario</h2>
         <form class="formularios"action="/users/edit/<%= usuarioEncontrado.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+            <div class="input-img">
+                <div class="imagen-perfil">
+                    <img src="/img/users/<%=usuarioEncontrado.image%>">
+                </div>
+                <input name="image" type="file">
+            </div>
             <div>
                 <label>Nombre:</label>
                 <input class="text-field" type="text" name="name" value="<%=usuarioEncontrado.name%>">
             </div>
-           <div>
+            <div>
                 <label>Apellido:</label>
-                 <input class="text-field" type="text" name="last_name" value="<%=usuarioEncontrado.lastName%>">
-           </div>
+                <input class="text-field" type="text" name="last_name" value="<%=usuarioEncontrado.lastName%>">
+            </div>
             <div>
                 <label>Contraseña nueva:</label>
                 <input class="text-field" type="password" name="password" value="">
@@ -23,21 +29,13 @@
                 <label>Repetí tu nueva contraseña:</label>
                 <input class="text-field" type="password" name="repeat_password" value="">
             </div>
-            <div>
-                <label>Imagen de perfil</label>
-                <img src="/img/users/<%=usuarioEncontrado.image%>">
-                <div>
-                    <input name="image" type="file">
-                </div>
-            </div>
-            <form  action="/users/edit/<%=usuarioEncontrado.id%>?_method=PUT" method="put" display>
+            <div class="botones">
                 <button class="botonForm botonSubmit" type="submit">Modificar usuario</button>
-            </form> 
+                <form  action="/users/delete/<%=usuarioEncontrado.id%>?_method=DELETE" method="post" display>
+                    <button class="botonForm botonDelete" type="submit">Eliminar</button>
+                </form> 
             </div>
         </form>
-        <form  action="/users/delete/<%=usuarioEncontrado.id%>?_method=DELETE" method="post" display>
-            <button class="botonForm botonReset" type="submit">Eliminar</button>
-        </form> 
     </main>
 
         <%- include('./partials/footer')%>

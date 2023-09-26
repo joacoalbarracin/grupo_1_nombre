@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head', {title: "Home"})%>
-
-
+<%- include('./partials/head', {title: "Perfil de usuario"})%>
     <body>
-        
         <%- include('./partials/header')%>
-
         <main>
-            <div>
-                <img src="/img/users/<%=usuarioEncontrado.image%>">
-            </div>
-            <div class="infoUser">
-                <h4>Nombre:</h4><p><%=usuarioEncontrado.name%></p>
-                <h4>Apellido:</h4><p><%=usuarioEncontrado.lastName%></p>
-           </div>
-           <a href="/users/edit"><h3>Editar usuario</h3></a>
+            <section class="contenido-perfil">
+                <div class="imagen-perfil">
+                    <img src="/img/users/<%=usuarioEncontrado.image%>" alt="img-avatar">
+                </div>
+                <div class="perfil-usuario-body">
+                    <div class="info-user">
+                        <h4>Nombre:</h4><p><%=usuarioEncontrado.name%></p>
+                        <h4>Apellido:</h4><p><%=usuarioEncontrado.lastName%></p>
+                    </div>
+                    <a href="/users/edit">
+                        <button class="btn-profile">Editar usuario</button>
+                    </a>
+                </div>
+                </section>
         </main>
-        
         <%- include('./partials/footer')%>
-
-
     </body>
 </html>

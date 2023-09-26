@@ -49,18 +49,15 @@
             </div>
 
             <div>
+                <label for="categoria">Categoría:</label>
                 <br>
-                <label for="">Categoría: </label>
-                <br>
-                <input type="radio" id="5" name="categoria" value="Entretenimiento">
-                <label for="opcion1">Entretenimiento</label>
-                <br>
-                <input type="radio" id="1" name="categoria" value="Gastronomía">
-                <label for="opcion2">Gastronomía</label>
-                <br>
-                <input type="radio" id="4" name="opcion" value="Cultura">
-                <label for="opcion2">Cultura</label>
+                <select name="categoria" id="categoria">
+                    <option value="5">Entretenimiento</option>
+                    <option value="1">Gastronomía</option>
+                    <option value="4">Cultura</option>
+                </select>
             </div>
+            
 
             <div>
                 <label>Descuento (%):</label>
@@ -92,15 +89,8 @@
                 <input name="duration" type="number" class="text-field" id="duration" value="<%= locals.oldData ? oldData.duration : productoEncontrado.duration%>">
                 <p class="error-message" id="duration-error"></p>
             </div>
-
             <button class="botonForm botonSubmit" type="submit">Editar producto</button>
-            <br>
-
         </form>
-        <form action="/products/delete/<%=productoEncontrado.id%>?_method=DELETE" method="post" display>
-            <button class="botonForm botonReset" type="submit">Eliminar</button>
-        </form>      
-
     </main>
 
     <%- include('./partials/footer')%>

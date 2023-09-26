@@ -16,6 +16,9 @@
                             <div class="info-articulos">
                                 <h4 class = "name"> <%= row.name %></h4>
                             </div>
+                            <form id="borrar-prod" action="/products/delete/<%=row.id%>?_method=DELETE" method="post">
+                                <button type="submit" id="tacho"><i class="fa-solid fa-trash"></i></button>
+                            </form>
                         </a>
                     </article>
                      <% } ) %>
@@ -23,5 +26,6 @@
             </section>
         </main>
         <%- include('./partials/footer')%>
+        <script src="/js/eliminarProd.js"></script>
     </body>
 </html>
