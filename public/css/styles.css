@@ -595,6 +595,7 @@ span {
 
 main form {
     display: flex;
+  
     
 }
 
@@ -1004,7 +1005,7 @@ font-size: 20px;
     }
     
 #formulario-registro{
-    background-color: #ebebeb;
+    background-color: #efeff1d7;
     display: flex;
     justify-content: center;
 }
