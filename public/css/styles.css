@@ -142,29 +142,28 @@ body{
 
 
 .categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-gap: 10px;
     width: 100%;
-}
-
-.categorias li {
-    display: inline-block;
-    box-sizing: border-box;
-    width: 20%;
-    padding: 10px;
-    margin: 0;
-    
   }
 
-.categorias li a{
+  .categorias li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 0;
+  }
+  .categorias li a {
     display: inline-block;
     text-decoration: none;
     color: #FFF;
     background-color: #3c6e71;
     font-weight: bold;
-    padding: 0.5em;
-    justify-content: space-between;
-   
-}
-
+    padding: 0.5em 1em;
+  }
 .nav {
     display: flex;
 }
