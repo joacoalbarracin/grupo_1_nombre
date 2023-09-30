@@ -19,14 +19,18 @@ const generarCarrito = async function () {
         if (resultado.ok) {
           const producto = await resultado.json();
        contenedor.innerHTML+=`<img src="${producto.data.image}" alt="Teatro Colon">
+       <div class"elements">
+       <div class"product-info">
        <h3 class="tituloprodcart">${producto.data.name}</h3>
+       </div>
        <form method='POST' class='quantity' action=''>
-           <button class="quantity-button decrement" type="button">-</button>
+          
            <input type="number" class="quantity-input" value="1" min="1">
-           <button class="quantity-button increment" type="button">+</button>
+          
        </form>
 
-       <p class="option-price">${producto.data.price}</p>
+       <div class "product-price"><p class="option-price">${producto.data.price}</p></div>
+       </div>
 
        <div><i id="trash" class="fa-solid fa-trash"></i></div>`
        

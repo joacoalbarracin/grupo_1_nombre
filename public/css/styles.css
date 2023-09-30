@@ -698,7 +698,11 @@ font-size: 20px;
         background-color: #E0E1E6;
         width: 100%;
     } 
-    
+
+    .top-bar {
+        height: 170px;
+    }
+
     body header div.top-bar{
         display: flex;
         flex-direction: row;
@@ -716,6 +720,7 @@ font-size: 20px;
     }
     .logo-container{
         width: 20%;
+        height: 100%;
     }
     
     .accesos{
