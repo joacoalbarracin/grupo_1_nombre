@@ -606,10 +606,16 @@ main form {
     flex-wrap: nowrap;
 }
 
+
+
 #formulario-registro{
-    background-color: #ebebeb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     display: flex;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
 .formularios{
@@ -624,6 +630,12 @@ form div {
     margin-bottom: 10px;
     border-radius: 5%;
     width:70%;
+}
+
+main #formulario-registro {
+    margin-top: 0px;
+    height: 100%;
+ 
 }
 
 .input-img {
@@ -991,39 +1003,6 @@ font-size: 20px;
         margin-left: 80px;
     }
     
-
-
-    
-}
-
-footer {
-    background-color: #3c6e71;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-footer div ul {
-    background-color: #3c6e71;
-    display: flex;
-    justify-content: space-evenly;
-    text-decoration: none;
-    list-style: none;
-}
-
-.redes{
-    margin-top: 10px;
-}
-
-footer div ul li a{
-    color: #FFF;
-    text-decoration: none;
-    list-style: none;
-    font-weight: bold;
-}
-
-
-
-
 #formulario-registro{
     background-color: #ebebeb;
     display: flex;
@@ -1079,3 +1058,35 @@ footer div ul li a{
 .error-message {
     color: red;
 }
+
+    
+}
+
+footer {
+    background-color: #3c6e71;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+footer div ul {
+    background-color: #3c6e71;
+    display: flex;
+    justify-content: space-evenly;
+    text-decoration: none;
+    list-style: none;
+}
+
+.redes{
+    margin-top: 10px;
+}
+
+footer div ul li a{
+    color: #FFF;
+    text-decoration: none;
+    list-style: none;
+    font-weight: bold;
+}
+
+
+
+
