@@ -177,7 +177,12 @@ body{
     display: none;
 }
 
-
+article.prod {
+    
+       height: 370px;
+        object-fit: cover; /* Ajustar la imagen recortando si es necesario */
+     
+}
 
 main {
     margin-top: 15px;
@@ -191,6 +196,7 @@ main {
     font-weight: bold;
     margin-left: 4%;
     color: #3c6e71;
+    
 }
 
 .edicion {
