@@ -267,30 +267,31 @@ main {
     height: 37%;
   }
 
-footer {
+  footer {
     background-color: #3c6e71;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-footer div ul {
-    background-color: #3c6e71;
+    padding: 10px;
+  }
+  
+  /* Estilos para la lista de enlaces en el footer */
+  footer div ul {
     display: flex;
-    justify-content: space-evenly;
-    text-decoration: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     list-style: none;
-}
-
-.redes{
-    margin-top: 10px;
-}
-
-footer div ul li a{
-    color: #FFF;
+    padding: 0;
+    margin: 0;
+  }
+  
+  footer div ul li {
+    margin: 10px;
+  }
+  
+  footer div ul li a {
+    color: #fff;
     text-decoration: none;
-    list-style: none;
     font-weight: bold;
-}
+  }
 
 /* Vista de productDetail*/
 .detalleproducto {
@@ -847,6 +848,30 @@ font-size: 20px;
     }
 }
 
+footer {
+    background-color: #3c6e71;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+footer div ul {
+    background-color: #3c6e71;
+    display: flex;
+    justify-content: space-evenly;
+    text-decoration: none;
+    list-style: none;
+}
+
+.redes{
+    margin-top: 10px;
+}
+
+footer div ul li a{
+    color: #FFF;
+    text-decoration: none;
+    list-style: none;
+    font-weight: bold;
+}
 
 
 #formulario-registro{
