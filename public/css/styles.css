@@ -977,6 +977,22 @@ font-size: 20px;
         width: 31.5%;
     }
 
+    .detalletitulo {
+        font-size: 36px;
+        color: #333;
+        padding-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    img.imgdetalle {
+        
+        height: 70%;
+        width: 80%;
+        margin-left: 80px;
+    }
+    
+
+
     
 }
 
