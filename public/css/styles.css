@@ -28,7 +28,6 @@ body{
 
 .logo{
     height: 100%;
-    width: 100%;
     padding: 10px;
 }
 .logo-container{
@@ -144,7 +143,6 @@ body{
 .categorias {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    grid-gap: 10px;
     width: 100%;
   }
 
@@ -163,6 +161,26 @@ body{
     background-color: #3c6e71;
     font-weight: bold;
     padding: 0.5em 1em;
+  }
+
+  .categorias li a:hover {
+    background-color: #4a8c90; /* New background color on hover */
+    transform: scale(1.1); /* Scale up the element slightly on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow */
+  }
+
+  .accesos a {
+    display: inline-block;
+    text-decoration: none;
+    color: #FFF;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .accesos a:hover {
+    transform: scale(1.1); /* Increase size on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add box shadow on hover */
   }
 .nav {
     display: flex;
@@ -768,9 +786,135 @@ font-size: 20px;
 
     
 
-@media (min-width: 361px){
+@media (min-width: 200px){
 
+    header{
+        background-color: #E0E1E6;
+        width: 100%;
+    } 
 
+    .top-bar {
+        height: 100px;
+    }
+
+    body header div.top-bar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ajusta el valor de desenfoque y opacidad según tus preferencias */
+        width: 100%;
+    }
+    
+    .logo{
+        height: 100%;
+        width: auto;
+        padding: 10px;
+    }
+    .logo-container{
+        width: 20%;
+        height: 100%;
+    }
+    
+    .accesos{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-bottom: 25px;
+        font-size: 12px;
+    }
+    
+    /* Estilos para el contenedor del buscador */
+    .search-bar {
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        margin-left: 15px;
+    }
+      
+    /* Estilos para el campo de búsqueda */
+    .search-bar input[type="search"] {
+        flex: 4;
+        border: none;
+        padding: 8px;
+        border-radius: 4px 0 0 4px;
+        font-size: 10px;
+        width: 8em;
+    }
+    
+    /* Estilos para el botón de búsqueda */
+    .search-bar button[type="submit"] {
+        background-color: #3c6e71; /* Color de fondo del botón */
+        color: #fff; /* Color del texto del botón */
+        border: none;
+        border-radius: 0 4px 4px 0;
+        padding: 8px 12px;
+        cursor: pointer;
+        font-size: 10px;
+    }
+    
+    /* Estilos para el icono de búsqueda dentro del botón */
+    .search-bar button[type="submit"] i {
+        margin-right: 5px;
+        color: #fff;
+    }
+    
+    .links{
+        margin: 0.3em;
+        padding: 0.3em;
+        list-style: none;
+        display: flex;
+        margin-top: 30px;
+    }
+    
+    .links a {
+        text-decoration: none;
+        color: #3c6e71;
+        font-weight: bold;
+    }
+    
+    .links i {
+        color: #3c6e71;
+    }
+    
+    header nav{
+        display: flex;
+        flex-direction: row;
+        background-color: #3c6e71;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .categorias{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        font-weight: 500;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        width: 100%;
+        height: 50px;
+    }
+    
+    .categorias li {
+        list-style: none;
+        padding-top: 0.5em;
+        font-weight: 500;
+        font-size: large;
+        display: flex;
+        align-items: center;
+    }
+
+    .categorias li a {
+        list-style: none;
+        padding-top: 0.5em;
+        font-weight: 500;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+    }
    
     
     .productos{
@@ -832,8 +976,6 @@ font-size: 20px;
         width: 70%;
       }
     }
-    
-
 
 
 @media (min-width: 769px){
@@ -859,7 +1001,6 @@ font-size: 20px;
     
     .logo{
         height: 100%;
-        width: 60%;
         padding: 10px;
     }
     .logo-container{
@@ -871,8 +1012,9 @@ font-size: 20px;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        margin: 20px;
+        margin-bottom: 25px;
         padding: 10px;
+        font-size: 16px;
     }
     
     /* Estilos para el contenedor del buscador */
@@ -889,6 +1031,7 @@ font-size: 20px;
         padding: 8px;
         border-radius: 4px 0 0 4px;
         font-size: 16px;
+        width: 21em;
     }
     
     /* Estilos para el botón de búsqueda */
@@ -944,6 +1087,7 @@ font-size: 20px;
         padding-bottom: 1em;
         width: 100%;
         height: 50px;
+        font-size: 16px;
     }
     
     .categorias li {
@@ -953,6 +1097,10 @@ font-size: 20px;
         font-size: large;
         display: flex;
         align-items: center;
+    }
+
+    .categorias li a{
+        font-size:large;
     }
     
     
@@ -971,7 +1119,7 @@ font-size: 20px;
     
     .presentacion .texto-presentacion {
         position: absolute;
-        color: #000;
+        color: #4B4B4B;
         /* Cambiar text-decoration por font-weight para hacer el texto más legible */
         font-weight: bold;
         padding: 20px;
@@ -980,10 +1128,8 @@ font-size: 20px;
         width: 100%;
         height: 100%;
         /* Ajustar el tamaño de fuente */
-        font-size: 1.5rem;
-        
-        /* Agregar sombra al texto para resaltarlo del fondo */
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        font-size: large;
+    
       }
     
     main section article {
@@ -1045,8 +1191,7 @@ font-size: 20px;
     background-color: #3c6e71;
     color:#FFF;
     transition:background-color 0.7s;
-
-    
+    justify-content: center;
 }
 
 .botonEnviar:hover {
@@ -1054,6 +1199,10 @@ font-size: 20px;
 }
 .botonSubmit:hover {
     background-color: #468083;
+}
+
+.centered-container {
+    text-align: center;
 }
 
 .error-message {

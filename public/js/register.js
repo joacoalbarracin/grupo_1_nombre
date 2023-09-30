@@ -81,8 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (repeatPassword.value.trim() === '') {
-            errores.push('El campo Repetir Contraseña debe llenarse');
-            repeatPasswordError.textContent = 'El campo Repetir Contraseña debe llenarse';
+            errores.push('El campo Repetir contraseña debe llenarse');
+            repeatPasswordError.textContent = 'El campo Repetir contraseña debe llenarse';
         } else if (repeatPassword.value !== password.value) {
             errores.push('Las contraseñas no coinciden');
             repeatPasswordError.textContent = 'Las contraseñas no coinciden';
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (image.files.length === 0) {
             errores.push('Debe seleccionar una imagen');
-            imageError.textContent = 'Debe seleccionar una imagen';
+            imageError.textContent = 'Debe cargar una imagen';
         } else {
             const allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
             const fileName = image.files[0].name.toLowerCase();
