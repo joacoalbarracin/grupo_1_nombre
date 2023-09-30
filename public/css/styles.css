@@ -293,6 +293,129 @@ main {
     font-weight: bold;
   }
 
+/*carrito*/
+
+.cart-tittle {
+    font-size: 36px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    margin: 0 auto;
+    max-width: 1000px;
+     background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 20px; 
+  }
+  
+  .prodcart {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  
+  .prodcart img {
+    height: 250px;
+    flex-basis: 50%;
+    margin-right: 20px;
+  }
+  
+  .prodcart .elements {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    flex-direction: column; /* cambiar dirección del flexbox */
+  }
+  
+  .product-info {
+    width: 30%;
+  }
+  
+  .tituloprodcart {
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+  }
+  
+ 
+  .quantity {
+    margin: 0 20px;
+  }
+  
+  .quantity-input {
+    font-size: 18px;
+    width: 60px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  .product-price {
+    margin-left: auto;
+  }
+  
+  .option-price {
+    font-size: 20px;
+    color: #3c6e71;
+    margin: 0;
+  }
+  
+  #trash {
+    font-size: 18px;
+    color: #f44336;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: color 0.3s;
+  }
+  
+  #trash:hover {
+    color: #bf0d00;
+  }
+  
+  
+  .pay {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px; /* reducir el padding */
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 15px;
+    height: 20px;
+  }
+  
+  .pay p {
+    font-size: 20px;
+  }
+  
+  .button {
+    width: 100%; /* establecer una anchura fija del 100% */
+    background-color: #3c6e71;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+  
+  .button:hover {
+    background-color: #468083;
+  }
+
+ 
+
+
 /* Vista de productDetail*/
 .detalleproducto {
     margin-top: 0px;
@@ -400,6 +523,7 @@ span {
 .btn-comprar:hover {
     background-color: #468083; /* Color de fondo al pasar el ratón sobre el botón */
 }
+
 
 
 /* Vista de perfil de usuario */
@@ -846,6 +970,8 @@ font-size: 20px;
     main section article {
         width: 31.5%;
     }
+
+    
 }
 
 footer {
@@ -872,6 +998,8 @@ footer div ul li a{
     list-style: none;
     font-weight: bold;
 }
+
+
 
 
 #formulario-registro{

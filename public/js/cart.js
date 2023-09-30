@@ -32,7 +32,8 @@ const generarCarrito = async function () {
        <div class "product-price"><p class="option-price">${producto.data.price}</p></div>
        </div>
 
-       <div><i id="trash" class="fa-solid fa-trash"></i></div>`
+       <div><i id="trash" class="fa-solid fa-trash"></i></div>
+     `
        
 
 
