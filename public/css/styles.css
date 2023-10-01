@@ -13,7 +13,9 @@ body{
     background-color: #efeff1d7;
     width: 100%;
     font-family: "Roboto", sans-serif;
-    
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
 .header {
@@ -85,7 +87,6 @@ body{
 .links a {
     text-decoration: none;
     color: #3c6e71;
-    font-weight: bold;
 }
 
 .links i {
@@ -173,7 +174,6 @@ body{
     display: inline-block;
     text-decoration: none;
     color: #FFF;
-    font-weight: bold;
     padding: 0.5em 1em;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   }
@@ -202,11 +202,9 @@ article.prod {
      
 }
 
-main {
+main.home {
     margin-top: 15px;
 }
-
-
 
 .secciones {
     margin-bottom: 10px;
@@ -610,7 +608,7 @@ span {
 }
 
 /*De acá hacia abajo en CSS de formulario y registro*/
-
+/*
 main form {
     display: flex;
   
@@ -625,8 +623,6 @@ main form {
     flex-wrap: nowrap;
 }
 
-
-
 #formulario-registro{
     display: flex;
     flex-direction: column;
@@ -637,7 +633,7 @@ main form {
     margin-bottom: 10px;
 }
 
-.formularios{
+.formularios-login{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -703,7 +699,7 @@ form div .imagen-perfil img {
 }
 
 .botonForm{
-    width: 50%;
+    width: 100%;
 }
 
 .botonSubmit{
@@ -733,7 +729,505 @@ form div .imagen-perfil img {
 
 .botonDelete:hover {
     background-color: #8e8e8e;
+}*/
+
+/*Formulario-Login*/
+body.login-page {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #a8e6cf, #dcedc1, #ffd3b6, #ffaaa5);
 }
+
+body.login-page main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Minimum viewport height */
+}
+
+.formularios-login {
+    width: 300px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.formularios-login div {
+    margin-bottom: 20px;
+}
+
+.text-field {
+    width: 100%;
+    padding: 8px 12px;
+    border: 2px solid #468083;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-field:focus {
+    border-color: #356f7a;
+    box-shadow: 0 0 5px rgba(70, 128, 131, 0.5);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.botonForm.botonEnviar {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #468083;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.botonForm.botonEnviar:hover {
+    background-color: #356f7a;
+    transform: scale(1.05);
+}
+
+h6 {
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+/*Formulario-Registro*/
+
+
+body.registro-page {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #a8e6cf, #dcedc1, #ffd3b6, #ffaaa5);
+}
+
+body.registro-page #formulario-registro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+body.registro-page #formulario-registro h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+body.registro-page .formularios {
+    width: 400px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+body.registro-page .text-field {
+    width: 100%;
+    padding: 8px 12px;
+    border: 2px solid #468083;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.registro-page .text-field:focus {
+    border-color: #356f7a;
+    box-shadow: 0 0 5px rgba(70, 128, 131, 0.5);
+}
+
+body.registro-page label {
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 10px;
+    color: #333;
+}
+
+body.registro-page .error-message {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+body.registro-page .botonForm.botonSubmit {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #468083;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+body.registro-page .botonForm.botonSubmit:hover {
+    background-color: #356f7a;
+    transform: scale(1.05);
+}
+
+body.registro-page .file-upload-wrapper {
+    position: relative;
+}
+
+body.registro-page .custom-file-upload {
+    padding: 10px 20px;
+    background-color: #468083;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+body.registro-page .custom-file-upload:hover {
+    background-color: #356f7a;
+}
+
+body.registro-page .file-name {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+/*Formulario Creación Productos*/
+
+body.formulario-creacion-producto {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #a8e6cf, #dcedc1, #ffd3b6, #ffaaa5);
+}
+
+body.formulario-creacion-producto #formulario-registro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+body.formulario-creacion-producto #formulario-registro h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+body.formulario-creacion-producto .formularios {
+    width: 400px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+body.formulario-creacion-producto .text-field {
+    width: 100%;
+    padding: 8px 12px;
+    border: 2px solid #468083;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.formulario-creacion-producto .text-field:focus {
+    border-color: #356f7a;
+    box-shadow: 0 0 5px rgba(70, 128, 131, 0.5);
+}
+
+body.formulario-creacion-producto label {
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 10px;
+    color: #333;
+}
+
+body.formulario-creacion-producto .error-message {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+body.formulario-creacion-producto .botonForm.botonSubmit {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #468083;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+body.formulario-creacion-producto .botonForm.botonSubmit:hover {
+    background-color: #356f7a;
+    transform: scale(1.05);
+}
+
+body.formulario-creacion-producto .file-upload-wrapper {
+    position: relative;
+}
+
+body.formulario-creacion-producto input[type="file"] {
+    display: none;
+}
+
+body.formulario-creacion-producto .custom-file-upload {
+    padding: 10px 20px;
+    background-color: #468083;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+body.formulario-creacion-producto .custom-file-upload:hover {
+    background-color: #356f7a;
+}
+
+body.formulario-creacion-producto .file-name {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+/*Formulario Editar Producto*/
+
+body.formulario-editar-producto {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #a8e6cf, #dcedc1, #ffd3b6, #ffaaa5);
+}
+
+body.formulario-editar-producto #formulario-registro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+body.formulario-editar-producto #formulario-registro h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+body.formulario-editar-producto .formularios {
+    width: 400px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+body.formulario-editar-producto .text-field {
+    width: 100%;
+    padding: 8px 12px;
+    border: 2px solid #468083;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.formulario-editar-producto .text-field:focus {
+    border-color: #356f7a;
+    box-shadow: 0 0 5px rgba(70, 128, 131, 0.5);
+}
+
+body.formulario-editar-producto label {
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 10px;
+    color: #333;
+}
+
+body.formulario-editar-producto .error-message {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+body.formulario-editar-producto .botonForm.botonSubmit {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #468083;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+body.formulario-editar-producto .botonForm.botonSubmit:hover {
+    background-color: #356f7a;
+    transform: scale(1.05);
+}
+
+body.formulario-editar-producto .file-upload-wrapper {
+    position: relative;
+}
+
+body.formulario-editar-producto input[type="file"] {
+    display: none;
+}
+
+body.formulario-editar-producto .custom-file-upload {
+    padding: 10px 20px;
+    background-color: #468083;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+body.formulario-editar-producto .custom-file-upload:hover {
+    background-color: #356f7a;
+}
+
+body.formulario-editar-producto .file-name {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+/*Editar Usuario*/
+
+body.formulario-editar-usario {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #a8e6cf, #dcedc1, #ffd3b6, #ffaaa5);
+}
+
+body.formulario-editar-usario main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+body.formulario-editar-usario h2.edicion {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+body.formulario-editar-usario .formularios {
+    width: 400px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+body.formulario-editar-usario .text-field {
+    width: 100%;
+    padding: 8px 12px;
+    border: 2px solid #468083;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.formulario-editar-usario .text-field:focus {
+    border-color: #356f7a;
+    box-shadow: 0 0 5px rgba(70, 128, 131, 0.5);
+}
+
+body.formulario-editar-usario label {
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 10px;
+    color: #333;
+}
+
+body.formulario-editar-usario .input-img img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 20px auto;
+}
+
+body.formulario-editar-usario .botonForm.botonSubmit {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #468083;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+body.formulario-editar-usario .botonForm.botonSubmit:hover {
+    background-color: #356f7a;
+    transform: scale(1.05);
+}
+
+body.formulario-editar-usario .botonForm.botonDelete {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #e74c3c;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+body.formulario-editar-usario .botonForm.botonDelete:hover {
+    background-color: #d63031;
+    transform: scale(1.05);
+}
+
+body.formulario-editar-usario .input-img input[type="file"] {
+    display: none;  /* Para ocultar el input de archivo predeterminado */
+}
+
 
 /* Estilo del botón */
 #borrar-prod {
@@ -871,7 +1365,6 @@ font-size: 20px;
     .links a {
         text-decoration: none;
         color: #3c6e71;
-        font-weight: bold;
     }
     
     .links i {
@@ -975,7 +1468,76 @@ font-size: 20px;
         font-size: 16px;
         width: 70%;
       }
+/*Formulario Login*/
+      body.login-page main {
+        padding: 20px; /* Add some padding to prevent elements from touching the edge */
     }
+
+    .formularios-login {
+        width: 90%; /* Give it some breathing room on smaller devices */
+        max-width: 350px; /* This is to ensure that if the device's width grows, the form doesn't take up the whole width */
+    }
+
+    .text-field, .botonForm.botonEnviar {
+        font-size: 14px; /* Slightly bigger font for easier readability on smaller devices */
+    }
+
+    label, h6 {
+        font-size: 13px; /* Adjusting label and h6 font size for better fit */
+    }
+
+    .error, .error-message {
+        font-size: 11px; /* Reducing error font sizes a bit */
+    }
+
+    /*Formulario Registro*/
+
+    body.registro-page #formulario-registro {
+        padding: 20px;
+    }
+
+    body.registro-page .formularios {
+        width: 90%;
+        max-width: 450px;
+    }
+
+    body.registro-page .text-field, body.registro-page .botonForm.botonSubmit {
+        font-size: 14px;
+    }
+
+    body.registro-page label {
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+    body.registro-page .error-message {
+        font-size: 11px;
+    }
+
+    body.registro-page .custom-file-upload {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+    }
+
+    body.registro-page .file-name {
+        font-size: 10px;
+        margin-left: 5px;
+        font-weight: bold;
+    }
+
+    /*Formulario Creación Producto*/
+
+    body.formulario-creacion-producto .formularios {
+        width: 90%; /* Ajustamos el ancho del formulario para que sea más adaptable */
+        padding: 15px; /* Reducimos el padding para pantallas pequeñas */
+    }
+
+    body.formulario-creacion-producto #formulario-registro h3 {
+        font-size: 20px; /* Ajustamos el tamaño del título para pantallas pequeñas */
+        margin-bottom: 15px;
+    }
+
+}
 
 
 @media (min-width: 769px){
@@ -986,7 +1548,7 @@ font-size: 20px;
     } 
 
     .top-bar {
-        height: 170px;
+        height: 110px;
     }
 
     body header div.top-bar{
@@ -1062,7 +1624,6 @@ font-size: 20px;
     .links a {
         text-decoration: none;
         color: #3c6e71;
-        font-weight: bold;
     }
     
     .links i {
@@ -1149,7 +1710,7 @@ font-size: 20px;
         width: 80%;
         margin-left: 80px;
     }
-    
+ /*   
 #formulario-registro{
     background-color: #efeff1d7;
     display: flex;
@@ -1209,10 +1770,93 @@ font-size: 20px;
     color: red;
 }
 
+*/
 
-
-    
+body.login-page main {
+    padding-right: 40px;
+    padding-left: 40px; /* Enhanced padding for more spacing on larger screens */
 }
+
+.formularios-login {
+    width: 60%; /* Wider form for larger screens but capped with max-width */
+    max-width: 500px; /* Restricting the form's maximum width for better aesthetics */
+    padding: 50px; /* More internal spacing for the form on larger screens */
+}
+
+.text-field, .botonForm.botonEnviar {
+    font-size: 16px; /* Slightly larger font size for better readability on larger screens */
+}
+
+label, h6 {
+    font-size: 15px; /* Adjusting label and h6 font size for a better fit */
+}
+
+.error, .error-message {
+    font-size: 14px; /* Slightly larger font size for errors on larger screens */
+}
+
+.botonForm.botonEnviar {
+    padding: 12px 0; /* Slightly more padding for the button on larger screens */
+}
+
+/*Formulario Registro*/
+
+@media (min-width: 769px) {
+    body.registro-page #formulario-registro {
+        padding: 40px;
+    }
+
+    body.registro-page .formularios {
+        width: 60%;
+        max-width: 600px;
+        padding: 50px;
+    }
+
+    body.registro-page .text-field, body.registro-page .botonForm.botonSubmit {
+        font-size: 16px;
+    }
+
+    body.registro-page label {
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    body.registro-page .error-message {
+        font-size: 14px;
+    }
+
+    body.registro-page .botonForm.botonSubmit {
+        padding: 12px 0;
+    }
+
+    body.registro-page .custom-file-upload {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    body.registro-page .file-name {
+        font-size: 12px;
+        margin-left: 12px;
+        font-weight: bold;
+    }
+
+    /*Formulario Creacion Producto*/
+
+    body.formulario-creacion-producto .formularios {
+        width: 500px; /* Aumentamos el ancho del formulario para pantallas más grandes */
+        padding: 35px; /* Aumentamos el padding para pantallas más grandes */
+    }
+
+    body.formulario-creacion-producto #formulario-registro h3 {
+        font-size: 26px; /* Aumentamos el tamaño del título para pantallas más grandes */
+        margin-bottom: 25px;
+    }
+}
+
+
+}
+
+
 
 footer {
     background-color: #3c6e71;

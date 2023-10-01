@@ -2,17 +2,23 @@
 <html lang="en">
 <%- include('./partials/head', {title: "Home"})%>
 
-<body>
+<body class="formulario-editar-usario">
     <%- include('./partials/header')%>
     <main>
         <h2 class="edicion">Modificá tu Usuario</h2>
         <form class="formularios"action="/users/edit/<%= usuarioEncontrado.id %>?_method=PUT" method="post" enctype="multipart/form-data">
             <div class="input-img">
                 <div class="imagen-perfil">
-                    <img src="/img/users/<%=usuarioEncontrado.image%>">
+                    <img id="image-preview" src="/img/users/<%=usuarioEncontrado.image%>" alt="Imagen de perfil del usuario">
                 </div>
-                <input name="image" type="file">
+                <div class="file-upload-wrapper">
+                    <label for="image" class="custom-file-upload">Cambiar imagen</label>
+                    <input name="image" type="file" id="image">
+                    <span class="file-name"><%= usuarioEncontrado.image ? usuarioEncontrado.image.split('/').pop() : "No se ha seleccionado ningún archivo" %></span>
+                    <div class="error-message" id="image-error"></div> <!-- Error message for email -->
+                </div>
             </div>
+            
             <div>
                 <label>Nombre:</label>
                 <input class="text-field" type="text" name="name" value="<%=usuarioEncontrado.name%>">
@@ -24,10 +30,12 @@
             <div>
                 <label>Contraseña nueva:</label>
                 <input class="text-field" type="password" name="password" value="">
+                <div class="error-message" id="password-error"></div>
             </div>
             <div>
                 <label>Repetí tu nueva contraseña:</label>
                 <input class="text-field" type="password" name="repeat_password" value="">
+                <div class="error-message" id="repeat_password-error"></div>
             </div>
             <div class="botones">
                 <button class="botonForm botonSubmit" type="submit">Modificar usuario</button>

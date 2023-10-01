@@ -2,7 +2,7 @@
 <html lang="en">
 <%- include('./partials/head', {title: "Home"})%>
 
-<body>
+<body class="formulario-editar-producto">
     <%- include('./partials/header')%>
 
     <main id="formulario-registro">
@@ -37,10 +37,17 @@
 
             <div>
                 <label>Imagen del producto</label>
-                <img src="/img/<%=productoEncontrado.image%>" alt="Imagen Producto" height="50px">
-                <input name="image" type="file" id="image" value="<%= locals.oldData ? oldData.image : productoEncontrado.image%>">
+                <img id="image-preview" src="/img/<%=productoEncontrado.image%>" alt="Imagen Producto" height="50px">
+            
+                <div class="file-upload-wrapper">
+                    <label for="image" class="custom-file-upload">Cambiar imagen</label>
+                    <input name="image" type="file" id="image">
+                    <span class="file-name"><%= productoEncontrado.image ? productoEncontrado.image.split('/').pop() : "No se ha seleccionado ningún archivo" %></span>
+                </div>
+            
                 <p class="error-message" id="image-error"></p>
             </div>
+            
 
             <div>
                 <label>Price:</label>

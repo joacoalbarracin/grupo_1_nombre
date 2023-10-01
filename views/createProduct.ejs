@@ -2,7 +2,7 @@
 <html lang="en">
     <%- include('./partials/head', {title: "Home"})%>
 
-    <body>
+    <body class="formulario-creacion-producto">
         <%- include('./partials/header')%>
         <main id="formulario-registro">
             <h3>Completá tus datos</h3>
@@ -27,11 +27,14 @@
                     <input class="text-field" input="text" name="location" id="location" value="<%= locals.oldData ? oldData.location : null%>">
                     <p class="error-message" id="location-error"></p>
                 </div>
-                <div>
-                    <label>Imagen del producto</label>
-                    <input name="image" type="file" id="image">
+                <div class="file-upload-wrapper">
+                    <label>Imagen de Producto</label>
+                    <button class="custom-file-upload">Seleccionar imagen</button>
+                    <input name="image" type="file" id="image" style="display: none;">
+                    <span class="file-name" id="file-name">Ningún archivo seleccionado</span>
                     <p class="error-message" id="image-error"></p>
-                </div>
+                    <img id="image-preview" src="#" alt="Previsualización de imagen" style="display:none; max-width: 200px; margin-top: 10px;">
+                </div>            
                 <div>
                     <label>Price:</label>
                     <input name="price" type="number" class="text-field" id="price" value="<%= locals.oldData ? oldData.price : null%>">

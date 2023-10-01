@@ -2,7 +2,7 @@
 <html lang="en">
 <%- include('./partials/head', {title: "Home"})%>
 
-<body>
+<body class="registro-page">
     <%- include('./partials/header')%>
 
     <main id="formulario-registro">
@@ -33,11 +33,14 @@
                 <input class="text-field" type="password" name="repeat_password" id="repeat_password">
                 <p class="error-message" id="repeat_password-error"></p>
             </div>
-            <div>
+            <div class="file-upload-wrapper">
                 <label>Imagen de perfil</label>
-                <input name="image" type="file" id="image">
+                <button class="custom-file-upload">Seleccionar imagen</button>
+                <input name="image" type="file" id="image" style="display: none;">
+                <span class="file-name" id="file-name">Ningún archivo seleccionado</span>
                 <p class="error-message" id="image-error"></p>
-            </div>
+                <img id="image-preview" src="#" alt="Previsualización de imagen" style="display:none; max-width: 200px; margin-top: 10px;">
+            </div>            
             <button class="botonForm botonSubmit" type="submit">Registrate</button>
         </form>
     </main>

@@ -17,7 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let users = [];
     fetchUserList().then(data => users = data);
 
-    form.addEventListener('submit', async function(event) {
+    form.addEventListener('submit', handleFormSubmission);
+
+    function handleFormSubmission(event) {
         event.preventDefault();
         let errores = [];
 
@@ -42,16 +44,20 @@ document.addEventListener('DOMContentLoaded', function() {
         repeatPasswordError.textContent = '';
         imageError.textContent = '';
 
+        // Código de validación
+        // Validar nombre
         if (name.value.trim() === '') {
             errores.push('El campo Nombre debe llenarse');
             nameError.textContent = 'El campo Nombre debe llenarse';
         }
-
+        
+        // Validar apellido
         if (lastName.value.trim() === '') {
             errores.push('El campo Apellido debe llenarse');
             lastNameError.textContent = 'El campo Apellido debe llenarse';
         }
 
+        // Validar email
         if (email.value.trim() === '') {
             errores.push('El campo Email debe llenarse');
             emailError.textContent = 'El campo Email debe llenarse';
@@ -69,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
+        // Validar contraseña
         if (password.value.trim() === '') {
             errores.push('El campo Contraseña debe llenarse');
             passwordError.textContent = 'El campo Contraseña debe llenarse';
@@ -80,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
+        // Validar repetir contraseña
         if (repeatPassword.value.trim() === '') {
             errores.push('El campo Repetir contraseña debe llenarse');
             repeatPasswordError.textContent = 'El campo Repetir contraseña debe llenarse';
@@ -88,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
             repeatPasswordError.textContent = 'Las contraseñas no coinciden';
         }
 
+        // Validar imagen
         if (image.files.length === 0) {
             errores.push('Debe seleccionar una imagen');
             imageError.textContent = 'Debe cargar una imagen';
@@ -95,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
             const fileName = image.files[0].name.toLowerCase();
             const fileExtension = fileName.split('.').pop();
-
             if (!allowedExtensions.includes(fileExtension)) {
                 errores.push('El formato de la imagen no es válido. Los formatos permitidos son JPG, JPEG, PNG y GIF.');
                 imageError.textContent = 'El formato de la imagen no es válido. Los formatos permitidos son JPG, JPEG, PNG y GIF.';
@@ -105,5 +113,43 @@ document.addEventListener('DOMContentLoaded', function() {
         if (errores.length === 0) {
             form.submit();
         }
+    }
+
+    function updateFileName(event) {
+        const fileName = event.target.files[0] ? event.target.files[0].name : "Ningún archivo seleccionado";
+        document.getElementById("file-name").textContent = fileName;
+        event.stopPropagation();
+        showImagePreview(event);
+    }
+
+    // Función para mostrar la previsualización de la imagen
+    function showImagePreview(event) {
+        const file = event.target.files[0];
+        const preview = document.getElementById('image-preview');
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            }
+
+            reader.readAsDataURL(file);
+        } else {
+            preview.style.display = 'none';
+        }
+    }
+
+    const imageInput = document.getElementById('image');
+    imageInput.addEventListener('change', updateFileName);
+
+    const customFileUploadButton = document.querySelector(".custom-file-upload");
+    customFileUploadButton.setAttribute('type', 'button');  // Asegurarse de que no envía el formulario
+    customFileUploadButton.addEventListener("click", function() {
+        imageInput.click();
     });
+
+    
 });
+

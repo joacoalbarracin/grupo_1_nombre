@@ -64,4 +64,39 @@ document.addEventListener('DOMContentLoaded', function () {
             form.submit(); // Enviar el formulario si no hay errores
         }
     });
+
+    function updateFileName(event) {
+        const fileName = event.target.files[0] ? event.target.files[0].name : "Ningún archivo seleccionado";
+        document.getElementById("file-name").textContent = fileName;
+        event.stopPropagation();
+        showImagePreview(event);
+    }
+
+    // Función para mostrar la previsualización de la imagen
+    function showImagePreview(event) {
+        const file = event.target.files[0];
+        const preview = document.getElementById('image-preview');
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            }
+
+            reader.readAsDataURL(file);
+        } else {
+            preview.style.display = 'none';
+        }
+    }
+
+    const imageInput = document.getElementById('image');
+    imageInput.addEventListener('change', updateFileName);
+
+    const customFileUploadButton = document.querySelector(".custom-file-upload");
+    customFileUploadButton.setAttribute('type', 'button');  // Asegurarse de que no envía el formulario
+    customFileUploadButton.addEventListener("click", function() {
+        imageInput.click();
+    });
 });
