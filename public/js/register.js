@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 errores.push('El campo Email no es válido');
                 emailError.textContent = 'El campo Email no es válido';
             } else {
-                const emailExists = users.some(user => user.email === email.value.trim());
+                const emailExists = Array.isArray(users) && users.some(user => user.email === email.value.trim());;
                 if (emailExists) {
                     errores.push('El Email ya está registrado');
                     emailError.textContent = 'El Email ya está registrado';
@@ -111,7 +111,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (errores.length === 0) {
+            console.log("Formulario Enviado");
             form.submit();
+        } else {
+            console.log("Hay errores:", errores);
         }
     }
 

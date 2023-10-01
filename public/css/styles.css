@@ -16,6 +16,14 @@ body{
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    width: 100vw;
+}
+
+.body-profile main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Minimum viewport height */
 }
 
 .header {
@@ -93,6 +101,11 @@ body{
     color: #3c6e71;
 }
 
+.links:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
 .links .user-profile {
     display: none;
     position: absolute;
@@ -100,13 +113,18 @@ body{
     background-color: #F0F1F6;
     justify-content: center;
     align-items: center;
-    width: 150px;
+    width: 150px; /* Establece un ancho máximo */
 }
 
-.links .user-profile.mostrar{
+/* Establece un máximo de altura para el menú desplegable */
+.links .user-profile.mostrar {
     display: flex;
     flex-direction: column;
+    max-height: 300px; /* Ajusta el valor según sea necesario */
+    z-index: 2;
 }
+
+
 
 .links .user-profile .opciones-perfil {
     list-style: none;
@@ -147,41 +165,43 @@ body{
     width: 100%;
   }
 
-  .categorias li {
+.categorias li {
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     padding: 10px;
     margin: 0;
-  }
-  .categorias li a {
+}
+.categorias li a {
     display: inline-block;
     text-decoration: none;
     color: #FFF;
     background-color: #3c6e71;
     font-weight: bold;
     padding: 0.5em 1em;
-  }
+}
 
-  .categorias li a:hover {
+.categorias li a:hover {
     background-color: #4a8c90; /* New background color on hover */
     transform: scale(1.1); /* Scale up the element slightly on hover */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow */
-  }
+}
 
-  .accesos a {
+.accesos i {
     display: inline-block;
     text-decoration: none;
     color: #FFF;
     padding: 0.5em 1em;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  }
-  
-  .accesos a:hover {
-    transform: scale(1.1); /* Increase size on hover */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add box shadow on hover */
-  }
+}
+
+.accesos li:hover {
+    cursor: pointer;
+}
+
+
+
 .nav {
     display: flex;
 }
@@ -196,10 +216,8 @@ body{
 }
 
 article.prod {
-    
-       height: 370px;
-        object-fit: cover; /* Ajustar la imagen recortando si es necesario */
-     
+    height: 370px;
+    object-fit: cover; /* Ajustar la imagen recortando si es necesario */
 }
 
 main.home {
@@ -429,6 +447,7 @@ main.home {
     cursor: pointer;
     transition: background-color 0.3s;
     margin-top: 10px;
+    text-decoration: none;
   }
   
   .button:hover {
@@ -556,6 +575,7 @@ span {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    padding-top: 10px;
 }
 
 .contenido-perfil .imagen-perfil {
@@ -736,7 +756,7 @@ body.login-page {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #a8e6cf, #dcedc1, #ffd3b6, #ffaaa5);
+    background: linear-gradient(135deg, #808080, #a8e6cf, #dcedc1,#356f7a);
 }
 
 body.login-page main {
@@ -824,7 +844,7 @@ body.registro-page {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #a8e6cf, #dcedc1, #ffd3b6, #ffaaa5);
+    background: linear-gradient(135deg, #808080, #a8e6cf, #dcedc1,#356f7a);
 }
 
 body.registro-page #formulario-registro {
@@ -925,7 +945,7 @@ body.formulario-creacion-producto {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #a8e6cf, #dcedc1, #ffd3b6, #ffaaa5);
+    background: linear-gradient(135deg, #808080, #a8e6cf, #dcedc1,#356f7a);
 }
 
 body.formulario-creacion-producto #formulario-registro {
@@ -1030,7 +1050,7 @@ body.formulario-editar-producto {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #a8e6cf, #dcedc1, #ffd3b6, #ffaaa5);
+    background: linear-gradient(135deg, #808080, #a8e6cf, #dcedc1,#356f7a);
 }
 
 body.formulario-editar-producto #formulario-registro {
@@ -1135,7 +1155,7 @@ body.formulario-editar-usario {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #a8e6cf, #dcedc1, #ffd3b6, #ffaaa5);
+    background: linear-gradient(135deg, #808080, #a8e6cf, #dcedc1,#356f7a);
 }
 
 body.formulario-editar-usario main {
@@ -1370,6 +1390,7 @@ font-size: 20px;
     .links i {
         color: #3c6e71;
     }
+
     
     header nav{
         display: flex;
@@ -1447,27 +1468,26 @@ font-size: 20px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-
     }
     .detalletitulo {
         font-size: 20px;
       }
-      .detalledescripcion {
+    .detalledescripcion {
         font-size: 14px;
-      }
-      .imagen {
+    }
+    .imagen {
         width: 70%;
-      }
+    }
       .especificaciones {
         font-size: 16px;
-      }
-      .detalleprecio {
+    }
+    .detalleprecio {
         font-size: 20px;
-      }
-      .btn-comprar {
+    }
+    .btn-comprar {
         font-size: 16px;
         width: 70%;
-      }
+    }
 /*Formulario Login*/
       body.login-page main {
         padding: 20px; /* Add some padding to prevent elements from touching the edge */
@@ -1630,6 +1650,17 @@ font-size: 20px;
         color: #3c6e71;
     }
     
+    .links .user-profile {
+        display: none;
+        position: absolute;
+        top: 100%;
+        background-color: #F0F1F6;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        position: absolute;
+    }
+
     header nav{
         display: flex;
         flex-direction: row;
@@ -1676,6 +1707,7 @@ font-size: 20px;
     
     .presentacion .buenosAires {
         width: 100%;
+        z-index: -100;
     }
     
     .presentacion .texto-presentacion {
@@ -1710,98 +1742,35 @@ font-size: 20px;
         width: 80%;
         margin-left: 80px;
     }
- /*   
-#formulario-registro{
-    background-color: #efeff1d7;
-    display: flex;
-    justify-content: center;
-}
-
-.formularios{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 25px;
-
-}
-
-.form div {
-    margin-bottom: 10px;
-    border-radius: 5%;
-    width:100%;
-}
-
-.text-field {
-    padding: 5px;
-    width: 100%;
-}
-
-
-.botonForm{
-    width: 40%;
-}
-
-.botonSubmit{
-    background-color: #3c6e71;
-    color: #FFF;
+    body.login-page main {
+        padding-right: 40px;
+        padding-left: 40px; /* Enhanced padding for more spacing on larger screens */
     }
 
+    .formularios-login {
+        width: 60%; /* Wider form for larger screens but capped with max-width */
+        max-width: 500px; /* Restricting the form's maximum width for better aesthetics */
+        padding: 50px; /* More internal spacing for the form on larger screens */
+    }
 
-.botonEnviar {
-    background-color: #3c6e71;
-    color:#FFF;
-    transition:background-color 0.7s;
-    justify-content: center;
-}
+    .text-field, .botonForm.botonEnviar {
+        font-size: 16px; /* Slightly larger font size for better readability on larger screens */
+    }
 
-.botonEnviar:hover {
-    background-color: #468083;
-}
-.botonSubmit:hover {
-    background-color: #468083;
-}
+    label, h6 {
+        font-size: 15px; /* Adjusting label and h6 font size for a better fit */
+    }
 
-.centered-container {
-    text-align: center;
-}
+    .error, .error-message {
+        font-size: 14px; /* Slightly larger font size for errors on larger screens */
+    }
 
-.error-message {
-    color: red;
-}
+    .botonForm.botonEnviar {
+        padding: 12px 0; /* Slightly more padding for the button on larger screens */
+    }
 
-*/
+    /*Formulario Registro*/
 
-body.login-page main {
-    padding-right: 40px;
-    padding-left: 40px; /* Enhanced padding for more spacing on larger screens */
-}
-
-.formularios-login {
-    width: 60%; /* Wider form for larger screens but capped with max-width */
-    max-width: 500px; /* Restricting the form's maximum width for better aesthetics */
-    padding: 50px; /* More internal spacing for the form on larger screens */
-}
-
-.text-field, .botonForm.botonEnviar {
-    font-size: 16px; /* Slightly larger font size for better readability on larger screens */
-}
-
-label, h6 {
-    font-size: 15px; /* Adjusting label and h6 font size for a better fit */
-}
-
-.error, .error-message {
-    font-size: 14px; /* Slightly larger font size for errors on larger screens */
-}
-
-.botonForm.botonEnviar {
-    padding: 12px 0; /* Slightly more padding for the button on larger screens */
-}
-
-/*Formulario Registro*/
-
-@media (min-width: 769px) {
     body.registro-page #formulario-registro {
         padding: 40px;
     }
@@ -1851,8 +1820,6 @@ label, h6 {
         font-size: 26px; /* Aumentamos el tamaño del título para pantallas más grandes */
         margin-bottom: 25px;
     }
-}
-
 
 }
 

@@ -6,7 +6,7 @@
     <%- include('./partials/header')%>
     <main>
         <h2 class="edicion">Modificá tu Usuario</h2>
-        <form class="formularios"action="/users/edit/<%= usuarioEncontrado.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+        <form class="formularios" id='edit_user_form' action="/users/edit/<%= usuarioEncontrado.id %>?_method=PUT" method="post" enctype="multipart/form-data">
             <div class="input-img">
                 <div class="imagen-perfil">
                     <img id="image-preview" src="/img/users/<%=usuarioEncontrado.image%>" alt="Imagen de perfil del usuario">

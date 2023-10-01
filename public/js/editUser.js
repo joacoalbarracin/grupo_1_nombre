@@ -85,5 +85,5 @@ document.addEventListener('DOMContentLoaded', function () {
     customFileUploadButton.addEventListener("click", function() {
         imageInput.click();
     });
-
+    
 });
