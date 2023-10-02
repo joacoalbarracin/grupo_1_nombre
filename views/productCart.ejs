@@ -4,24 +4,39 @@
 
 <body>
     <%- include('./partials/header')%>
-    <main>
-        <h2 class="cart-tittle">Tu carrito de compras:</h2>
-        
-        <div class="content">
-            <div class="prodcart">
-               
+    <main class="main-cart">
+        <h2 class="cart-title">Tu carrito de compras:</h2>
+        <div class="cart">
+            <div class="cart-container">
+                <div class="cart-item">
+                    <div class="product-info">
+                        <img src= "/img/bombonera.jpeg" alt="Producto 1">
+                        <div class="product-info title-price">
+                            <h3 class="product-title">Visita Guiada Bombonera + museo</h3>
+                            <p class="product-price">$35.00</p>
+                            <div class="quantity">
+                                <button class="quantity-button">-</button>
+                                <span class="quantity-count">1</span>
+                                <button class="quantity-button">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="remove-button"><i class="fa-solid fa-xmark"></i></button>
+                </div>
             </div>
-        <div class="pay">
-            <p>Total: $160</p>
-
-            <script src="https://cdn.pinpayments.com/pin.v2.js"></script>
-            <p><a id="btn-pay" href="#" class="button">Comprar</a></p>
+            <div class="cart-summary">
+                <div class="subtotal">
+                    <p>Subtotal:</p>
+                    <p class="subtotal-amount">$35.00</p>
+                </div>
+                <div class="total">
+                    <p>Total:</p>
+                    <p class="detalleprecioCarrito">$35.00</p>
+                </div>
+                <button class="btn-comprar">Comprar</button>
+            </div>
         </div>
     </main>
-
     <%- include('./partials/footer')%>
-    <script src="/js/cart.js"></script>
-
-
 </body>
 </html>
