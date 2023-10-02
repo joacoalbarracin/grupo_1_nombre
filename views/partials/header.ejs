@@ -6,11 +6,10 @@
         </div>
         <div class="buscador">
             <form class="search-bar" action='/products/search' method="POST">
-                <input type="search" name="busqueda" placeholder="Buscar..." value="">
+                <input type="search" name="busqueda" placeholder = "Buscar..." value="">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
-  
         <ul class="accesos">
             <% if (user === null) { %> 
                 <li class="links"><a href="/users/login">Ingresa</a></li>

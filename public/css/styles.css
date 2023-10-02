@@ -46,7 +46,7 @@ body{
 }
 
  /* Estilos para el botón de búsqueda */
- .search-bar button[type="submit"] {
+.search-bar button[type="submit"] {
     background-color: #3c6e71; /* Color de fondo del botón */
     color: #fff; /* Color del texto del botón */
     border: none;
@@ -213,6 +213,10 @@ body{
 
 .presentacion {
     display: none;
+}
+
+.productos {
+    padding-top: 10px;
 }
 
 article.prod {
@@ -1286,9 +1290,7 @@ font-size: 20px;
 .buscador{
     display: flex;
     justify-content: space-between;
-    padding-left:0.2em;
-  
-    
+    padding-left:0.2em;    
 }
 
 .carrito{
@@ -1598,12 +1600,21 @@ font-size: 20px;
         padding: 10px;
         font-size: 16px;
     }
+
+    .buscador {
+        justify-content: center;
+        margin: 0;
+    }
     
     /* Estilos para el contenedor del buscador */
     .search-bar {
         display: flex;
         align-items: center;
         border-radius: 4px;
+        justify-content: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 0px;
     }
       
     /* Estilos para el campo de búsqueda */
